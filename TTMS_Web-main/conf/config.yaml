@@ -1,0 +1,32 @@
+service:
+  AppMode: debug
+  HttpPort: :4000
+
+mysql:
+  DB: mysql
+  DbHost: 127.0.0.1
+#  DbHost: 117.78.11.45
+  DbPort: 3306
+  DbUser: root
+#  DbUser: remote_user
+  DbPassword: 'hyx20040731'
+  DbName: ttms
+
+redis:
+  RedisDb: redis
+  RedisAddr: 127.0.0.1:6379
+  RedisPw: 'hyx20040731'
+  RedisDbName: 2
+
+email:
+  ValidEmail: 'http://117.78.11.45:5173/register/'
+  SmtpHost: smtp.qq.com
+  SmtpEmail: '1160433376@qq.com'
+  SmtpPass: 'qwbyyqacqjqijbbh'
+
+path:
+  Host: 'http://117.78.11.45'
+  MoviePath: '/static/imgs/movie/'
+  AvatarPath: '/static/imgs/avatar/'
+  DirectorPath: '/static/imgs/director/'
+  ActorPath: '/static/imgs/actor/'

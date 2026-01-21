@@ -1,6 +1,5 @@
 // 电影控制器（处理请求和响应示例）
 const movieService = require('../services/movieService.js')
-const { cc } = require('../utils/response.js')
 
 const movieController = {
     /**
@@ -9,9 +8,16 @@ const movieController = {
     getMovieList: async (req, res) => {
         try {
             const result = await movieService.getMovieList()
-            res.send(cc(result, 0))
-        } catch (error) {
-            res.send(cc(error.message))
+            res.status(200).json({
+                success: true,
+                message: '获取电影列表成功',
+                data: result
+            })
+        } catch (err) {
+            res.status(500).json({
+                success: false,
+                message: err.message
+            })
         }
     },
 
@@ -22,9 +28,16 @@ const movieController = {
         try {
             const { id } = req.params
             const movie = await movieService.getMovieDetail(id)
-            res.send(cc(movie, 0))
-        } catch (error) {
-            res.send(cc(error.message))
+            res.status(200).json({
+                success: true,
+                message: '获取电影详情成功',
+                data: movie
+            })
+        } catch (err) {
+            res.status(500).json({
+                success: false,
+                message: err.message
+            })
         }
     },
 
@@ -34,9 +47,16 @@ const movieController = {
     createMovie: async (req, res) => {
         try {
             const result = await movieService.createMovie(req.body)
-            res.send(cc(result.message, 0))
-        } catch (error) {
-            res.send(cc(error.message))
+            res.status(201).json({
+                success: true,
+                message: '创建电影成功',
+                data: result
+            })
+        } catch (err) {
+            res.status(400).json({
+                success: false,
+                message: err.message
+            })
         }
     },
 
@@ -47,9 +67,16 @@ const movieController = {
         try {
             const { id } = req.params
             const result = await movieService.updateMovie(id, req.body)
-            res.send(cc(result.message, 0))
-        } catch (error) {
-            res.send(cc(error.message))
+            res.status(200).json({
+                success: true,
+                message: '更新电影成功',
+                data: result
+            })
+        } catch (err) {
+            res.status(400).json({
+                success: false,
+                message: err.message
+            })
         }
     },
 
@@ -60,9 +87,16 @@ const movieController = {
         try {
             const { id } = req.params
             const result = await movieService.deleteMovie(id)
-            res.send(cc(result.message, 0))
-        } catch (error) {
-            res.send(cc(error.message))
+            res.status(200).json({
+                success: true,
+                message: '删除电影成功',
+                data: result
+            })
+        } catch (err) {
+            res.status(400).json({
+                success: false,
+                message: err.message
+            })
         }
     }
 }

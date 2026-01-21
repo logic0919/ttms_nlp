@@ -1,11 +1,15 @@
 // 全局错误处理中间件
-const { error } = require('../utils/response.js')
-
 module.exports = (err, req, res, next) => {
     // token 解析失败
     if (err.name === 'UnauthorizedError') {
-        return res.status(401).send(error('无效的token', 401))
+        return res.status(401).json({
+            success: false,
+            message: '无效的token'
+        })
     }
     // 未知错误
-    res.status(500).send(error(err.message, 500))
+    res.status(500).json({
+        success: false,
+        message: err.message
+    })
 }

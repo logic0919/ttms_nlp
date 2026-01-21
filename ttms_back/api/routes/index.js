@@ -13,11 +13,14 @@ router.use('/api/user', userRoutes)
 // router.use('/api/order', orderRoutes)      // 取消注释以启用订单模块
 
 // 测试路由（可以保留或删除）
-const { success } = require('../utils/response.js')
 router.get('/api/test', (req, res) => {
     console.log(req.query.a)
     console.log(req.query.b)
-    res.status(200).send(success(null, 'test成功'))
+    res.status(200).json({
+        success: true,
+        message: 'test成功',
+        data: null
+    })
 })
 
 module.exports = router

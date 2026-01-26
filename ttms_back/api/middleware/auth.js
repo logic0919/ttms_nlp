@@ -6,7 +6,10 @@ const config = require('../config.js')
  * JWT Token 验证中间件
  */
 const verifyToken = (req, res, next) => {
+    console.log('sss');
+    // console.log(req.headers.authorization);
     const token = req.headers.authorization?.replace('Bearer ', '') || req.query.token
+console.log(req.body);
 
     if (!token) {
         return res.status(401).json({
@@ -24,6 +27,8 @@ const verifyToken = (req, res, next) => {
         }
         // 将用户信息挂载到req对象上，方便后续使用
         req.user = data
+        // console.log('aa');
+        // console.log(data);req.headers.authorization
         next()
     })
 }

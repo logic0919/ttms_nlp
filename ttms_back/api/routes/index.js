@@ -4,23 +4,14 @@ const router = express.Router()
 
 // 导入各个模块的路由
 const userRoutes = require('./user.js')
-// const movieRoutes = require('./movie.js')  // 取消注释以启用电影模块
+const movieRoutes = require('./movie.js')
+const hallRoutes = require('./hall.js')
 // const orderRoutes = require('./order.js')  // 取消注释以启用订单模块
 
 // 注册路由
 router.use('/api/user', userRoutes)
-// router.use('/api/movie', movieRoutes)      // 取消注释以启用电影模块
+router.use('/api/movie', movieRoutes)
+router.use('/api/hall', hallRoutes)
 // router.use('/api/order', orderRoutes)      // 取消注释以启用订单模块
-
-// 测试路由（可以保留或删除）
-router.get('/api/test', (req, res) => {
-    console.log(req.query.a)
-    console.log(req.query.b)
-    res.status(200).json({
-        success: true,
-        message: 'test成功',
-        data: null
-    })
-})
 
 module.exports = router

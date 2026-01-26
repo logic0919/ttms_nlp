@@ -9,14 +9,38 @@ const movieService = {
         const movies = await movieModel.findAll()
         return {
             movies,
-            total: movies.length
+            total: movies.length,
+            status:200
+        }
+    },
+    /**
+     * 根据标签（tab）搜索电影
+     */
+    searchMoviesByTab: async (tab) => {
+        // 调用模型层查找
+        const movies = await movieModel.findByTab(tab);
+        return {
+            movies,
+            total: movies.length,
+            status: 200
+        }
+    },
+    /**
+     * 根据chinese_name字段模糊搜索电影
+     */
+    searchMoviesByChineseName: async (name) => {
+        const movies = await movieModel.findByChineseName(name)
+        return {
+            movies,
+            total: movies.length,
+            status: 200
         }
     },
 
     /**
      * 获取电影详情
      */
-    getMovieDetail: async (id) => {
+    searchMoviesById: async (id) => {
         const movies = await movieModel.findById(id)
         if (movies.length === 0) {
             throw new Error('电影不存在')
@@ -29,10 +53,6 @@ const movieService = {
      */
     createMovie: async (movieData) => {
         // 这里可以添加业务逻辑验证
-        if (!movieData.name) {
-            throw new Error('电影名称不能为空')
-        }
-
         const result = await movieModel.create(movieData)
         if (result.affectedRows !== 1) {
             throw new Error('创建电影失败')
@@ -40,7 +60,8 @@ const movieService = {
 
         return {
             message: '创建电影成功',
-            id: result.insertId
+            id: result.insertId,
+            status:200
         }
     },
 
@@ -71,7 +92,6 @@ const movieService = {
         if (movies.length === 0) {
             throw new Error('电影不存在')
         }
-
         const result = await movieModel.delete(id)
         if (result.affectedRows !== 1) {
             throw new Error('删除电影失败')

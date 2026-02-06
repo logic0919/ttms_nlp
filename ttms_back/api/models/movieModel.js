@@ -17,7 +17,27 @@ const movieModel = {
             })
         })
     },
-
+    /**
+     * 获取有场次安排的电影列表（正在热映）
+     */
+    findMoviesWithSessions: () => {
+        return new Promise((resolve, reject) => {
+            const sqlStr = `
+                SELECT DISTINCT m.* 
+                FROM movie m 
+                INNER JOIN session s ON m.movie_id = s.movie_id
+                WHERE s.stime >= NOW()
+                ORDER BY m.movie_id ASC
+            `;
+            db.query(sqlStr, (err, results) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(results);
+                }
+            });
+        });
+    },
     /**
      * 根据ID获取电影详情
      */

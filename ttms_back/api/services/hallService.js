@@ -65,14 +65,21 @@ const hallService = {
     updateHall: async (id, hallData) => {
         // 检查影厅是否存在
         const halls = await hallModel.findById(id)
+
         if (halls.length === 0) {
             throw new Error('影厅不存在')
         }
-
+        
+        const sessions = await hallModel.hasRelatedSessions(id)
+        
+        if (sessions) {
+            throw new Error('该影厅有关联的场次，无法删除')
+        }
+        
         // 如果更新了名称，检查新名称是否与其他影厅冲突
         if (hallData.name) {
             const existingHalls = await hallModel.findByName(hallData.name)
-            if (existingHalls.length > 0 && existingHalls[0].id != id) {
+            if (existingHalls.length > 0 && existingHalls[0].hall_id != id) {
                 throw new Error('影厅名称已存在')
             }
         }

@@ -70,7 +70,7 @@ const hallModel = {
      */
     hasRelatedSessions: (hallId) => {
         return new Promise((resolve, reject) => {
-            const sqlStr = 'SELECT COUNT(*) as count FROM session WHERE hall_id = ?'
+            const sqlStr = 'SELECT COUNT(*) as count FROM session WHERE hall_id = ? AND stime> NOW()'
             db.query(sqlStr, hallId, (err, results) => {
                 if (err) {
                     reject(err)
@@ -112,7 +112,7 @@ const hallModel = {
      */
     update: (id, hallData) => {
         return new Promise((resolve, reject) => {
-            const { name, rows, cols, description } = hallData
+            const { name, rnum, cnum, seat } = hallData
             
             // 构建动态SQL语句
             const fields = []
@@ -122,21 +122,18 @@ const hallModel = {
                 fields.push('name = ?')
                 values.push(name)
             }
-            if (rows !== undefined) {
-                fields.push('rows = ?')
-                values.push(rows)
+            if (rnum !== undefined) {
+                fields.push('rnum = ?')
+                values.push(rnum)
             }
-            if (cols !== undefined) {
-                fields.push('cols = ?')
-                values.push(cols)
+            if (cnum !== undefined) {
+                fields.push('cnum = ?')
+                values.push(cnum)
             }
-            if (description !== undefined) {
-                fields.push('description = ?')
-                values.push(description)
+            if (seat !== undefined) {
+                fields.push('seat = ?')
+                values.push(seat)
             }
-
-            // 添加更新时间
-            fields.push('updated_at = NOW()')
             
             if (fields.length === 1) { // 只有更新时间被添加
                 reject(new Error('没有提供有效的更新字段'))

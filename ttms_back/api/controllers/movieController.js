@@ -158,6 +158,24 @@ const movieController = {
             })
         }
     },
+    /**
+     * 获取正在热映（有场次安排）电影列表
+     */
+    getHotList: async (req, res) => {
+        try {
+            const result = await movieService.getHotList()
+            res.status(200).json({
+                success: true,
+                message: '获取电影列表成功',
+                data: result
+            })
+        } catch (err) {
+            res.status(400).json({
+                success: false,
+                message: err.message
+            })
+        }
+    },
 
     /**
      * 删除电影

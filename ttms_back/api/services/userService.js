@@ -96,20 +96,16 @@ const userService = {
         // 若是，颁发新token
         // 否则，生成新的token，也就是sign
         try {
-            // 1.先验证
-            console.log(11);
-            
+            // 1.先验证            
             const user = jwt.verify(token, config.jwtSerectKey)
             // 2.此时拿到了user_id和status信息，那么生成新的token
             // 计算token还剩多久过期
-            console.log(44);
             
             const {status,user_id,exp}=user
             const now = Math.floor(Date.now() / 1000); // 当前时间戳（秒）
             const timeLeft = exp - now; // token 剩余时间（秒）
             let newToken;
             let isexp = false;
-            console.log(22);
             
             if (timeLeft <= 60 * 60) { // 剩余不足1小时
                 // 生成新token，有效期2天

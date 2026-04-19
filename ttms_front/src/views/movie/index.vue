@@ -1,12 +1,14 @@
 <script setup>
 import { sort } from '../../utils/data'
-import { movieGetByTabService } from '../../api/movie'
+import { movieGetByTabService, movieSearchService } from '../../api/movie'
 import { onMounted, ref, watch } from 'vue'
 import { ElMessage } from 'element-plus'
 
 const movie_list = ref([])
+const searchKeyword = ref('')
+const isSearching = ref(false)
+const isAllActive = ref(true) // 默认"所有影片"处于选中状态
 
-// 补全长度为5的倍数（保持UI整齐）
 watch(
   () => movie_list.value.length,
   (newValue) => {
@@ -14,7 +16,13 @@ watch(
     let arr = []
     if (sub !== 5) {
       for (let i = 0; i < sub; i++) {
-        arr.push({ movie_id: -1, chinese_name: '', category_ids: '', duration: 0, movie_img: '' })
+        arr.push({
+          movie_id: -1,
+          chinese_name: '',
+          category_ids: '',
+          duration: 0,
+          movie_img: ''
+        })
       }
     }
     movie_list.value.push(...arr)
@@ -22,50 +30,7 @@ watch(
   { immediate: true }
 )
 
-const nav_id = ref(0)
 const sort_id = ref(0)
-const page = ref(1)
-const refNav = ref(null)
-
-onMounted(() => {
-  if (refNav.value && refNav.value.children[0]) {
-    refNav.value.children[0].style.backgroundColor = 'red'
-  }
-})
-
-const switchNav = (num, e) => {
-  nav_id.value = num
-  if (refNav.value) {
-    Array.from(refNav.value.children).forEach((c) => (c.style.backgroundColor = 'transparent'))
-    e.target.style.backgroundColor = 'rgb(246, 65, 65)'
-  }
-  sort_id.value = 0
-  page.value = 1
-  if (lastActive.value) {
-    lastActive.value.style.color = 'black'
-    lastActive.value.style.backgroundColor = 'transparent'
-  }
-  if (ref1.value && ref1.value.children[0]) {
-    lastActive.value = ref1.value.children[0]
-    lastActive.value.style.color = 'white'
-    lastActive.value.style.backgroundColor = 'red'
-  }
-}
-
-// 全部影片（包含即将上映）
-const getAll = async () => {
-  try {
-    const res = await movieGetByTabService(sort_id.value)
-    if (res.data.success) {
-      movie_list.value = res.data.data.movies || []
-    } else {
-      ElMessage.error('获取影片列表失败')
-    }
-  } catch (e) {
-    ElMessage.error('获取影片列表失败')
-  }
-}
-
 const ref1 = ref(null)
 const lastActive = ref(null)
 
@@ -79,6 +44,19 @@ onMounted(() => {
   }, 10)
 })
 
+const getAll = async () => {
+  try {
+    const res = await movieGetByTabService(sort_id.value)
+    if (res.data.success) {
+      movie_list.value = res.data.data.movies || []
+    } else {
+      ElMessage.error('获取影片列表失败')
+    }
+  } catch (e) {
+    ElMessage.error('获取影片列表失败')
+  }
+}
+
 const switchSort = (e, num) => {
   if (lastActive.value) {
     lastActive.value.style.backgroundColor = 'transparent'
@@ -88,24 +66,88 @@ const switchSort = (e, num) => {
   e.target.style.color = 'white'
   lastActive.value = e.target
   sort_id.value = num
+  searchKeyword.value = ''
+  isSearching.value = false
+  isAllActive.value = false // 切换分类时取消"所有影片"高亮
+}
+
+const resetAll = () => {
+  searchKeyword.value = ''
+  isSearching.value = false
+  sort_id.value = 0
+  isAllActive.value = true // 点击"所有影片"时高亮
+  if (ref1.value && ref1.value.children[0]) {
+    if (lastActive.value) {
+      lastActive.value.style.backgroundColor = 'transparent'
+      lastActive.value.style.color = 'black'
+    }
+    lastActive.value = ref1.value.children[0]
+    lastActive.value.style.backgroundColor = 'red'
+    lastActive.value.style.color = 'white'
+  }
+  getAll()
+}
+
+const doSearch = async () => {
+  const kw = searchKeyword.value.trim()
+  if (!kw) {
+    isSearching.value = false
+    getAll()
+    return
+  }
+  isSearching.value = true
+  isAllActive.value = false // 搜索时取消"所有影片"高亮
+  try {
+    const res = await movieSearchService(kw)
+    if (res.data.success) {
+      movie_list.value = res.data.data.movies || []
+    } else {
+      ElMessage.error('搜索失败')
+    }
+  } catch (e) {
+    ElMessage.error('搜索失败')
+  }
+}
+
+const clearSearch = () => {
+  searchKeyword.value = ''
+  isSearching.value = false
+  isAllActive.value = true
+  getAll()
 }
 
 watch(
-  () => ({ nav: nav_id.value, sort: sort_id.value, page: page.value }),
+  () => sort_id.value,
   () => {
-    getAll()
+    if (!isSearching.value) getAll()
   },
-  { immediate: true, deep: true }
+  { immediate: true }
 )
 </script>
 
 <template>
   <div class="movie">
-    <div class="top" ref="refNav">
-      <div class="all" @click="(e) => switchNav(2, e)">所有影片</div>
+    <div class="top">
+      <div class="all" :class="{ active: isAllActive }" @click="resetAll">
+        所有影片
+      </div>
     </div>
     <div class="main">
-      <div class="nav">
+      <div class="search-bar">
+        <el-input
+          v-model="searchKeyword"
+          placeholder="搜索影片名称"
+          clearable
+          @clear="clearSearch"
+          @keyup.enter="doSearch"
+          style="width: 300px"
+        >
+          <template #append>
+            <el-button @click="doSearch">搜索</el-button>
+          </template>
+        </el-input>
+      </div>
+      <div class="nav" v-if="!isSearching">
         <div class="text">类型：</div>
         <div class="sort" ref="ref1">
           <div
@@ -149,8 +191,6 @@ watch(
     background-color: rgb(93, 93, 93);
     display: flex;
     justify-content: center;
-    .hot,
-    .will,
     .all {
       width: 130px;
       height: 100%;
@@ -159,6 +199,13 @@ watch(
       letter-spacing: 2px;
       text-align: center;
       cursor: pointer;
+      transition: background-color 0.2s;
+      &.active {
+        background-color: rgb(246, 65, 65);
+      }
+      &:hover {
+        background-color: rgba(246, 65, 65, 0.7);
+      }
     }
   }
   .main {
@@ -168,6 +215,9 @@ watch(
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    .search-bar {
+      margin-bottom: 20px;
+    }
     .nav {
       height: 140px;
       width: 100%;

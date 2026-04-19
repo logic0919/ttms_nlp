@@ -6,7 +6,8 @@ import user from '../views/user/index.vue'
 const login = import('../views/login/indexPage.vue')
 const movieDetail = import('../views/movieDetail/index.vue')
 const movieDetailIntro = import('../views/movieDetail/movieDetailIntro.vue')
-const movieDetailPerformer = import('../views/movieDetail/movieDetailPerformer.vue')
+const movieDetailPerformer =
+  import('../views/movieDetail/movieDetailPerformer.vue')
 const movieDetailPicture = import('../views/movieDetail/movieDetailPicture.vue')
 const addMovie = import('../views/adminMovie/addMovie.vue')
 const order = import('../views/order/setOrder.vue')
@@ -43,12 +44,28 @@ const router = createRouter({
         { path: '/admin/showHall', name: 'showHall', component: showHall },
         { path: '/admin/viewHall/:id', name: 'viewHall', component: viewHall },
         { path: '/admin/addHall', name: 'addHall', component: addHall },
-        { path: '/admin/showSession', name: 'showSession', component: showSession },
-        { path: '/admin/viewSession/:id', name: 'viewSession', component: viewSession },
-        { path: '/admin/addSession', name: 'addSession', component: addSession },
+        {
+          path: '/admin/showSession',
+          name: 'showSession',
+          component: showSession
+        },
+        {
+          path: '/admin/viewSession/:id',
+          name: 'viewSession',
+          component: viewSession
+        },
+        {
+          path: '/admin/addSession',
+          name: 'addSession',
+          component: addSession
+        },
         { path: '/admin/addMovie', name: 'addMovie', component: addMovie },
         { path: '/admin/showMovie', name: 'showMovie', component: showMovie },
-        { path: '/admin/viewMovie/:id', name: 'viewMovie', component: viewMovie },
+        {
+          path: '/admin/viewMovie/:id',
+          name: 'viewMovie',
+          component: viewMovie
+        },
         { path: '/admin/addTheater', name: 'addTheater', component: addTheater }
       ]
     },
@@ -76,11 +93,16 @@ const router = createRouter({
         }
       ]
     },
-    { path: '/movieSession/:id', name: 'movieSession', component: movieSession },
+    {
+      path: '/movieSession/:id',
+      name: 'movieSession',
+      component: movieSession
+    },
     { path: '/:pathMatch(.*)*', name: 'notFound', component: notFound }
   ]
 })
 
+// 需要登录才能访问的路由
 const authUrls = [
   'user',
   'showHall',
@@ -93,8 +115,11 @@ const authUrls = [
   'addMovie',
   'orderShow',
   'showMovie',
+  'viewMovie',
   'order'
 ]
+
+// 需要管理员权限的路由
 const adminUrls = [
   'showHall',
   'viewHall',
@@ -104,19 +129,26 @@ const adminUrls = [
   'addSession',
   'addTheater',
   'addMovie',
-  'showMovie'
+  'showMovie',
+  'viewMovie'
 ]
 
 router.beforeEach((to, from, next) => {
   const userStore = useUserStore()
-  // 刷新后 store 可能为空，从 localStorage 补充 token
   const token = userStore.token || userStore.getlocalToken()
+  // status==0 是管理员，1 是普通用户
   const status = userStore.status
 
   if (adminUrls.includes(to.name)) {
-    if (!(token && !status)) {
-      ElMessage.error('权限不足，无法访问')
-      // next(from.path || '/index')
+    if (!token) {
+      ElMessage.error('请先登录')
+      next('/login')
+      return
+    }
+    // status===0 或 status==='0' 才是管理员
+    if (status) {
+      ElMessage.error('权限不足，仅管理员可访问')
+      next(from.name ? false : '/index')
       return
     }
   } else if (authUrls.includes(to.name)) {

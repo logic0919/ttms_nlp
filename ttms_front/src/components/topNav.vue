@@ -6,7 +6,6 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 const userStore = useUserStore()
 const { token, id, status } = storeToRefs(userStore)
-
 </script>
 
 <template>
@@ -14,15 +13,20 @@ const { token, id, status } = storeToRefs(userStore)
     <div class="main">
       <div class="left">
         <img src="../assets/image/logo.jpg" alt="" class="logo" />
-        <el-button type="danger" plain @click="router.push('/index')" class="a">首页</el-button>
-        <el-button type="danger" plain @click="router.push('/movie')" class="b">电影</el-button>
+        <el-button type="danger" plain @click="router.push('/index')" class="a"
+          >首页</el-button
+        >
+        <el-button type="danger" plain @click="router.push('/movie')" class="b"
+          >电影</el-button
+        >
         <el-button
           type="danger"
           plain
           v-if="!status"
           @click="router.push('/admin')"
           class="b"
-        >管理端</el-button>
+          >管理端</el-button
+        >
       </div>
       <div class="right1">
         <el-button
@@ -31,7 +35,8 @@ const { token, id, status } = storeToRefs(userStore)
           @click="router.push('/login')"
           type="danger"
           plain
-        >登录</el-button>
+          >登录</el-button
+        >
         <div class="show" v-else>
           <div class="name">{{ id }}</div>
           <el-button
@@ -40,7 +45,8 @@ const { token, id, status } = storeToRefs(userStore)
             style="margin-left: 10px"
             @click="router.push('/user')"
             class="b"
-          >个人中心</el-button>
+            >个人中心</el-button
+          >
         </div>
       </div>
     </div>
@@ -74,16 +80,31 @@ const { token, id, status } = storeToRefs(userStore)
       justify-content: space-between;
       align-items: center;
       height: 100%;
-      .logo { width: 230px; height: 100%; }
-      .a, .b { width: 80px; height: 50px; margin-left: 20px; }
+      .logo {
+        width: 230px;
+        height: 100%;
+      }
+      .a,
+      .b {
+        width: 80px;
+        height: 50px;
+        margin-left: 20px;
+      }
     }
     .right1 {
       width: 200px;
-      .btn { width: 60px; height: 30px; background-color: rgb(255, 255, 255); border-radius: 6px; }
+      .btn {
+        width: 60px;
+        height: 30px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 6px;
+      }
       .show {
         display: flex;
         align-items: center;
-        .name { font-size: 17px; }
+        .name {
+          font-size: 17px;
+        }
       }
     }
   }

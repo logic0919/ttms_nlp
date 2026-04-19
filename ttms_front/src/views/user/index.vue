@@ -22,7 +22,6 @@ const switchOrder = () => {
 
 const order_list = ref([])
 
-// 解析 seat_positions 字段: "1-2,1-3" => [[1,2],[1,3]]
 const parseSeatPositions = (seatPositions) => {
   if (!seatPositions) return []
   return seatPositions.split(',').map((pos) => {
@@ -31,29 +30,20 @@ const parseSeatPositions = (seatPositions) => {
   })
 }
 
-// 判断订单状态
-// status=0 => 已退款(3)
-// status=1 && exp在15分钟内未支付 => 待支付(1)
-// status=1 && exp已过但未支付 => 已过期(5)
-// status=1 && 已支付(exp='3000...') && show_time > now => 待完成(2)
-// status=1 && 已支付(exp='3000...') && show_time <= now => 已完成(4)
 const getOrderType = (item) => {
-  console.log('stime:', item.stime, 'exp:', item.exp, 'status:', item.status)
-  if (item.status === 0) return 3 // 已退款
+  if (item.status === 0) return 3
 
   const isPaid = item.exp && item.exp.startsWith('3000')
 
   if (!isPaid) {
-    // 未支付，判断是否还在15分钟内
     const expTime = new Date(item.exp?.replace(' ', 'T') || 0).getTime()
-    if (expTime > Date.now()) return 1 // 待支付
-    return 5 // 已过期
+    if (expTime > Date.now()) return 1
+    return 5
   }
 
-  // 已支付，判断影片是否已开场
-  const showTime = new Date(item.stime?.replace(' ', 'T') || 0).getTime()
-  if (showTime > Date.now()) return 2 // 待完成
-  return 4 // 已完成
+  const showTime = new Date(item.stime).getTime()
+  if (showTime > Date.now()) return 2
+  return 4
 }
 
 const fetchOrders = async () => {
@@ -61,12 +51,11 @@ const fetchOrders = async () => {
     const res = await orderGetUserService()
     if (res.data.success) {
       const orders = res.data.data.orders || []
-      // fetchOrders 中的 map：
       order_list.value = orders.map((item) => ({
         id: item.order_id,
         movie: item.movie_name,
         show_time: item.stime ? formatTime(item.stime) : '',
-        stime: item.stime, // 加这一行，保留原始值给 getOrderType 用
+        stime: item.stime,
         hall: item.hall_name,
         price: item.price,
         seat: parseSeatPositions(item.seat_positions),
@@ -84,9 +73,7 @@ const fetchOrders = async () => {
   }
 }
 
-onMounted(() => {
-  // 不在 mounted 时自动加载，切换到订单 tab 时再加载
-})
+onMounted(() => {})
 
 provide('backMoney', async (orderId) => {
   ElMessageBox.confirm('确定退款吗？', '提示')
@@ -101,7 +88,7 @@ provide('backMoney', async (orderId) => {
           ElMessage({ message: '退款失败', type: 'error' })
         }
       } catch (e) {
-        // 错误由拦截器处理
+        ElMessage({ message: '退款失败', type: 'error' })
       }
     })
     .catch(() => {})
@@ -116,15 +103,32 @@ const loginout = () => {
     })
     .catch(() => {})
 }
+
+// status==0 是管理员，1 是普通用户
+const statusLabel = (s) => {
+  if (!s) return '管理员'
+  return '普通用户'
+}
 </script>
 
 <template>
   <div class="user">
     <div class="left">
       <div class="info">
-        <el-avatar class="avatar" :size="50" />
+        <el-avatar
+          v-if="!status"
+          src="https://ttms-img.oss-cn-beijing.aliyuncs.com/assets/admin.png"
+          class="avatar"
+          :size="50"
+        />
+        <el-avatar
+          v-else
+          src="https://ttms-img.oss-cn-beijing.aliyuncs.com/assets/user.png"
+          class="avatar"
+          :size="50"
+        />
         <div class="id">id：{{ id }}</div>
-        <div class="name">身份：{{ status === 'administrator' ? '管理员' : '普通用户' }}</div>
+        <div class="name">身份：{{ statusLabel(status) }}</div>
       </div>
       <div class="line"></div>
       <div class="nav">
@@ -145,7 +149,7 @@ const loginout = () => {
           </li>
           <li>
             <h5 class="sortName">身份：</h5>
-            {{ status === 'administrator' ? '管理员' : '普通用户' }}
+            {{ statusLabel(status) }}
           </li>
           <li>
             <h5 class="sortName">退出登录：</h5>
@@ -155,12 +159,16 @@ const loginout = () => {
       </div>
       <div class="orders" v-show="!isInfo">
         <div v-if="order_list.length === 0">
-          <el-empty style="margin-top: 100px" description="还没有订单"></el-empty>
+          <el-empty
+            style="margin-top: 100px"
+            description="还没有订单"
+          ></el-empty>
         </div>
         <div class="order" v-else>我的订单</div>
         <myOrder
           v-for="i in order_list"
           :key="i.id"
+          :id="i.id"
           :date="i.show_time"
           :name="i.movie"
           :hall="i.hall"

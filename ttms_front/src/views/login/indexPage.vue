@@ -7,45 +7,62 @@ import { useUserStore } from '@/stores/index'
 const router = useRouter()
 const userStore = useUserStore()
 const { setAll, setlocalToken, setlocalId } = userStore
+
 const pwdinp1 = ref(null)
 const pwdinp2 = ref(null)
 const pwdinp3 = ref(null)
 const islogin = ref(true)
-const form = ref(null)
-const formModel = ref({ id: '' })
-const rules = {
-  id: [{ required: true, message: '请输入用户ID', trigger: 'blur' }]
+
+// 登录和注册用独立的 form ref，避免切换后 ref 失效
+const loginForm = ref(null)
+const registerForm = ref(null)
+
+const loginModel = ref({ id: '' })
+const registerModel = ref({ id: '' })
+
+// 账号格式：只允许数字、英文字母、下划线，长度4-20
+const idValidator = (rule, value, callback) => {
+  if (!value) {
+    callback(new Error('请输入用户ID'))
+  } else if (!/^[a-zA-Z0-9_]{4,20}$/.test(value)) {
+    callback(new Error('只能包含字母、数字、下划线，长度4-20位'))
+  } else {
+    callback()
+  }
 }
 
-const clearForm = () => {
-  formModel.value.id = ''
-  if (pwdinp1.value) pwdinp1.value.formModel.pwd = ''
-  if (pwdinp2.value) pwdinp2.value.formModel.pwd = ''
-  if (pwdinp3.value) pwdinp3.value.formModel.pwd = ''
+const rules = {
+  id: [{ validator: idValidator, trigger: 'blur' }]
 }
+
 const switchLogin = () => {
   islogin.value = true
-  clearForm()
+  loginModel.value.id = ''
+  registerModel.value.id = ''
 }
 const switchRegister = () => {
   islogin.value = false
-  clearForm()
+  loginModel.value.id = ''
+  registerModel.value.id = ''
 }
 
-const loginClass = computed(() => (islogin.value ? ['active span'] : ['noactive span']))
-const registerClass = computed(() => (islogin.value ? ['noactive span'] : ['active span']))
+const loginClass = computed(() =>
+  islogin.value ? ['active span'] : ['noactive span']
+)
+const registerClass = computed(() =>
+  islogin.value ? ['noactive span'] : ['active span']
+)
 
 const register = async () => {
-  await form.value.validate()
+  await registerForm.value.validate()
   await pwdinp2.value.validate()
   await pwdinp3.value.validate()
   if (pwdinp2.value.formModel.pwd !== pwdinp3.value.formModel.pwd) {
     ElMessage({ message: '两次密码不一致', type: 'error' })
     return
   }
-  // 后端接口: POST /api/user/register { user_id, pwd }
   const res = await userRegisterService({
-    id: formModel.value.id,
+    id: registerModel.value.id,
     pwd: pwdinp2.value.formModel.pwd
   })
   if (res.data.success) {
@@ -55,28 +72,20 @@ const register = async () => {
 }
 
 const login = async () => {
-  await form.value.validate()
+  await loginForm.value.validate()
   await pwdinp1.value.validate()
-  // 后端接口: POST /api/user/login { user_id, pwd }
-  // 返回: { success, data: { message, data: { token, user_id, status } } }
   const res = await userLoginService({
-    user_id: formModel.value.id,
+    user_id: loginModel.value.id,
     pwd: pwdinp1.value.formModel.pwd
   })
   if (res.data.success) {
-    // 后端service层将data再包一层，实际token在 res.data.data.data
     const innerData = res.data.data.data
     const token = innerData.token
     const user_id = innerData.user_id
     const status = innerData.status
     setlocalToken(token)
     setlocalId(user_id)
-    setAll({
-      token,
-      id: user_id,
-      // status: 1 表示管理员
-      status: status
-    })
+    setAll({ token, id: user_id, status })
     ElMessage({ message: '登录成功', type: 'success' })
     setTimeout(() => router.push('/index'), 1000)
   }
@@ -99,10 +108,18 @@ const login = async () => {
             <span @click="switchRegister" :class="registerClass">注册</span>
           </div>
 
-          <div class="register" ref="register" v-if="!islogin">
-            <el-form class="elform" :model="formModel" :rules="rules" ref="form">
+          <div class="register" v-if="!islogin">
+            <el-form
+              class="elform"
+              :model="registerModel"
+              :rules="rules"
+              ref="registerForm"
+            >
               <el-form-item prop="id" class="elinput">
-                <el-input v-model="formModel.id" placeholder="请输入用户ID"></el-input>
+                <el-input
+                  v-model="registerModel.id"
+                  placeholder="请输入用户ID"
+                ></el-input>
               </el-form-item>
             </el-form>
             <pwd-input ref="pwdinp2"></pwd-input>
@@ -110,17 +127,27 @@ const login = async () => {
             <button @click="register">注册</button>
           </div>
 
-          <div class="login" ref="login" v-if="islogin">
-            <el-form class="elform" :model="formModel" :rules="rules" ref="form">
+          <div class="login" v-if="islogin">
+            <el-form
+              class="elform"
+              :model="loginModel"
+              :rules="rules"
+              ref="loginForm"
+            >
               <el-form-item prop="id" class="elinput">
-                <el-input v-model="formModel.id" placeholder="请输入用户ID"></el-input>
+                <el-input
+                  v-model="loginModel.id"
+                  placeholder="请输入用户ID"
+                ></el-input>
               </el-form-item>
             </el-form>
             <pwd-input ref="pwdinp1"></pwd-input>
             <button class="btn" @click="login">登录</button>
           </div>
 
-          <h6 class="agree">注册登录即表示同意 <i>用户协议</i> 和 <i>隐私政策</i></h6>
+          <h6 class="agree">
+            注册登录即表示同意 <i>用户协议</i> 和 <i>隐私政策</i>
+          </h6>
         </div>
       </div>
     </div>

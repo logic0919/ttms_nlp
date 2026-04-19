@@ -7,86 +7,71 @@ const router = useRouter()
 
 const carouse = ref([
   {
-    img_path: 'https://p0.pipi.cn/friday/0ec68bfaefc9a5c72f93e59e1ff17d63.jpg?imageMogr2/thumbnail/2500x2500%3E',
+    img_path:
+      'https://p0.pipi.cn/friday/0ec68bfaefc9a5c72f93e59e1ff17d63.jpg?imageMogr2/thumbnail/2500x2500%3E',
     movie_name: '1'
   },
   {
-    img_path: 'https://p0.pipi.cn/friday/80bee4532e7e175179f50c855cb3c516.jpg?imageMogr2/thumbnail/2500x2500%3E',
+    img_path:
+      'https://ttms-img.oss-cn-beijing.aliyuncs.com/assets/29d0abeb-fd56-476e-bc51-a813d0b676d0.png',
     movie_name: '2'
   },
   {
-    img_path: 'https://p0.pipi.cn/friday/bf89fcd4a47df6452f41fb25fbe2d5a1.jpg?imageMogr2/thumbnail/2500x2500%3E',
+    img_path:
+      'https://p0.pipi.cn/friday/bf89fcd4a47df6452f41fb25fbe2d5a1.jpg?imageMogr2/thumbnail/2500x2500%3E',
     movie_name: '3'
   },
   {
-    img_path: 'https://p0.pipi.cn/friday/8b2a6a235c0427cd3f087c93294877af.jpg?imageMogr2/thumbnail/2500x2500%3E',
+    img_path:
+      'https://ttms-img.oss-cn-beijing.aliyuncs.com/assets/92d98ae3-7fcb-4e97-be70-74a92b5d1ef4.png',
     movie_name: '4'
   }
 ])
 
-// 正在热映（有场次安排的电影）
+// 从数组中随机取 n 个，不重复
+const randomPick = (arr, n) => {
+  const copy = [...arr]
+  const result = []
+  while (result.length < n && copy.length > 0) {
+    const idx = Math.floor(Math.random() * copy.length)
+    result.push(copy.splice(idx, 1)[0])
+  }
+  return result
+}
+
+// 正在热映模块：随机取6个
 const hot_list = ref([])
-const getHot = async () => {
-  try {
-    const res = await movieIndexHotService()
-    if (res.data.success) {
-      hot_list.value = res.data.data.movies || []
-    } else {
-      ElMessage.error('获取热门电影失败')
-    }
-  } catch (e) {
-    ElMessage.error('获取热门电影失败')
-  }
-}
-
-// 即将上映（全部电影列表取前6条，作为即将上映展示）
-const unreleased_list = ref([])
-const getUnreleased = async () => {
-  try {
-    const res = await movieGetAllService()
-    if (res.data.success) {
-      let data = res.data.data.movies || []
-      unreleased_list.value = data.slice(0, 6)
-    } else {
-      ElMessage.error('获取即将上映电影失败')
-    }
-  } catch (e) {
-    ElMessage.error('获取即将上映电影失败')
-  }
-}
-
-// 票房榜（使用全部电影列表）
+// 票房榜模块：随机取6个（和热映取自同一份数据但顺序不同）
 const box_list = ref([])
-const getBox = async () => {
+
+const getAllMovies = async () => {
   try {
     const res = await movieGetAllService()
     if (res.data.success) {
-      box_list.value = res.data.data.movies || []
+      const all = res.data.data.movies || []
+      hot_list.value = randomPick(all, 6)
+      box_list.value = randomPick(all, 6)
     } else {
-      ElMessage.error('获取票房榜失败')
+      ElMessage.error('获取电影失败')
     }
   } catch (e) {
-    ElMessage.error('获取票房榜失败')
+    ElMessage.error('获取电影失败')
   }
 }
 
 onMounted(() => {
-  getHot()
-  getUnreleased()
-  getBox()
+  getAllMovies()
 })
 
 const color = (index) => {
-  if (index == 1) {
+  if (index === 1) {
     return 'color: red;font-size: 25px;font-style: italic;'
   }
 }
 
 const info = ref('票房榜')
 const info1 = ref('正在热映')
-const info2 = ref('即将上映')
 const info3 = ref('hotMovie')
-const info4 = ref('unreleased')
 const info5 = ref('boxOffice')
 
 const gotoDetail = (id) => {
@@ -104,7 +89,11 @@ const gotoDetail = (id) => {
           :key="index"
         >
           <div class="carousel-item">
-            <img :src="item.img_path" :alt="item.movie_name" class="carousel-image" />
+            <img
+              :src="item.img_path"
+              :alt="item.movie_name"
+              class="carousel-image"
+            />
             <h3 class="movie-name">{{ item.movie_name }}</h3>
           </div>
         </el-carousel-item>
@@ -112,26 +101,11 @@ const gotoDetail = (id) => {
     </div>
     <div class="main">
       <div class="movie">
-        <div class="unreleased">
-          <div class="top">
-            <div class="text"><nav-text :info="info2" :eng="info4"></nav-text></div>
-            <a href="/movie">全部></a>
-          </div>
-          <div class="core">
-            <movieBox
-              v-for="i in unreleased_list"
-              :key="i.movie_id"
-              :id="i.movie_id"
-              :img="i.movie_img"
-              :name="i.chinese_name"
-              :duration="i.duration"
-              :category="i.category_ids"
-            ></movieBox>
-          </div>
-        </div>
         <div class="hot">
           <div class="top">
-            <div class="text"><nav-text :info="info1" :eng="info3"></nav-text></div>
+            <div class="text">
+              <nav-text :info="info1" :eng="info3"></nav-text>
+            </div>
             <a href="/movie">全部></a>
           </div>
           <div class="core">
@@ -187,8 +161,7 @@ const gotoDetail = (id) => {
     justify-content: space-between;
     .movie {
       width: 60%;
-      .hot,
-      .unreleased {
+      .hot {
         .top {
           height: 70px;
           padding-left: 20px;
@@ -196,7 +169,9 @@ const gotoDetail = (id) => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          .text { font-size: 20px; }
+          .text {
+            font-size: 20px;
+          }
           a {
             color: rgb(255, 120, 120);
             font-size: 25px;
@@ -232,7 +207,9 @@ const gotoDetail = (id) => {
           align-items: center;
           background-color: rgba(158, 158, 158, 0.6);
         }
-        img { height: 96%; }
+        img {
+          height: 96%;
+        }
         .main {
           width: 60%;
           line-height: 30px;

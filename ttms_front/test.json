@@ -1,5 +1,0 @@
-{
-  "body": "{\"success\":true,\"message\":\"登录成功\",\"data\":{\"message\":\"登录成功\",\"data\":{\"token\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInN0YXR1cyI6MSwiaWF0IjoxNzc2Mjc0NzA2LCJleHAiOjE3NzYyODYwMDJ9.jQDCBGiHaV0lQSHkki4pCeZYXCNXo6_7lp_r39PRJ70\",\"user_id\":\"1\",\"status\":1}}}",
-  "statusCode": 200,
-  "headers": "{\"Access-Control-Allow-Origin\":\"*\",\"Content-Length\":\"288\",\"Content-Type\":\"application/json; charset=utf-8\",\"Date\":\"Wed, 15 Apr 2026 17:38:26 GMT\",\"Etag\":\"W/\\\"120-utbB4ziXYfQfzyHko4OR+AAfqkE\\\"\",\"X-Powered-By\":\"Express\"}"
-}

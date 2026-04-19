@@ -1,15 +1,17 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import { movieGetAllService, movieDelService, movieSearchService } from '@/api/movie'
+import {
+  movieGetAllService,
+  movieDelService,
+  movieSearchService
+} from '@/api/movie'
 import { formatDate } from '@/utils/data'
 import { Search } from '@element-plus/icons-vue'
 
 const movie_list = ref([])
 const seaInp = ref('')
 
-// 新后端：GET /movie/list → { success, data: [...movies] }
-// 电影字段：movie_id / chinese_name / english_name / show_time / directors / introduction / movie_img
-onMounted(async () => {
+const loadAll = async () => {
   try {
     const res = await movieGetAllService()
     movie_list.value = res.data.data.movies || []
@@ -17,20 +19,26 @@ onMounted(async () => {
     movie_list.value = []
     ElMessage({ message: '影片列表获取失败', type: 'error' })
   }
+}
+
+onMounted(() => {
+  loadAll()
 })
 
 const bkgc = (index) => {
-  return index % 2 === 0 ? 'background-color: #f5f5f5' : 'background-color: rgb(223, 223, 223)'
+  return index % 2 === 0
+    ? 'background-color: #f5f5f5'
+    : 'background-color: rgb(223, 223, 223)'
 }
 
-// 新后端：DELETE /movie/delmovie?movie_id=xxx
-// 列表过滤用 movie_id（原来是 id）
 const del = (id) => {
   ElMessageBox.confirm('确定删除这个影片吗？', '提示')
     .then(async () => {
       try {
         await movieDelService(id + '')
-        movie_list.value = movie_list.value.filter((item) => item.movie_id !== id)
+        movie_list.value = movie_list.value.filter(
+          (item) => item.movie_id !== id
+        )
         ElMessage({ message: '删除成功', type: 'success' })
       } catch (e) {
         ElMessage({ message: '删除失败，请稍后重试', type: 'error' })
@@ -39,30 +47,40 @@ const del = (id) => {
     .catch(() => {})
 }
 
-// 新后端：GET /movie/seabyname?chinese_name=xxx → { success, data: [...movies] }
 const search = async () => {
-  if (!seaInp.value) {
-    try {
-      const res = await movieGetAllService()
-      movie_list.value = res.data.data || []
-    } catch (e) {
-      movie_list.value = []
-    }
+  const kw = seaInp.value.trim()
+  // 关键词为空时恢复全部列表
+  if (!kw) {
+    loadAll()
     return
   }
   try {
-    const res = await movieSearchService(seaInp.value)
-    movie_list.value = res.data.data || []
+    const res = await movieSearchService(kw)
+    // 修复：搜索接口返回的是 res.data.data.movies，不是 res.data.data
+    movie_list.value = res.data.data.movies || []
   } catch (e) {
     movie_list.value = []
+    ElMessage({ message: '搜索失败', type: 'error' })
   }
+}
+
+// 输入框清空时自动恢复全部列表
+const onClear = () => {
+  loadAll()
 }
 </script>
 
 <template>
   <div class="showMovie">
     <div class="search">
-      <el-input v-model="seaInp" placeholder="请输入搜索内容" class="input-with-select">
+      <el-input
+        v-model="seaInp"
+        placeholder="请输入搜索内容"
+        class="input-with-select"
+        clearable
+        @clear="onClear"
+        @keyup.enter="search"
+      >
         <template #append>
           <el-button :icon="Search" @click="search" />
         </template>
@@ -82,8 +100,12 @@ const search = async () => {
       <div class="opea">操作</div>
     </div>
     <div class="table">
-      <!-- 新后端字段：movie_id / show_time / movie_img（原来是 id / showtime / img_path） -->
-      <div class="item" v-for="(i, index) in movie_list" :key="i.movie_id" :style="bkgc(index)">
+      <div
+        class="item"
+        v-for="(i, index) in movie_list"
+        :key="i.movie_id"
+        :style="bkgc(index)"
+      >
         <div class="id">{{ i.movie_id }}</div>
         <div class="name">{{ i.chinese_name }}</div>
         <div class="eng">{{ i.english_name }}</div>
@@ -92,7 +114,9 @@ const search = async () => {
         <div class="intro">{{ i.introduction }}</div>
         <div class="img"><img :src="i.movie_img" alt="" /></div>
         <div class="opea">
-          <el-button plain class="btn" type="primary" @click="del(i.movie_id)">删除</el-button>
+          <el-button plain class="btn" type="primary" @click="del(i.movie_id)"
+            >删除</el-button
+          >
         </div>
       </div>
     </div>

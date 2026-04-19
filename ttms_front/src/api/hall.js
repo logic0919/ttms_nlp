@@ -1,37 +1,44 @@
 import request from '@/utils/request'
-// 添加演出厅
-const hallAddService = (obj) => {
-  return request.post('/api/v1/admin/hall/create', obj)
-}
-// 查找某个影院的影厅列表
-const hallGetListService = (id) => {
-  console.log(id)
-  return request.get('/api/v1/admin/halls', {
-    params: {
-      theater_id: id
-    }
+
+// 新增影厅，body: { name, rnum, cnum, seat }
+// seat 是二维数组，JSON.stringify 后传给后端
+const hallAddService = (obj) =>
+  request.post('/api/hall/create', {
+    name: obj.name,
+    rows: obj.rows,
+    cols: obj.cols,
+    array: obj.array
   })
-}
-// 查找某个演出厅的信息
-const hallGetService = (id) => {
-  return request.get(`/api/v1/admin/hall?id=${id}`)
-}
-// 修改某个影厅的信息
-const hallChangeService = (obj) => {
-  return request.put('/api/v1/admin/hall/update', obj)
-}
-// 删除影厅
-const hallDelService = (id) => {
-  return request.delete('/api/v1/admin/hall/delete', {
-    params: {
-      id
-    }
+// 根据hall_id搜索影厅信息
+const hallSearchByIdService = (id) =>
+  request.get('/api/hall/seabyid', { params: { hall_id: id } })
+
+// 获取所有影厅，返回 { data: { halls: [ { hall_id, name, rnum, cnum, seat } ] } }
+const hallGetListService = () => request.get('/api/hall/list')
+
+// 根据 hall_id 获取单个影厅，返回 { data: { hall_id, name, rnum, cnum, seat } }
+const hallGetService = (id) =>
+  request.get('/api/hall/seabyid', { params: { hall_id: id } })
+
+// 修改影厅，body: { hall_id, name, rnum, cnum, seat }
+const hallChangeService = (obj) =>
+  request.post('/api/hall/update', {
+    hall_id: obj.hall_id,
+    name: obj.name,
+    rnum: obj.rnum,
+    cnum: obj.cnum,
+    seat: obj.seat
   })
-}
+
+// 删除影厅，query 参数 id
+const hallDelService = (id) =>
+  request.delete('/api/hall/del', { params: { id } })
+
 export {
   hallAddService,
   hallGetListService,
   hallGetService,
   hallChangeService,
-  hallDelService
+  hallDelService,
+  hallSearchByIdService
 }

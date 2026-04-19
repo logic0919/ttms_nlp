@@ -1,59 +1,59 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import {
-  movieGetAllService,
-  movieDelService,
-  movieSearchService
-} from '@/api/movie'
+import { movieGetAllService, movieDelService, movieSearchService } from '@/api/movie'
 import { formatDate } from '@/utils/data'
-// import { useRouter } from 'vue-router'
 import { Search } from '@element-plus/icons-vue'
-// const router = useRouter()
+
 const movie_list = ref([])
 const seaInp = ref('')
+
+// 新后端：GET /movie/list → { success, data: [...movies] }
+// 电影字段：movie_id / chinese_name / english_name / show_time / directors / introduction / movie_img
 onMounted(async () => {
-  const res = await movieGetAllService(1)
-  if (res.data.status === 200) {
-    movie_list.value = res.data.data.item
-  } else {
+  try {
+    const res = await movieGetAllService()
+    movie_list.value = res.data.data.movies || []
+  } catch (e) {
     movie_list.value = []
     ElMessage({ message: '影片列表获取失败', type: 'error' })
   }
 })
+
 const bkgc = (index) => {
-  return index % 2 === 0
-    ? 'background-color: #f5f5f5'
-    : 'background-color: rgb(223, 223, 223)'
+  return index % 2 === 0 ? 'background-color: #f5f5f5' : 'background-color: rgb(223, 223, 223)'
 }
+
+// 新后端：DELETE /movie/delmovie?movie_id=xxx
+// 列表过滤用 movie_id（原来是 id）
 const del = (id) => {
-  console.log(id)
   ElMessageBox.confirm('确定删除这个影片吗？', '提示')
     .then(async () => {
-      const res = await movieDelService(id + '')
-      if (res.data.status === 200) {
-        for (let i = 0; i < movie_list.value.length; i++) {
-          if (movie_list.value[i].id === id) {
-            movie_list.value.splice(i, 1)
-            break
-          }
-        }
+      try {
+        await movieDelService(id + '')
+        movie_list.value = movie_list.value.filter((item) => item.movie_id !== id)
         ElMessage({ message: '删除成功', type: 'success' })
-      } else {
+      } catch (e) {
         ElMessage({ message: '删除失败，请稍后重试', type: 'error' })
       }
     })
     .catch(() => {})
 }
+
+// 新后端：GET /movie/seabyname?chinese_name=xxx → { success, data: [...movies] }
 const search = async () => {
-  const res = await movieSearchService(seaInp.value)
-  if (res.data.status === 200) {
-    const data = res.data.data.item
-    if (data === null) {
+  if (!seaInp.value) {
+    try {
+      const res = await movieGetAllService()
+      movie_list.value = res.data.data || []
+    } catch (e) {
       movie_list.value = []
-    } else {
-      movie_list.value = data
     }
-  } else {
+    return
+  }
+  try {
+    const res = await movieSearchService(seaInp.value)
+    movie_list.value = res.data.data || []
+  } catch (e) {
     movie_list.value = []
   }
 }
@@ -62,11 +62,7 @@ const search = async () => {
 <template>
   <div class="showMovie">
     <div class="search">
-      <el-input
-        v-model="seaInp"
-        placeholder="请输入搜索内容"
-        class="input-with-select"
-      >
+      <el-input v-model="seaInp" placeholder="请输入搜索内容" class="input-with-select">
         <template #append>
           <el-button :icon="Search" @click="search" />
         </template>
@@ -80,37 +76,23 @@ const search = async () => {
       <div class="name">影片名</div>
       <div class="eng">英文名称</div>
       <div class="show_time">上映时间</div>
-      <div class="status">影片状态</div>
       <div class="director">导演</div>
       <div class="intro">剧情介绍</div>
       <div class="img">封面照</div>
       <div class="opea">操作</div>
     </div>
     <div class="table">
-      <div
-        class="item"
-        v-for="(i, index) in movie_list"
-        :key="i.id"
-        :style="bkgc(index)"
-      >
-        <div class="id">{{ i.id }}</div>
+      <!-- 新后端字段：movie_id / show_time / movie_img（原来是 id / showtime / img_path） -->
+      <div class="item" v-for="(i, index) in movie_list" :key="i.movie_id" :style="bkgc(index)">
+        <div class="id">{{ i.movie_id }}</div>
         <div class="name">{{ i.chinese_name }}</div>
         <div class="eng">{{ i.english_name }}</div>
-        <div class="show_time">{{ formatDate(i.showtime) }}</div>
-        <div class="status">{{ i.on_sale ? '在上映' : '未上映' }}</div>
+        <div class="show_time">{{ formatDate(i.show_time) }}</div>
         <div class="director">{{ i.directors }}</div>
         <div class="intro">{{ i.introduction }}</div>
-        <div class="img"><img :src="i.img_path" alt="" /></div>
+        <div class="img"><img :src="i.movie_img" alt="" /></div>
         <div class="opea">
-          <!-- <el-button plain class="btn" type="primary" @click="change(i.id)">修改</el-button> -->
-          <el-button
-            plain
-            class="btn"
-            type="primary"
-            @click="del(i.id)"
-            :disabled="i.on_sale"
-            >删除</el-button
-          >
+          <el-button plain class="btn" type="primary" @click="del(i.movie_id)">删除</el-button>
         </div>
       </div>
     </div>
@@ -152,7 +134,6 @@ const search = async () => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid rgb(223, 223, 223);
     border: 1px dashed rgb(212, 212, 212);
     div {
       text-align: center;
@@ -169,10 +150,6 @@ const search = async () => {
     }
     .show_time {
       width: 6%;
-      font-size: 10px;
-    }
-    .status {
-      width: 4%;
       font-size: 10px;
     }
     .director {
@@ -204,9 +181,6 @@ const search = async () => {
       align-items: center;
       .btn {
         width: 60px;
-        &:nth-child(2) {
-          margin-left: -0px;
-        }
       }
     }
   }

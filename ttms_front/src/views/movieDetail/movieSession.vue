@@ -1,96 +1,89 @@
 <script setup>
 import { useRoute, useRouter } from 'vue-router'
-import {
-  theaters,
-  getDate,
-  formatDate,
-  formatTime1,
-  sortToStr
-} from '@/utils/data'
+import { sort, getDate, formatDate, formatTime1 } from '@/utils/data'
 import { sessionGetListService } from '@/api/session'
 import { movieGetInfoService } from '@/api/movie'
 import { ref, watch } from 'vue'
+
 const route = useRoute()
 const router = useRouter()
 const movie_id = Number(route.params.id)
 const detailRoute = `/movieDetail/${movie_id}/introduction`
-const gotodetail = () => {
-  router.push(detailRoute)
-}
+const gotodetail = () => router.push(detailRoute)
+
 const movie = ref('')
 const eng = ref('')
 const duration = ref('')
-const type = ref([])
+const type = ref('')
 const area = ref('')
 const img = ref('')
+const strType = ref('')
+
 const getInfo = async () => {
-  const res = await movieGetInfoService(movie_id)
-  if (res.data.status === 200) {
-    const data = res.data.data
-    console.log(data)
-    movie.value = data.chinese_name
-    eng.value = data.english_name
-    duration.value = data.duration / 60000000000
-    area.value = data.area
-    type.value = sortToStr(data.category_id)
-    img.value = data.img_path
-  } else {
+  try {
+    const res = await movieGetInfoService(movie_id)
+    if (res.data.success) {
+      const data = res.data.data
+      movie.value = data.chinese_name
+      eng.value = data.english_name
+      duration.value = data.duration
+      area.value = data.area
+      type.value = data.category_ids || ''
+      img.value = data.movie_img
+      strType.value = type.value
+        .slice(2) // 去除前两个字符
+        .split(',')
+        .map((id) => {
+          const index = Number(id)
+          return sort[index] || ''
+        })
+        .filter((name) => name)
+        .join(' ')
+    } else {
+      ElMessage.error('影片信息获取失败')
+    }
+  } catch (e) {
     ElMessage.error('影片信息获取失败')
   }
 }
 getInfo()
+
 const session_list = ref([])
-// 今明后三个日期信息，用于渲染页面
+// 今明后三个日期
 const dateData = getDate()
-// const theater_list = [
-//   {
-//     key: 0,
-//     value: '全部'
-//   }
-// ].concat(theaters)
-const radio1 = ref(1)
+
 const radio2 = ref(dateData[0].dateid)
+
 watch(
-  () => {
-    return {
-      theater: radio1.value,
-      date: radio2.value
-    }
-  },
-  async (newValue) => {
-    console.log({
-      theater_id: newValue.theater,
-      movie_id: Number(movie_id),
-      date: formatDate(newValue.date)
-    })
-    const res = await sessionGetListService(
-      newValue.theater,
-      Number(movie_id),
-      formatDate(newValue.date)
-    )
-    if (res.data.status === 200) {
-      if (res.data.data.item === null) {
-        session_list.value = []
+  () => radio2.value,
+  async (dateVal) => {
+    try {
+      // 后端接口: GET /api/session/seabymovieanddate?movie_id=&date=YYYY-MM-DD
+      // 返回: { success, data: { sessions, total, date, movie_id, status } }
+      const res = await sessionGetListService(
+        null,
+        movie_id,
+        formatDate(dateVal)
+      )
+      if (res.data.success) {
+        // 后端返回 sessions 数组，每条含 session_id, movie_id, hall_id, stime, etime, price
+        // 以及JOIN后的 chinese_name（来自movie表）, name（来自hall表）
+        session_list.value = res.data.data.sessions || []
       } else {
-        session_list.value = res.data.data.item
+        ElMessage({ message: '场次信息获取失败', type: 'error' })
       }
-    } else {
+    } catch (e) {
       ElMessage({ message: '场次信息获取失败', type: 'error' })
     }
   },
-  {
-    immediate: true,
-    deep: true
-  }
+  { immediate: true }
 )
+
 const color = (i) => {
-  if (i % 2 == 0) {
-    return 'background-color: #e7e7e7;'
-  } else {
-    return 'background-color: #d6d6d6'
-  }
+  return i % 2 == 0 ? 'background-color: #e7e7e7;' : 'background-color: #d6d6d6'
 }
 </script>
+
 <template>
   <div class="movieSession">
     <div class="top">
@@ -99,7 +92,7 @@ const color = (i) => {
         <div class="info">
           <div class="movieName">{{ movie }}</div>
           <div class="engName">{{ eng }}</div>
-          <div class="type">{{ type }}</div>
+          <div class="type">{{ strType }}</div>
           <div class="time">时长：{{ duration }}分钟</div>
           <button class="btn" @click="gotodetail()">查看详细信息</button>
         </div>
@@ -107,20 +100,6 @@ const color = (i) => {
     </div>
     <div class="main">
       <div class="chooseBox">
-        <div class="movieChoose">
-          <div class="text">影院：</div>
-          <el-radio-group class="radios" v-model="radio1">
-            <el-radio
-              class="movie-item"
-              v-for="i in theaters"
-              :value="i.key"
-              :key="i.key"
-              size="large"
-              border
-              >{{ i.value }}</el-radio
-            >
-          </el-radio-group>
-        </div>
         <div class="dateChoose">
           <div class="text">日期：</div>
           <el-radio-group class="radios" v-model="radio2">
@@ -142,29 +121,30 @@ const color = (i) => {
       <div class="session_list" v-else>
         <div class="nav">
           <span class="name">影片</span>
-          <span class="time">时间 </span>
+          <span class="time">时间</span>
           <span class="hall">影厅</span>
           <span class="price">价格</span>
-          <span class="opea">操作 </span>
+          <span class="opea">操作</span>
         </div>
         <div
           class="item"
           v-for="(i, index) in session_list"
-          :key="i.ID"
+          :key="i.session_id"
           :style="color(index)"
         >
-          <span class="name">{{ i.Movie.chinese_name }}</span>
+          <!-- findByMovieAndDate JOIN了movie和hall，字段平铺：chinese_name来自movie，name来自hall -->
+          <span class="name">{{ i.chinese_name || movie }}</span>
           <span class="time">
-            <div class="start">{{ formatTime1(i.ShowTime) }}</div>
-            <div class="end">{{ formatTime1(i.EndTime) }}散场</div>
+            <div class="start">{{ formatTime1(i.stime) }}</div>
+            <div class="end">{{ formatTime1(i.etime) }}散场</div>
           </span>
-          <span class="hall">{{ i.Hall.Name }}</span>
-          <span class="price">￥{{ i.Price }}</span>
+          <span class="hall">{{ i.name }}</span>
+          <span class="price">￥{{ i.price }}</span>
           <span class="opea">
             <el-button
               class="btn"
               type="primary"
-              @click="router.push(`/order/${i.ID}`)"
+              @click="router.push(`/order/${i.session_id}`)"
               >选座购票</el-button
             >
           </span>
@@ -180,7 +160,6 @@ const color = (i) => {
   min-width: 1000px;
   .top {
     height: 340px;
-    background-color: rgb(116, 116, 116);
     background: linear-gradient(
       to right,
       rgb(199, 234, 240),
@@ -205,14 +184,12 @@ const color = (i) => {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        // background-color: antiquewhite;
         .movieName,
         .type,
         .time,
         .engName {
           color: aliceblue;
           font-size: 16px;
-          // height: 30px;
         }
         .time {
           margin-bottom: 60px;
@@ -241,23 +218,9 @@ const color = (i) => {
     .chooseBox {
       border: 1px solid #ccc;
       padding: 16px;
-      .movieChoose {
-        display: flex;
-        padding-bottom: 10px;
-        border-bottom: 1px dashed #ccc;
-        .text {
-          width: 70px;
-        }
-        .radios {
-          .movie-item {
-            margin-right: 10px;
-            margin-bottom: 10px;
-          }
-        }
-      }
       .dateChoose {
         display: flex;
-        padding-top: 16px;
+        padding-top: 8px;
         .text {
           width: 70px;
         }

@@ -1,21 +1,19 @@
-// import { useUserStore } from '@/stores/user'
 import axios from 'axios'
 import router from '@/router'
 import { ElMessage } from 'element-plus'
 import { useUserStore } from '@/stores/index'
 
-const baseURL = 'http://117.78.11.45:4000'
+const baseURL = 'http://localhost:8080'
 
-const instance = axios.create({
-  baseURL,
-  timeout: 100000
-})
+const instance = axios.create({ baseURL, timeout: 100000 })
 
 instance.interceptors.request.use(
   (config) => {
     const userStore = useUserStore()
     if (userStore.token) {
       config.headers.Authorization = userStore.token
+    } else if (userStore.getlocalToken()) {
+      config.headers.Authorization = userStore.getlocalToken()
     }
     return config
   },
@@ -24,21 +22,13 @@ instance.interceptors.request.use(
 
 instance.interceptors.response.use(
   (res) => {
-    if (res.data.status === 200) {
-      return res
-    }
-    ElMessage({ message: res.data.msg || '服务异常', type: 'error' })
+    if (res.data.success === true) return res
+    ElMessage({ message: res.data.message || '服务异常', type: 'error' })
     return Promise.reject(res.data)
   },
   (err) => {
-    ElMessage({
-      message: '服务异常',
-      type: 'error'
-    })
-    console.log(err)
-    if (err.response?.status === 401) {
-      router.push('/login')
-    }
+    ElMessage({ message: err.response?.data?.message || '服务异常', type: 'error' })
+    if (err.response?.status === 401) router.push('/login')
     return Promise.reject(err)
   }
 )

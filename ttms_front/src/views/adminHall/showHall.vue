@@ -1,39 +1,40 @@
 <script setup>
-// import { Location, Menu, Document, Setting } from '@element-plus/icons-vue'
 import { useRouter } from 'vue-router'
 import { hallGetListService } from '@/api/hall'
 import { computed, provide, ref, watch } from 'vue'
+
 const router = useRouter()
 const theater_id = ref('')
 const hallList = ref([])
-const hallNum = computed(() => {
-  return hallList.value.length
-})
+const hallNum = computed(() => hallList.value.length)
+
+// 新后端：GET /hall/list → { success, data: { halls: [...] } }
+// 接口不再需要 theater_id，返回全部影厅
 const getList = async () => {
-  const res = await hallGetListService(theater_id.value)
-  if (res.data.status === 200) {
-    hallList.value = res.data.data.item
-    if (hallList.value === null) {
-      hallList.value = []
-    }
-  } else {
+  try {
+    const res = await hallGetListService()
+    hallList.value = res.data.data.halls.halls || []
+  } catch (e) {
+    hallList.value = []
     ElMessage({ message: '演出厅列表获取失败', type: 'error' })
   }
 }
+
 watch(
   () => router.currentRoute.value,
-  (newValue) => {
-    theater_id.value = newValue.params.id
+  () => {
     getList()
   },
   { immediate: true }
 )
-// 路由跳转至添加影厅的界面
+
 const addHall = () => {
   router.push(`/admin/addHall/${theater_id.value}`)
 }
+
+// 新后端用 hall_id 字段（原来是 ID）
 const delHall = (targetId) => {
-  hallList.value = hallList.value.filter((item) => item.ID !== targetId)
+  hallList.value = hallList.value.filter((item) => item.hall_id !== targetId)
 }
 provide('delHall', (id) => {
   delHall(id)
@@ -45,9 +46,7 @@ provide('delHall', (id) => {
     <div class="top">
       <div class="total">总共有{{ hallNum }}个演出厅</div>
       <div class="add">
-        <el-button type="primary" icon="el-icon-plus" @click="addHall"
-          >添加演出厅</el-button
-        >
+        <el-button type="primary" @click="addHall">添加演出厅</el-button>
       </div>
     </div>
     <div class="empty" v-if="hallList.length == 0"><empty-com></empty-com></div>
@@ -59,19 +58,20 @@ provide('delHall', (id) => {
         <div class="col">影厅列数</div>
         <div class="opea">操作</div>
       </div>
+      <!-- 新后端字段：hall_id / name / rnum / cnum（原来是 ID / Name / SeatRow / SeatColumn） -->
       <hall-item
         v-for="(i, index) in hallList"
-        :key="i.ID"
-        :id="i.ID"
-        :name="i.Name"
-        :row="i.SeatRow"
-        :col="i.SeatColumn"
+        :key="i.hall_id"
+        :id="i.hall_id"
+        :name="i.name"
+        :row="i.rnum"
+        :col="i.cnum"
         :index="index"
-        :theater="theater_id"
       ></hall-item>
     </div>
   </div>
 </template>
+
 <style lang="scss" scoped>
 .showHall {
   width: 80%;
@@ -84,10 +84,6 @@ provide('delHall', (id) => {
     height: 80px;
     border-bottom: 1px solid rgb(105, 105, 105);
     margin-bottom: 30px;
-    .total {
-    }
-    .add {
-    }
   }
   .main {
     display: flex;
@@ -97,7 +93,6 @@ provide('delHall', (id) => {
       display: flex;
       justify-content: space-between;
       height: 80px;
-      background-color: rgb(235, 235, 235);
       background-color: rgb(127, 127, 127);
       color: white;
       font-size: 20px;

@@ -1,103 +1,99 @@
 <script setup>
-// import { movieGetCarouselsService } from '@/api/movie'
 import { orderSetService } from '@/api/order'
-import { sessionGetOneService } from '@/api/session'
+import {
+  sessionGetOneService,
+  sessionGetLockedSeatService
+} from '@/api/session'
+import { hallGetService } from '@/api/hall'
+import { movieGetInfoService } from '@/api/movie'
 import { formatTime } from '@/utils/data'
-// import { useUserStore } from '@/stores'
-import { ref, provide, computed } from 'vue'
+import { ref, provide, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-// const userStore = useUserStore()
+
 const route = useRoute()
 const router = useRouter()
-const session = ref('')
-session.value = route.params.session_id
-// // 以下为场次基本信息，不需要做修改
-const row = ref('')
-const col = ref('')
+const session_id = ref(route.params.session_id)
+
+const row = ref(0)
+const col = ref(0)
 const name = ref('')
 const eng_name = ref('')
-const theater = ref('')
-const movie_id = ref('')
 const hall = ref('')
 const time = ref('')
 const img = ref('')
 const duration = ref(0)
-const price = ref('')
+const price = ref(0)
 const seatArr = ref([])
-// 获取信息
-const getSessionInfo = async () => {
-  const res = await sessionGetOneService(session.value)
-  console.log(res.data.data)
-  if (res.status === 200) {
-    // 内部数据
-    const data = res.data.data
-    const movie = data.Movie
-    // 外部数据
-    row.value = data.Hall.SeatRow
-    col.value = data.Hall.SeatColumn
-    price.value = data.Price
-    hall.value = data.Hall.Name
-    name.value = movie.chinese_name
-    eng_name.value = movie.english_name
-    duration.value = movie.duration / 60000000000
-    theater.value = data.Theater.Name
-    movie_id.value = movie.ID
-    time.value = formatTime(data.ShowTime)
-    img.value = movie.img_path
-    console.log(stringToArray(data.SeatStatus, row.value, col.value))
-    seatArr.value = stringToArray(data.SeatStatus, row.value, col.value)
+const seatReady = ref(false)
+
+function buildSeatArr(hallSeatStr, rnum, cnum, lockedSeats) {
+  let base
+  if (hallSeatStr) {
+    const nums = hallSeatStr.split(',').map(Number)
+    base = Array.from({ length: rnum }, (_, i) =>
+      Array.from({ length: cnum }, (_, j) => nums[i * cnum + j] ?? 1)
+    )
   } else {
-    ElMessage.error('场次信息获取失败')
+    base = Array.from({ length: rnum }, () => Array(cnum).fill(1))
   }
-}
-getSessionInfo()
-function stringToArray(str, a, b) {
-  const nums = str.split(',').map(Number)
-  const array = Array.from({ length: a }, () => Array(b).fill(0))
-  let index = 0
-  for (let i = 0; i < a; i++) {
-    for (let j = 0; j < b; j++) {
-      if (index < nums.length) {
-        array[i][j] = nums[index++]
+  if (lockedSeats && lockedSeats.length) {
+    for (const [r, c] of lockedSeats) {
+      if (r >= 1 && r <= rnum && c >= 1 && c <= cnum) {
+        base[r - 1][c - 1] = 2
       }
     }
   }
-
-  return array
+  return base
 }
+
+const getSessionInfo = async () => {
+  try {
+    const res = await sessionGetOneService(session_id.value)
+    const sessionData = res.data.data
+    price.value = sessionData.price
+    time.value = formatTime(sessionData.stime)
+
+    const hallRes = await hallGetService(sessionData.hall_id)
+    const hallData = hallRes.data.data
+    hall.value = hallData.name
+    row.value = hallData.rnum
+    col.value = hallData.cnum
+
+    const movieRes = await movieGetInfoService(sessionData.movie_id)
+    const rawMovieData = movieRes.data.data
+    const movieData = Array.isArray(rawMovieData) ? rawMovieData[0] : rawMovieData
+    name.value = movieData.chinese_name
+    eng_name.value = movieData.english_name
+    duration.value = Number(movieData.duration)
+    img.value = movieData.movie_img
+
+    const lockedRes = await sessionGetLockedSeatService(session_id.value)
+    const lockedSeats = lockedRes.data.data.lockedSeats || []
+
+    seatArr.value = buildSeatArr(
+      hallData.seat,
+      hallData.rnum,
+      hallData.cnum,
+      lockedSeats
+    )
+
+    seatReady.value = true
+  } catch (e) {
+    ElMessage.error('场次信息获取失败')
+  }
+}
+
+onMounted(() => {
+  getSessionInfo()
+})
+
 const style = computed(() => {
   if (row.value * 43 < 600) {
     return 'display: flex;justify-content: center;'
-  } else {
-    return ''
   }
+  return ''
 })
-// 座位数组
-// const seatArr = ref([
-//   [0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1],
-//   [2, 1, 2, 1, 2, 1, 0, 1, 1, 2, 1, 1, 0, 1, 0, 0, 1],
-//   [1, 2, 1, 2, 1, 1, 0, 1, 1, 1, 2, 1, 0, 1, 0, 0, 1],
-//   [1, 2, 1, 2, 0, 1, 2, 1, 1, 1, 2, 1, 0, 1, 0, 0, 1],
-//   [1, 2, 1, 2, 0, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 0, 1],
-//   [1, 2, 1, 2, 0, 1, 3, 3, 1, 1, 2, 1, 1, 1, 1, 0, 1],
-//   [1, 2, 1, 2, 0, 1, 2, 1, 1, 1, 2, 1, 1, 1, 0, 1, 1],
-//   [1, 2, 1, 2, 0, 1, 2, 1, 1, 1, 2, 1, 1, 1, 0, 1, 1],
-//   [1, 2, 1, 2, 0, 1, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1],
-//   [1, 2, 1, 2, 0, 1, 2, 1, 1, 1, 2, 1, 0, 1, 1, 1, 1],
-//   [1, 2, 1, 2, 1, 0, 1, 1, 1, 2, 2, 1, 0, 1, 1, 0, 1]
-// ])
-// const seatArr = ref([
-//   [0, 1, 0, 1, 0, 1, 0, 1, 0],
-//   [2, 1, 2, 1, 2, 1, 0, 1, 1],
-//   [1, 2, 1, 2, 1, 1, 0, 1, 1],
-//   [1, 2, 1, 2, 0, 1, 2, 1, 1],
-//   [1, 2, 1, 2, 0, 1, 2, 1, 1],
-//   [1, 2, 1, 2, 0, 1, 3, 3, 1],
-//   [1, 2, 1, 2, 0, 1, 3, 3, 1],
-//   [1, 2, 1, 2, 0, 1, 3, 3, 1],
-//   [1, 2, 1, 2, 0, 1, 2, 1, 1]
-// ])
-// 生成选中的座位的二维数组的函数
+
 const getCheckedSeat = (matrix) => {
   let indices = []
   for (let i = 0; i < matrix.length; i++) {
@@ -109,15 +105,12 @@ const getCheckedSeat = (matrix) => {
   }
   return indices
 }
-const checkedSeat = computed(() => {
-  return getCheckedSeat(seatArr.value)
-})
-// 总价
-const total = computed(() => {
-  return checkedSeat.value.length * price.value
-})
+
+const checkedSeat = computed(() => getCheckedSeat(seatArr.value))
+const total = computed(() => checkedSeat.value.length * price.value)
+
 provide('changeStatus', (obj) => {
-  if (obj.status == 3) {
+  if (obj.status === 3) {
     if (checkedSeat.value.length < 5) {
       seatArr.value[obj.row - 1][obj.col - 1] = obj.status
     } else {
@@ -127,38 +120,24 @@ provide('changeStatus', (obj) => {
     seatArr.value[obj.row - 1][obj.col - 1] = obj.status
   }
 })
-// 根据数组checkedSeat生成选中的座位的字符串checkedSeatArr
-// 转换的函数
-const getCheckedSeatStr = () => {
-  let arr = checkedSeat.value
-  let flattenedArray = arr.flat()
-  return flattenedArray.join(',')
-}
-// 购票
+
 const buy = async () => {
-  console.log(
-    Number(session.value),
-    getCheckedSeatStr(),
-    movie_id.value,
-    checkedSeat.value.length
-  )
-  const res = await orderSetService(
-    Number(session.value),
-    getCheckedSeatStr(),
-    movie_id.value,
-    checkedSeat.value.length
-  )
-  if (res.status === 200) {
-    // 获取到订单id，并跳转页面
+  if (checkedSeat.value.length === 0) {
+    ElMessage.warning('请先选择座位')
+    return
+  }
+  try {
+    const res = await orderSetService(
+      Number(session_id.value),
+      checkedSeat.value
+    )
     ElMessage.success('订单创建成功')
     router.push({
       path: '/orderShow',
-      query: {
-        orderId: res.data.data.id
-      }
+      query: { orderId: res.data.data.order_id }
     })
-  } else {
-    ElMessage.error('订单创建失败')
+  } catch (e) {
+    // 错误已由 request 拦截器处理
   }
 }
 </script>
@@ -168,15 +147,16 @@ const buy = async () => {
     <div class="seatArea" :style="style">
       <div class="yinmu">银幕中心</div>
       <seat-table
-        v-if="row !== ''"
+        v-if="seatReady"
         :row="row"
         :col="col"
         :seatDefault="seatArr"
       ></seat-table>
+      <div v-if="!seatReady">正在加载座位信息...</div>
     </div>
     <div class="info">
       <div class="info1">
-        <img :src="img" alt="" />
+        <img class="imgaa" :src="img" alt="" />
         <div class="info3">
           <h5>{{ name }}</h5>
           <h5>{{ eng_name }}</h5>
@@ -184,7 +164,6 @@ const buy = async () => {
         </div>
       </div>
       <div class="info2">
-        <h6>影院：{{ theater }}</h6>
         <h6>影厅：{{ hall }}</h6>
         <h6>开场时间：{{ time }}</h6>
         <h6>票价：{{ price }}</h6>
@@ -266,6 +245,8 @@ const buy = async () => {
       padding-bottom: 10px;
       height: 30%;
       img {
+        width: 120px;
+        height: 170px;
         margin-right: 20px;
         border: 2px solid white;
       }

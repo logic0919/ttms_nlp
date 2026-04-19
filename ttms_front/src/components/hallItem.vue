@@ -2,14 +2,14 @@
 import { computed, inject } from 'vue'
 import { useRouter } from 'vue-router'
 import { hallDelService } from '@/api/hall'
+
 const router = useRouter()
 const props = defineProps({
   id: Number,
   name: String,
   row: Number,
   col: Number,
-  index: Number,
-  theater: Number
+  index: Number
 })
 const color = computed(() => {
   return props.index % 2 == 0
@@ -17,18 +17,18 @@ const color = computed(() => {
     : 'background-color: rgb(235, 235, 235);'
 })
 const adminHall = () => {
-  router.push(`/admin/viewHall/${props.theater}/${props.id}`)
+  router.push(`/admin/viewHall/${props.id}`)
 }
 const delHall = inject('delHall')
 const delHallFn = () => {
-  ElMessageBox.confirm('确定删除这个场次吗？', '提示')
+  ElMessageBox.confirm('确定删除这个影厅吗？', '提示')
     .then(async () => {
-      const res = await hallDelService(props.id)
-      if (res.data.status === 200) {
+      try {
+        await hallDelService(props.id)
         delHall(props.id)
         ElMessage({ message: '删除成功', type: 'success' })
-      } else {
-        ElMessage({ message: '删除失败，请稍后重试', type: 'error' })
+      } catch (e) {
+        ElMessage({ message: e?.message || '删除失败，请稍后重试', type: 'error' })
       }
     })
     .catch(() => {})
@@ -42,20 +42,8 @@ const delHallFn = () => {
     <div class="row">{{ row }}</div>
     <div class="col">{{ col }}</div>
     <span class="opea">
-      <el-button
-        type="primary"
-        class="btn"
-        icon="el-icon-plus"
-        @click="adminHall"
-        >查看</el-button
-      >
-      <el-button
-        type="primary"
-        class="btn"
-        icon="el-icon-plus"
-        @click="delHallFn"
-        >删除</el-button
-      >
+      <el-button type="primary" class="btn" @click="adminHall">查看</el-button>
+      <el-button type="primary" class="btn" @click="delHallFn">删除</el-button>
     </span>
   </div>
 </template>

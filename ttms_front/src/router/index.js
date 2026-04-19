@@ -1,17 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// 首页相关
 import index from '@/views/index/index.vue'
 import movie from '../views/movie/index.vue'
 import user from '../views/user/index.vue'
-// 非首页相关
 
 const login = import('../views/login/indexPage.vue')
-const register = import('../views/login/register.vue')
 const movieDetail = import('../views/movieDetail/index.vue')
 const movieDetailIntro = import('../views/movieDetail/movieDetailIntro.vue')
-const movieDetailPerformer = import(
-  '../views/movieDetail/movieDetailPerformer.vue'
-)
+const movieDetailPerformer = import('../views/movieDetail/movieDetailPerformer.vue')
 const movieDetailPicture = import('../views/movieDetail/movieDetailPicture.vue')
 const addMovie = import('../views/adminMovie/addMovie.vue')
 const order = import('../views/order/setOrder.vue')
@@ -34,113 +29,36 @@ import { useUserStore } from '@/stores/index'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      redirect: '/index'
-    },
-    {
-      path: '/index',
-      component: index,
-      name: 'index'
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: login
-    },
-    {
-      path: '/register/:token',
-      name: 'register',
-      component: register
-    },
-    {
-      path: '/user',
-      name: 'user',
-      component: user
-    },
-    {
-      path: '/movie',
-      name: 'movie',
-      component: movie
-    },
+    { path: '/', redirect: '/index' },
+    { path: '/index', component: index, name: 'index' },
+    { path: '/login', name: 'login', component: login },
+    { path: '/user', name: 'user', component: user },
+    { path: '/movie', name: 'movie', component: movie },
     {
       path: '/admin',
       name: 'admin',
       component: admin,
-      redirect: '/admin/showHall/1',
+      redirect: '/admin/showHall',
       children: [
-        // 关于影厅管理
-        {
-          path: '/admin/showHall/:id',
-          name: 'showHall',
-          component: showHall
-        },
-        {
-          path: '/admin/viewHall/:theater_id/:id',
-          name: 'viewHall',
-          component: viewHall
-        },
-        {
-          path: '/admin/addHall/:theater_id',
-          name: 'addHall',
-          component: addHall
-        },
-        // 关于场次管理
-        {
-          path: '/admin/showSession/:theater_id',
-          name: 'showSession',
-          component: showSession
-        },
-        {
-          path: '/admin/viewSession/:theater_id/:id',
-          name: 'viewSession',
-          component: viewSession
-        },
-        {
-          path: '/admin/addSession/:theater_id',
-          name: 'addSession',
-          component: addSession
-        },
-        // 关于影片管理
-        {
-          path: '/admin/addMovie',
-          name: 'addMovie',
-          component: addMovie
-        },
-        {
-          path: '/admin/showMovie',
-          name: 'showMovie',
-          component: showMovie
-        },
-        {
-          path: '/admin/viewMovie/:id',
-          name: 'viewMovie',
-          component: viewMovie
-        },
-        // 关于影院管理
-        {
-          path: '/admin/addTheater',
-          name: 'addTheater',
-          component: addTheater
-        }
+        { path: '/admin/showHall', name: 'showHall', component: showHall },
+        { path: '/admin/viewHall/:id', name: 'viewHall', component: viewHall },
+        { path: '/admin/addHall', name: 'addHall', component: addHall },
+        { path: '/admin/showSession', name: 'showSession', component: showSession },
+        { path: '/admin/viewSession/:id', name: 'viewSession', component: viewSession },
+        { path: '/admin/addSession', name: 'addSession', component: addSession },
+        { path: '/admin/addMovie', name: 'addMovie', component: addMovie },
+        { path: '/admin/showMovie', name: 'showMovie', component: showMovie },
+        { path: '/admin/viewMovie/:id', name: 'viewMovie', component: viewMovie },
+        { path: '/admin/addTheater', name: 'addTheater', component: addTheater }
       ]
     },
-    {
-      path: '/orderShow',
-      name: 'orderShow',
-      component: orderShow
-    },
-    {
-      path: '/order/:session_id',
-      name: 'order',
-      component: order
-    },
+    { path: '/orderShow', name: 'orderShow', component: orderShow },
+    { path: '/order/:session_id', name: 'order', component: order },
     {
       path: '/movieDetail/:id',
       name: 'movieDetail',
       component: movieDetail,
       children: [
-        // 电影简介
         {
           path: '/movieDetail/:id/introduction',
           name: 'movieDetailIntro',
@@ -158,19 +76,11 @@ const router = createRouter({
         }
       ]
     },
-    {
-      path: '/movieSession/:id',
-      name: 'movieSession',
-      component: movieSession
-    },
-    {
-      path: '/:pathMatch(.*)*',
-      name: 'notFound',
-      component: notFound
-    }
+    { path: '/movieSession/:id', name: 'movieSession', component: movieSession },
+    { path: '/:pathMatch(.*)*', name: 'notFound', component: notFound }
   ]
 })
-// 登录禁止权限页面路径数组
+
 const authUrls = [
   'user',
   'showHall',
@@ -182,9 +92,9 @@ const authUrls = [
   'addTheater',
   'addMovie',
   'orderShow',
-  'showMovie'
+  'showMovie',
+  'order'
 ]
-// 管理员禁止权限页面
 const adminUrls = [
   'showHall',
   'viewHall',
@@ -196,22 +106,20 @@ const adminUrls = [
   'addMovie',
   'showMovie'
 ]
+
 router.beforeEach((to, from, next) => {
   const userStore = useUserStore()
-  const token = userStore.token
+  // 刷新后 store 可能为空，从 localStorage 补充 token
+  const token = userStore.token || userStore.getlocalToken()
   const status = userStore.status
-  //   管理员要求页面
+
   if (adminUrls.includes(to.name)) {
-    console.log('进入管理页面')
-    // 登录并且身份是管理员
-    if (!(token && status === 'administrator')) {
+    if (!(token && !status)) {
       ElMessage.error('权限不足，无法访问')
+      // next(from.path || '/index')
       return
     }
-  }
-  // 登录要求页面
-  else if (authUrls.includes(to.name)) {
-    console.log('进入登录限制页面')
+  } else if (authUrls.includes(to.name)) {
     if (!token) {
       ElMessage.error('请先登录')
       next('/login')

@@ -1,52 +1,31 @@
 import request from '@/utils/request'
-// 创建订单
-const orderSetService = (id, seat, movie_id, num) => {
-  console.log(id, seat, movie_id, num)
-  return request.post('/api/v1/submit-order', {
-    session_id: id,
-    seat: seat,
-    movie_id: movie_id,
-    num
-  })
-}
-// 倒计时confirm
-// order_id
-const orderConfirmService = (order_id) => {
-  console.log(order_id)
-  return request.post('/api/v1/confirm-order', {
-    order_id
-  })
+
+// 锁座（需要登录 token）
+// seat 格式：[[row, col], [row, col], ...]
+// 后端从 token 解析 user_id，无需前端传
+// 返回 { data: { order_id, expireTime } }
+const orderSetService = (session_id, seat) => {
+  return request.post('/api/order/lock', { session_id, seat })
 }
 
-// 支付pay
-// order_id
-const orderPayService = (order_id) => {
-  return request.post('/api/v1/pay-order', {
-    order_id
-  })
-}
+// 获取订单详情（需要登录 token），query: order_id
+// 返回 { data: { order_id, movie_name, session_start_time, session_end_time, hall_name, order_price, seats, user_id, status, exp } }
+const orderConfirmService = (order_id) =>
+  request.get('/api/order/getinfo', { params: { order_id } })
 
-// 退款return
-// order_id
-const orderReturnService = (order_id) => {
-  console.log(order_id)
-  return request.delete('/api/v1/return-order', {
-    params: { order_id }
-  })
-}
+// 支付订单（需要登录 token），body: { order_id }
+// 返回 { data: { orderId } }
+const orderPayService = (order_id) =>
+  request.post('/api/order/pay', { order_id })
 
-// get个人订单
-// user_id
-// 0:待支付
-// 1：已支付
-// 2：已完成
-// 3：已退款
+// 退票（需要登录 token），body: { order_id }
+// 返回 { data: { orderId } }
+const orderReturnService = (order_id) =>
+  request.post('/api/order/refund', { order_id })
 
-const orderGetUserService = (user_id) => {
-  return request.get('/api/v1/user-orders', {
-    params: { user_id }
-  })
-}
+// 获取当前登录用户的订单列表（后端从 token 解析 user_id）
+// 返回 { data: { orders: [ { order_id, session_id, user_id, exp, status, price, stime, etime, movie_name, movie_img, hall_name, seat_info, seat_positions } ], total } }
+const orderGetUserService = () => request.get('/api/order/getbyuserid')
 
 export {
   orderSetService,

@@ -1,6 +1,7 @@
 <script setup>
-import { theaterAddService } from '@/api/theater'
 import { ref } from 'vue'
+import { ElMessage } from 'element-plus'
+
 const formModel = ref({
   name: '',
   place: ''
@@ -10,14 +11,11 @@ const rules = ref({
   name: [{ required: true, message: '请输入影院名称', trigger: 'blur' }],
   place: [{ required: true, message: '请输入影院地址', trigger: 'blur' }]
 })
-const addHall = async () => {
+
+const addTheater = async () => {
   await form.value.validate()
-  const res = await theaterAddService(formModel.value)
-  if (res.data.status === 200) {
-    ElMessage({ message: '创建影院成功', type: 'success' })
-  } else {
-    ElMessage({ message: '操作失败，请稍后重试', type: 'error' })
-  }
+  // 后端暂未提供影院管理接口，此处为预留页面
+  ElMessage({ message: '影院信息已记录（后端接口待接入）', type: 'info' })
 }
 </script>
 
@@ -38,10 +36,7 @@ const addHall = async () => {
         <el-form-item label="影院地址" prop="place" class="form-item" required>
           <el-input v-model="formModel.place" placeholder="请输入影院地址" />
         </el-form-item>
-
-        <el-button class="btn" type="primary" @click="addHall"
-          >添加影院</el-button
-        >
+        <el-button class="btn" type="primary" @click="addTheater">添加影院</el-button>
       </el-form>
     </div>
   </div>

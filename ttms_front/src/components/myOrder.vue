@@ -2,31 +2,29 @@
 import router from '@/router'
 import { formatDate } from '@/utils/data'
 import { computed, inject } from 'vue'
+
 const props = defineProps({
-  id: String,
+  id: [String, Number],
   date: String,
-  day: String,
-  time: String,
   name: String,
   hall: String,
   seat: Array,
   price: Number,
-  status: Number,
-  img: String,
-  theater: String
+  type: Number, // 1=待支付 2=待完成 3=已退款 4=已完成 5=已过期
+  img: String
 })
+
 const statusStr = computed(() => {
-  if (props.status === 0) {
-    return '待支付'
-  } else if (props.status === 1) {
-    return '待完成'
-  } else if (props.status === 2) {
-    return '已完成'
-  } else if (props.status === 3) {
-    return '已退款'
+  const map = {
+    1: '待支付',
+    2: '待完成',
+    3: '已退款',
+    4: '已完成',
+    5: '已过期'
   }
-  return ''
+  return map[props.type] || ''
 })
+
 const backMoney = inject('backMoney')
 const gotoPay = (id) => {
   router.push(`/orderShow?orderId=${id}`)
@@ -37,7 +35,7 @@ const gotoPay = (id) => {
   <div class="myOrder">
     <div class="top">
       <div class="date">{{ formatDate(date) }}</div>
-      <div class="id">猫眼订单号:{{ id }}</div>
+      <div class="id">订单号:{{ id }}</div>
     </div>
     <div class="main1">
       <div class="img"><img :src="img" alt="" /></div>
@@ -47,16 +45,18 @@ const gotoPay = (id) => {
       </div>
       <div class="seat">
         <div class="seatGro">
-          <div v-for="i in seat" :key="i">{{ i }}</div>
+          <div v-for="s in seat" :key="s">{{ s }}</div>
         </div>
       </div>
       <div class="price">￥{{ price }}</div>
       <div class="status">{{ statusStr }}</div>
       <div class="opea">
-        <el-button type="primary" @click="backMoney(id)" v-if="status === 1"
+        <!-- 已支付且影片未开场才能退款 -->
+        <el-button type="primary" @click="backMoney(id)" v-if="type === 2"
           >退款</el-button
         >
-        <el-button type="primary" @click="gotoPay(id)" v-if="status === 0"
+        <!-- 待支付才显示去支付 -->
+        <el-button type="primary" @click="gotoPay(id)" v-if="type === 1"
           >去支付</el-button
         >
       </div>

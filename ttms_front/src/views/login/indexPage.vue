@@ -1,29 +1,28 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-const router = useRouter()
 import { userRegisterService, userLoginService } from '@/api/user'
 import { useUserStore } from '@/stores/index'
-const userStore = useUserStore()
-const { setlocalTime, setAll, setlocalToken } = userStore
-const reInput = '请再次输入密码'
-// 一些表单数据绑定
-const clearForm = () => {
-  formModel.value.email = ''
-  formModel.value.id = ''
-  formModel.value.name = ''
-  pwdinp1.value.formModel.pwd = ''
-  pwdinp2.value.formModel.pwd = ''
-  pwdinp3.value.formModel.pwd = ''
-}
 
-// 登录中的密码输入框
+const router = useRouter()
+const userStore = useUserStore()
+const { setAll, setlocalToken, setlocalId } = userStore
 const pwdinp1 = ref(null)
-// 注册中的密码输入框
 const pwdinp2 = ref(null)
 const pwdinp3 = ref(null)
-// 关于切换选项
 const islogin = ref(true)
+const form = ref(null)
+const formModel = ref({ id: '' })
+const rules = {
+  id: [{ required: true, message: '请输入用户ID', trigger: 'blur' }]
+}
+
+const clearForm = () => {
+  formModel.value.id = ''
+  if (pwdinp1.value) pwdinp1.value.formModel.pwd = ''
+  if (pwdinp2.value) pwdinp2.value.formModel.pwd = ''
+  if (pwdinp3.value) pwdinp3.value.formModel.pwd = ''
+}
 const switchLogin = () => {
   islogin.value = true
   clearForm()
@@ -32,88 +31,58 @@ const switchRegister = () => {
   islogin.value = false
   clearForm()
 }
-const loginClass = computed(() => {
-  return islogin.value ? ['active span'] : ['noactive span']
-})
-const registerClass = computed(() => {
-  return islogin.value ? ['noactive span'] : ['active span']
-})
-// 注册函数
+
+const loginClass = computed(() => (islogin.value ? ['active span'] : ['noactive span']))
+const registerClass = computed(() => (islogin.value ? ['noactive span'] : ['active span']))
+
 const register = async () => {
   await form.value.validate()
   await pwdinp2.value.validate()
   await pwdinp3.value.validate()
   if (pwdinp2.value.formModel.pwd !== pwdinp3.value.formModel.pwd) {
-    ElMessage({ message: '两次输入密码不一致', type: 'error' })
+    ElMessage({ message: '两次密码不一致', type: 'error' })
     return
   }
+  // 后端接口: POST /api/user/register { user_id, pwd }
   const res = await userRegisterService({
-    name: formModel.value.name,
-    email: formModel.value.email,
+    id: formModel.value.id,
     pwd: pwdinp2.value.formModel.pwd
   })
-  if (res.data.status === 200) {
-    ElMessage({ message: '邮件发送成功，请注意查收', type: 'success' })
-  } else {
-    ElMessage({ message: '操作失败，请稍后重试', type: 'error' })
+  if (res.data.success) {
+    ElMessage({ message: '注册成功，请登录', type: 'success' })
+    switchLogin()
   }
 }
-// 登录函数
+
 const login = async () => {
   await form.value.validate()
   await pwdinp1.value.validate()
+  // 后端接口: POST /api/user/login { user_id, pwd }
+  // 返回: { success, data: { message, data: { token, user_id, status } } }
   const res = await userLoginService({
-    id: formModel.value.id,
+    user_id: formModel.value.id,
     pwd: pwdinp1.value.formModel.pwd
   })
-  if (res.data.status === 200) {
-    const { token } = res.data.data
-    const info = res.data.data.user
-    // 本地过期时间戳
-    setlocalTime()
-    // 本地信息+token
+  if (res.data.success) {
+    // 后端service层将data再包一层，实际token在 res.data.data.data
+    const innerData = res.data.data.data
+    const token = innerData.token
+    const user_id = innerData.user_id
+    const status = innerData.status
     setlocalToken(token)
-    // 仓库信息+token
-    setAll({ token, ...info, name: info.nick_name })
-    ElMessage({ message: '登录成功，即将跳转', type: 'success' })
-    setTimeout(() => {
-      router.push('/index')
-    }, 3000)
+    setlocalId(user_id)
+    setAll({
+      token,
+      id: user_id,
+      // status: 1 表示管理员
+      status: status
+    })
+    ElMessage({ message: '登录成功', type: 'success' })
+    setTimeout(() => router.push('/index'), 1000)
   }
 }
-const form = ref(null)
-const formModel = ref({
-  id: '',
-  email: '',
-  name: ''
-})
-const rules = {
-  id: [
-    { required: true, message: '请输入id', trigger: 'blur' }
-    // {
-    //   pattern: /^\d{11}$/,
-    //   message: 'id必须11位数字',
-    //   trigger: 'blur'
-    // }
-  ],
-  email: [
-    { required: true, message: '请输入邮箱', trigger: 'blur' }
-    // {
-    //   pattern: /^\d{11}$/,
-    //   message: '邮箱必须11位数字',
-    //   trigger: 'blur'
-    // }
-  ],
-  name: [
-    { required: true, message: '请输入昵称', trigger: 'blur' }
-    // {
-    //   pattern: /^\w{6,15}$/,
-    //   message: '密码应为6至15位字母数字下划线',
-    //   trigger: 'blur'
-    // }
-  ]
-}
 </script>
+
 <template>
   <div class="main">
     <div class="left">
@@ -131,49 +100,27 @@ const rules = {
           </div>
 
           <div class="register" ref="register" v-if="!islogin">
-            <el-form
-              class="elform"
-              :model="formModel"
-              :rules="rules"
-              ref="form"
-            >
-              <el-form-item prop="name" class="elinput">
-                <el-input v-model="formModel.name" placeholder="请输入昵称">
-                </el-input>
-              </el-form-item>
-              <el-form-item prop="email" class="elinput">
-                <el-input
-                  v-model="formModel.email"
-                  placeholder="请输入邮箱"
-                ></el-input>
+            <el-form class="elform" :model="formModel" :rules="rules" ref="form">
+              <el-form-item prop="id" class="elinput">
+                <el-input v-model="formModel.id" placeholder="请输入用户ID"></el-input>
               </el-form-item>
             </el-form>
             <pwd-input ref="pwdinp2"></pwd-input>
-            <pwd-input :info="reInput" ref="pwdinp3"></pwd-input>
+            <pwd-input ref="pwdinp3"></pwd-input>
             <button @click="register">注册</button>
           </div>
 
           <div class="login" ref="login" v-if="islogin">
-            <el-form
-              class="elform"
-              :model="formModel"
-              :rules="rules"
-              ref="form"
-            >
+            <el-form class="elform" :model="formModel" :rules="rules" ref="form">
               <el-form-item prop="id" class="elinput">
-                <el-input
-                  v-model="formModel.id"
-                  placeholder="请输入id"
-                  :prefix-icon="User"
-                ></el-input>
+                <el-input v-model="formModel.id" placeholder="请输入用户ID"></el-input>
               </el-form-item>
             </el-form>
             <pwd-input ref="pwdinp1"></pwd-input>
             <button class="btn" @click="login">登录</button>
           </div>
-          <h6 class="agree">
-            注册登录即表示同意 <i>用户协议</i> 和 <i>隐私政策</i>
-          </h6>
+
+          <h6 class="agree">注册登录即表示同意 <i>用户协议</i> 和 <i>隐私政策</i></h6>
         </div>
       </div>
     </div>
@@ -190,7 +137,6 @@ const rules = {
   .left {
     width: 60%;
     min-width: 600px;
-    // border: 1px solid red;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     overflow: hidden;
@@ -218,11 +164,9 @@ const rules = {
         justify-content: space-between;
         flex-direction: column;
         margin: 0 auto;
-        // border: 1px solid red;
         .logo {
           height: 50px;
           line-height: 200%;
-          // border: 1px solid red;
           img {
             width: 50%;
           }
@@ -231,13 +175,11 @@ const rules = {
           height: 40px;
           .active {
             color: rgb(33, 90, 229);
-            border-bottom: 2px solid rgb(138, 138, 138);
-            border-color: rgb(33, 90, 229);
+            border-bottom: 2px solid rgb(33, 90, 229);
           }
           .noactive {
             color: rgb(138, 138, 138);
             border-bottom: 2px solid rgb(138, 138, 138);
-            border-color: rgb(138, 138, 138);
           }
           .span {
             cursor: pointer;
@@ -245,11 +187,7 @@ const rules = {
             width: 36%;
             height: 40px;
             font-size: 15px;
-            // font-weight: 700;
-            // padding-left: 15px;
-            // padding-right: 15px;
             line-height: 35px;
-            // line-height: 300%;
             &:nth-child(1) {
               margin-right: 10px;
             }
@@ -258,7 +196,6 @@ const rules = {
         .login {
           height: 180px;
           .btn {
-            // background-color: rgb(255, 45, 45);
             font-size: 17px;
             font-weight: 700;
             letter-spacing: 5px;
@@ -269,7 +206,6 @@ const rules = {
           display: flex;
           justify-content: space-between;
           flex-direction: column;
-          // border: 1px solid red;
           & > input {
             width: 100%;
           }
@@ -284,8 +220,6 @@ const rules = {
           }
         }
         .agree {
-          // height: 10px;
-          // border: 1px solid red;
           text-align: center;
           i {
             color: rgb(33, 90, 229);

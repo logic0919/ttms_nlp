@@ -9,7 +9,8 @@ const props = defineProps({
   duration: Number,
   category: String
 })
-const time = props.duration / 60000000000
+// 后端 duration 直接是分钟数
+const time = props.duration
 </script>
 
 <template>
@@ -23,7 +24,6 @@ const time = props.duration / 60000000000
       <img :src="img" alt="" />
       <div class="info">
         <div class="duration">{{ time }}分钟</div>
-        <div class="cateGory">{{ category }}</div>
       </div>
     </div>
     <div class="text">{{ name }}</div>

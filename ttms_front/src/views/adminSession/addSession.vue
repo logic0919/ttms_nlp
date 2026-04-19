@@ -1,86 +1,103 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import { useRoute } from 'vue-router'
 import { hallGetListService } from '@/api/hall'
-import { findtheaterName, formatTime } from '@/utils/data'
-import { movieSearchService } from '@/api/movie'
+import { formatTime } from '@/utils/data'
+import { movieSearchService, movieGetInfoService } from '@/api/movie'
 import { sessionAddService } from '@/api/session'
 import { ElMessage } from 'element-plus'
-const route = useRoute()
-// 确定了某个影院
-const theater_id = route.params.theater_id
 
-// 关于表单
 const formModel = ref({
   theater_name: '',
   start: '',
   price: '',
-  hall_name: '',
-  movie_id: '',
-  movie_name: ''
+  hall_id: '',
+  movie_id: ''
 })
 const form = ref(null)
 const rules = ref({
   theater_name: [{ required: true, message: '请选择影院', trigger: 'blur' }],
   price: [{ required: true, message: '请输入价格', trigger: 'blur' }],
-  hall_name: [{ required: true, message: '请选择影厅', trigger: 'blur' }],
-  movie_name: [{ required: true, message: '请选择影片', trigger: 'blur' }],
+  hall_id: [{ required: true, message: '请选择影厅', trigger: 'blur' }],
+  movie_id: [{ required: true, message: '请选择影片', trigger: 'blur' }],
   start: [{ required: true, message: '请选择开场时间', trigger: 'blur' }]
 })
+
 const hall_list = ref([])
 const movie_list = ref([])
+const selectedMovieDuration = ref(120) // 默认时长 120 分钟
+
+// 新后端：GET /hall/list → { success, data: { halls: [...] } }
+// 字段：hall_id / name（原来是 ID / Name）
 const getHallList = async () => {
-  const res = await hallGetListService(theater_id)
-  if (res.data.status === 200) {
-    hall_list.value = res.data.data.item
-  } else {
+  try {
+    const res = await hallGetListService()
+    hall_list.value = res.data.data.halls.halls || []
+  } catch (e) {
     ElMessage({ message: '影厅列表获取失败', type: 'error' })
   }
 }
-formModel.value.theater_name = findtheaterName(Number(theater_id))
+
 onMounted(() => {
   getHallList()
 })
+
 const loading = ref(false)
-//关于远程搜索
+
+// 新后端：GET /movie/seabyname?chinese_name=xxx → { success, data: [...movies] }
+// 字段：movie_id / chinese_name / duration
 const remoteMethod = async (query) => {
   if (query) {
     loading.value = true
-    const res = await movieSearchService(query)
-    loading.value = false
-    if (res.data.status === 200) {
-      movie_list.value = res.data.data.item
-    } else {
+    try {
+      const res = await movieSearchService(query)
+      movie_list.value = res.data.data.movies || []
+    } catch (e) {
       movie_list.value = []
+    } finally {
+      loading.value = false
     }
   } else {
     movie_list.value = []
   }
 }
-// 添加场次函数
+
+// 选中电影时获取时长，用于计算 etime
+const onMovieChange = async (movieId) => {
+  try {
+    const res = await movieGetInfoService(movieId)
+    const data = res.data.data
+    const movie = Array.isArray(data) ? data[0] : data
+    selectedMovieDuration.value = parseInt(movie?.duration) || 120
+  } catch (e) {
+    selectedMovieDuration.value = 120
+  }
+}
+
+// 新后端：POST /session/create，body: { movie_id, hall_id, stime, etime, price }
+// stime / etime 为 "YYYY-MM-DD HH:mm" 格式字符串
 const addSession = async () => {
   await form.value.validate()
-  if (formatTime(formModel.value.start) < formatTime(new Date())) {
+  const nowTime = formatTime(new Date())
+  const startTime = formatTime(formModel.value.start)
+  if (startTime < nowTime) {
     ElMessage.error('场次时间不能小于当前时间')
     return
   }
-  const res = await sessionAddService({
-    theater_id: Number(theater_id),
-    movie_id: formModel.value.movie_name,
-    hall_id: Number(formModel.value.hall_name),
-    show_time: new Date(formModel.value.start),
-    price: Number(formModel.value.price)
-  })
-  if (res.data.status === 200) {
-    ElMessage({
-      type: 'success',
-      message: '添加成功'
+  const stimeMs = new Date(formModel.value.start).getTime()
+  const etimeMs = stimeMs + selectedMovieDuration.value * 60 * 1000
+  const etime = formatTime(new Date(etimeMs))
+
+  try {
+    await sessionAddService({
+      movie_id: formModel.value.movie_id,
+      hall_id: Number(formModel.value.hall_id),
+      stime: startTime,
+      etime: etime,
+      price: Number(formModel.value.price)
     })
-  } else {
-    ElMessage({
-      type: 'error',
-      message: '添加失败'
-    })
+    ElMessage({ type: 'success', message: '添加成功' })
+  } catch (e) {
+    ElMessage({ type: 'error', message: '添加失败' })
   }
 }
 </script>
@@ -94,32 +111,27 @@ const addSession = async () => {
         :rules="rules"
         label-width="auto"
         class="demo-ruleForm form"
-        :size="formSize"
         status-icon
       >
-        <el-form-item label="影院名称" prop="theater_name" class="form-item">
-          <el-input
-            v-model="formModel.theater_name"
-            disabled
-            placeholder="请输入影院"
-          />
-        </el-form-item>
-        <el-form-item label="影厅名称" prop="hall_name" class="form-item">
+        <el-form-item label="影厅名称" prop="hall_id" class="form-item">
+          <!-- 新后端：hall_id / name（原来是 ID / Name） -->
           <el-select
-            v-model="formModel.hall_name"
+            v-model="formModel.hall_id"
             placeholder="请选择演出厅"
             style="width: 240px"
           >
             <el-option
               v-for="item in hall_list"
-              :key="item.ID"
-              :label="item.Name"
-              :value="item.ID"
-          /></el-select>
+              :key="item.hall_id"
+              :label="item.name"
+              :value="item.hall_id"
+            />
+          </el-select>
         </el-form-item>
-        <el-form-item label="影片名称" prop="movie_name" class="form-item">
+        <el-form-item label="影片名称" prop="movie_id" class="form-item">
+          <!-- 新后端：movie_id / chinese_name（原来是 id / chinese_name） -->
           <el-select
-            v-model="formModel.movie_name"
+            v-model="formModel.movie_id"
             filterable
             remote
             reserve-keyword
@@ -128,12 +140,13 @@ const addSession = async () => {
             :remote-method="remoteMethod"
             :loading="loading"
             style="width: 240px"
+            @change="onMovieChange"
           >
             <el-option
               v-for="item in movie_list"
-              :key="item.id"
+              :key="item.movie_id"
               :label="item.chinese_name"
-              :value="item.id"
+              :value="item.movie_id"
             />
           </el-select>
         </el-form-item>
@@ -167,17 +180,6 @@ const addSession = async () => {
       width: 70%;
       .form-item {
         margin-top: 40px;
-        // border: 1px solid red;
-      }
-      .tags {
-        .tag {
-          width: 90px;
-          height: 40px;
-          margin-right: 10px;
-          margin-bottom: 10px;
-          text-align: center;
-          line-height: 40px;
-        }
       }
       .btn {
         width: 80%;

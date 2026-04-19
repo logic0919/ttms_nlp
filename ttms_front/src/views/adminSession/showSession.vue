@@ -1,115 +1,90 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
-import { movieGetHottheaterService } from '../../api/movie'
-import { sessionGetListService, sessionDelService } from '../../api/session'
-import { getDate, formatDate, formatTime1 } from '../../utils/data'
+import { movieGetHotService } from '@/api/movie'
+import { sessionGetListService, sessionDelService } from '@/api/session'
+import { getDate, formatDate, formatTime1 } from '@/utils/data'
+
 const router = useRouter()
 const theater_id = ref('')
 const movie_list = ref([])
 const dateData = getDate()
 const radio1 = ref(0)
 const radio2 = ref(dateData[0].dateid)
+
 watch(
   () => router.currentRoute.value,
-  async (newValue) => {
-    // 如果路径参数改掉
-    // 首先，修改theater_id值
-    // 其次，radio值赋为初始值
-    // 获取该影院正在上映的影片列表
-    theater_id.value = newValue.params.theater_id
+  async () => {
     radio2.value = dateData[0].dateid
-    radio1.value = 1
-    const res = await movieGetHottheaterService(theater_id.value)
-    if (res.data.status === 200) {
-      movie_list.value = res.data.data.item
-      if (movie_list.value === null) {
-        movie_list.value = []
-      }
-      radio1.value = 1
-      // 切换影院但是该影院的上映影片数量为0，不能发请求
+    try {
+      const res = await movieGetHotService()
+      movie_list.value = res.data.data.movies || []
       if (movie_list.value.length !== 0) {
-        const res1 = await sessionGetListService(
-          theater_id.value,
-          radio1.value,
-          formatDate(radio2.value)
-        )
-        if (res1.data.status === 200) {
-          session_list.value = res1.data.data.item
-          if (res1.data.data.item === null) {
-            session_list.value = []
-          }
-        } else {
-          ElMessage({ message: '场次获取失败', type: 'error' })
-        }
+        radio1.value = movie_list.value[0].movie_id
+        await loadSessions()
+      } else {
+        radio1.value = 0
+        session_list.value = []
       }
-    } else {
+    } catch (e) {
       ElMessage({ message: '影片获取失败', type: 'error' })
+      movie_list.value = []
     }
   },
   { immediate: true }
 )
-const addSession = () => {
-  router.push(`/admin/addSession/${theater_id.value}`)
-}
-// 要渲染的场次信息列表
+
 const session_list = ref([])
-// 监听选项是否发生变化
-watch(
-  () => {
-    return {
-      movie: radio1.value,
-      date: radio2.value
-    }
-  },
-  async (newValue) => {
-    const res = await sessionGetListService(
-      theater_id.value,
-      newValue.movie,
-      formatDate(newValue.date)
-    )
-    if (res.data.status === 200) {
-      session_list.value = res.data.data.item
-      if (res.data.data.item === null) {
-        session_list.value = []
-      }
-    } else {
-      ElMessage({ message: '场次获取失败', type: 'error' })
-    }
-  },
-  {
-    deep: true
+
+const loadSessions = async () => {
+  if (!radio1.value || radio1.value === 0) {
+    session_list.value = []
+    return
   }
-)
-const total = computed(() => {
-  return session_list.value.length
-})
-const color = (i) => {
-  if (i % 2 == 0) {
-    return 'background-color: #e7e7e7;'
-  } else {
-    return 'background-color: #d6d6d6'
+  try {
+    const dateStr = formatDate(radio2.value).trim()
+    // 修复：正确参数顺序 (theater_id不用, movie_id, date)
+    const res = await sessionGetListService(null, radio1.value, dateStr)
+    // 修复：后端返回 { sessions, total, ... } 对象，需取 .sessions
+    session_list.value = res.data.data.sessions || []
+  } catch (e) {
+    session_list.value = []
+    ElMessage({ message: '场次获取失败', type: 'error' })
   }
 }
-// 删除场次
+
+watch(
+  () => ({ movie: radio1.value, date: radio2.value }),
+  async () => {
+    if (movie_list.value.length !== 0) {
+      await loadSessions()
+    }
+  },
+  { deep: true }
+)
+
+const total = computed(() => session_list.value.length)
+const addSession = () => {
+  router.push(`/admin/addSession`)
+}
+const color = (i) => (i % 2 == 0 ? 'background-color: #e7e7e7;' : 'background-color: #d6d6d6')
+
 const delSession = async (id) => {
   ElMessageBox.confirm('确定删除场次？', '提示')
     .then(async () => {
-      const res = await sessionDelService(Number(id))
-      if (res.data.status === 200) {
+      try {
+        await sessionDelService(id)
+        session_list.value = session_list.value.filter((item) => item.session_id != id)
         ElMessage({ message: '场次删除成功', type: 'success' })
-        session_list.value = session_list.value.filter((item) => {
-          return item.ID != id
-        })
-      } else {
+      } catch (e) {
         ElMessage({ message: '场次删除失败', type: 'error' })
       }
     })
     .catch(() => {})
 }
-// 跳转至信息展示页面
+
 const gotoInfo = (id) => {
-  router.push(`/admin/viewSession/${theater_id.value}/${id}`)
+  router.push(`/admin/viewSession/${id}`)
 }
 </script>
 
@@ -118,27 +93,25 @@ const gotoInfo = (id) => {
     <div class="top">
       <div class="total">已找到{{ total }}场安排</div>
       <div class="add">
-        <el-button
-          style="width: 100px; height: 40px"
-          type="primary"
-          @click="addSession"
+        <el-button style="width: 100px; height: 40px" type="primary" @click="addSession"
           >增加场次</el-button
         >
       </div>
     </div>
-    <div v-if="movie_list.length == 0" style="margin-top: 160px">
-      <el-empty description="该影院没有上映影片"></el-empty>
-    </div>
-    <div class="showSession1" v-else>
+    <!-- <div v-if="movie_list.length == 0" style="margin-top: 160px">
+      <el-empty description="暂无正在上映的影片"></el-empty>
+    </div> -->
+    <div class="showSession1">
       <div class="chooseBox">
         <div class="movieChoose">
           <div class="text">影片：</div>
           <el-radio-group class="radios" v-model="radio1">
+            <!-- 新后端使用 movie_id（原来是 id） -->
             <el-radio
               class="movie-item"
               v-for="i in movie_list"
-              :value="i.id"
-              :key="i.id"
+              :value="i.movie_id"
+              :key="i.movie_id"
               size="large"
               border
               >{{ i.chinese_name }}</el-radio
@@ -168,30 +141,30 @@ const gotoInfo = (id) => {
           <div class="nav">
             <span class="id">场次ID</span>
             <span class="name">影片</span>
-            <span class="time">时间 </span>
+            <span class="time">时间</span>
             <span class="hall">影厅</span>
             <span class="price">价格</span>
-            <span class="opea">操作 </span>
+            <span class="opea">操作</span>
           </div>
+          <!-- 新后端字段：session_id / chinese_name / stime / etime / name / price -->
+          <!-- （原来是 ID / Movie.chinese_name / ShowTime / EndTime / Hall.Name / Price） -->
           <div
             class="item"
             v-for="(i, index) in session_list"
-            :key="i.ID"
+            :key="i.session_id"
             :style="color(index)"
           >
-            <span class="id">{{ i.ID }}</span>
-            <span class="name">{{ i.Movie.chinese_name }}</span>
+            <span class="id">{{ i.session_id }}</span>
+            <span class="name">{{ i.chinese_name }}</span>
             <span class="time">
-              <div class="start">{{ formatTime1(i.ShowTime) }}</div>
-              <div class="end">{{ formatTime1(i.EndTime) }}散场</div>
+              <div class="start">{{ formatTime1(i.stime) }}</div>
+              <div class="end">{{ formatTime1(i.etime) }}散场</div>
             </span>
-            <span class="hall">{{ i.Hall.Name }}</span>
-            <span class="price">￥{{ i.Price }}</span>
+            <span class="hall">{{ i.name }}</span>
+            <span class="price">￥{{ i.price }}</span>
             <span class="opea">
-              <el-button class="btn" type="primary" @click="gotoInfo(i.ID)"
-                >查看</el-button
-              >
-              <el-button class="btn" type="primary" @click="delSession(i.ID)"
+              <el-button class="btn" type="primary" @click="gotoInfo(i.session_id)">查看</el-button>
+              <el-button class="btn" type="primary" @click="delSession(i.session_id)"
                 >删除</el-button
               >
             </span>
@@ -220,10 +193,6 @@ const gotoInfo = (id) => {
     height: 80px;
     border-bottom: 1px solid rgb(105, 105, 105);
     margin-bottom: 30px;
-    .total {
-    }
-    .add {
-    }
   }
   .chooseBox {
     border: 1px solid #ccc;

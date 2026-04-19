@@ -1,0 +1,15 @@
+{
+  "url": "https://mountain-batch-throwback.ngrok-free.dev/api/hall/create",
+  "method": "POST",
+  "header": {
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInN0YXR1cyI6MSwiaWF0IjoxNzc2MzE1ODkzLCJleHAiOjE3ODc2MTE4OTN9.UOooVbJNaroAXAhn1C5FIuFXqjRPR9V7FSkLrxcEsAM"
+  },
+  "param": {},
+  "body": {
+    "cnum": 8,
+    "name": "巨幕影厅1",
+    "rnum": 8,
+    "seat": "0,1,1,1,1,1,1,1,0,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+  },
+  "auth": null
+}

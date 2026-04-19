@@ -2,72 +2,74 @@
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { sessionGetOneService, sessionAlertService } from '@/api/session'
-import { movieSearchService } from '@/api/movie'
+import { movieGetInfoService } from '@/api/movie'
 import { hallGetListService } from '@/api/hall'
-import { formatTime, findtheaterName } from '@/utils/data'
+import { formatTime } from '@/utils/data'
+import { ElMessage } from 'element-plus'
 
 const route = useRoute()
 const session_id = route.params.id
+
 const trueInfo = ref({
-  theater_name: '',
-  theater_id: '',
+  hall_name: '',
   movie_name: '',
   movie_id: '',
   hall_id: '',
   session_id: '',
   price: '',
-  start: ''
+  start: '',
+  etime: '',
+  movie_duration: 120
 })
 const disabled = ref(true)
-// 取消修改时，把真实值赋值给表单formModel
+
 const cancle = () => {
   formModel.value.theater_name = trueInfo.value.theater_name
   formModel.value.movie_name = trueInfo.value.movie_name
-  formModel.value.movie_id = trueInfo.value.movie_id
   formModel.value.hall_id = trueInfo.value.hall_id
   formModel.value.price = trueInfo.value.price
   formModel.value.start = trueInfo.value.start
   disabled.value = true
 }
-// 把表单赋值给真实值
-const success = () => {
-  trueInfo.value.start = formatTime(formModel.value.start)
-}
+
 const changeSession = async () => {
   await form.value.validate()
-  if (formatTime(formModel.value.start) < formatTime(new Date())) {
+  const nowTime = formatTime(new Date())
+  const startTime = formatTime(formModel.value.start)
+  if (startTime < nowTime) {
     ElMessage.error('场次时间不能小于当前时间')
     return
   }
-  const res = await sessionAlertService({
-    theater_id: trueInfo.value.theater_id,
-    movie_id: formModel.value.movie_id,
-    hall_id: formModel.value.hall_id,
-    show_time: new Date(formModel.value.start),
-    price: Number(formModel.value.price),
-    session_id: trueInfo.value.session_id
-  })
-  if (res.data.status === 200) {
-    success()
+  // 用电影时长计算新的结束时间
+  const stimeMs = new Date(formModel.value.start).getTime()
+  const etimeMs = stimeMs + (trueInfo.value.movie_duration || 120) * 60 * 1000
+  const etime = formatTime(new Date(etimeMs))
+
+  // 新后端：POST /session/update，body: { session_id, movie_id, hall_id, stime, etime, price }
+  try {
+    await sessionAlertService({
+      session_id: trueInfo.value.session_id,
+      movie_id: trueInfo.value.movie_id,
+      hall_id: trueInfo.value.hall_id,
+      stime: startTime,
+      etime: etime,
+      price: Number(formModel.value.price)
+    })
+    trueInfo.value.start = startTime
+    trueInfo.value.etime = etime
+    trueInfo.value.price = formModel.value.price
     disabled.value = true
-    ElMessage({
-      type: 'success',
-      message: '修改成功'
-    })
-  } else {
-    ElMessage({
-      type: 'error',
-      message: '修改失败'
-    })
+    ElMessage({ type: 'success', message: '修改成功' })
+  } catch (e) {
+    ElMessage({ type: 'error', message: '修改失败' })
   }
 }
-// 关于表单
+
 const formModel = ref({
-  theater_name: '',
+  hall_name: '',
   start: '',
   price: '',
   hall_id: '',
-  movie_id: '',
   movie_name: ''
 })
 const form = ref(null)
@@ -78,52 +80,48 @@ const rules = ref({
   movie_name: [{ required: true, message: '请选择影片', trigger: 'blur' }],
   start: [{ required: true, message: '请选择开场时间', trigger: 'blur' }]
 })
-// 该影院的所有演出厅列表
+
 const hall_list = ref([])
+
 onMounted(async () => {
-  const res = await sessionGetOneService(session_id)
-  if (res.data.status === 200) {
+  try {
+    // 新后端：GET /session/seabyid?id=xxx → { success, data: session }
+    // session 字段：session_id / movie_id / hall_id / stime / etime / price
+    const res = await sessionGetOneService(session_id)
     const data = res.data.data
-    console.log(data)
-    console.log(findtheaterName(data.Hall.TheaterID))
-    trueInfo.value.theater_name = findtheaterName(data.Hall.TheaterID)
-    trueInfo.value.theater_id = data.Hall.TheaterID
-    trueInfo.value.session_id = data.ID
-    trueInfo.value.movie_name = data.Movie.ChineseName
-    trueInfo.value.movie_id = data.Movie.ID
-    trueInfo.value.hall_id = data.Hall.ID
-    trueInfo.value.hall_name = data.Hall.Name
-    trueInfo.value.price = data.Price
-    trueInfo.value.start = formatTime(data.ShowTime)
-  } else {
+
+    trueInfo.value.session_id = data.session_id
+    trueInfo.value.movie_id = data.movie_id
+    trueInfo.value.hall_id = data.hall_id
+    trueInfo.value.price = data.price
+    trueInfo.value.start = data.stime
+    trueInfo.value.etime = data.etime
+
+    // 获取电影名称和时长
+    try {
+      const movieRes = await movieGetInfoService(data.movie_id)
+      const movieData = movieRes.data.data
+      trueInfo.value.movie_name = movieData?.chinese_name || '未知影片'
+      trueInfo.value.movie_duration = parseInt(movieData?.duration) || 120
+    } catch (e) {
+      // trueInfo.value.movie_name = '未知影片'
+      ElMessage({ message: '影片信息获取失败', type: 'error' })
+    }
+
+    // 获取所有影厅列表（用于下拉选择）
+    // 新后端：GET /hall/list → { success, data: { halls: [...] } }，字段：hall_id / name
+    const hallRes = await hallGetListService(data.hall_id)
+    hall_list.value = hallRes.data.data.halls.halls || []
+    // 找到当前场次对应的影厅名（用于 hall_name 回填）
+    const hall = hall_list.value.find((h) => h.hall_id === data.hall_id)
+
+    if (hall) trueInfo.value.hall_name = hall.name + ' 未知影厅名'
+  } catch (e) {
     ElMessage({ message: '信息获取失败', type: 'error' })
-  }
-  const res1 = await hallGetListService(trueInfo.value.theater_id)
-  if (res1.data.status === 200) {
-    hall_list.value = res1.data.data.item
-  } else {
-    ElMessage({ message: '影厅列表获取失败', type: 'error' })
   }
 
   cancle()
 })
-const movie_list = ref([])
-const loading = ref(false)
-const remoteMethod = async (query) => {
-  if (query) {
-    loading.value = true
-    const res = await movieSearchService(query)
-    loading.value = false
-    if (res.data.status === 200) {
-      movie_list.value = res.data.data.item
-      console.log(res.data.data)
-    } else {
-      movie_list.value = []
-    }
-  } else {
-    movie_list.value = []
-  }
-}
 </script>
 
 <template>
@@ -135,17 +133,10 @@ const remoteMethod = async (query) => {
         :rules="rules"
         label-width="auto"
         class="demo-ruleForm form"
-        :size="formSize"
         status-icon
       >
-        <el-form-item label="影院名称" prop="theater_name" class="form-item">
-          <el-input
-            v-model="formModel.theater_name"
-            disabled
-            placeholder="请输入影片名"
-          />
-        </el-form-item>
         <el-form-item label="影厅名称" prop="hall_id" class="form-item">
+          <!-- 新后端：hall_id / name（原来是 ID / Name） -->
           <el-select
             disabled
             v-model="formModel.hall_id"
@@ -154,35 +145,22 @@ const remoteMethod = async (query) => {
           >
             <el-option
               v-for="item in hall_list"
-              :key="item.ID"
-              :label="item.Name"
-              :value="item.ID"
-          /></el-select>
-        </el-form-item>
-        <el-form-item label="影片名称" prop="movie_name" class="form-item">
-          <el-select
-            v-model="formModel.movie_name"
-            filterable
-            remote
-            reserve-keyword
-            placeholder="请输入影片名称"
-            remote-show-suffix
-            :remote-method="remoteMethod"
-            :loading="loading"
-            style="width: 240px"
-            disabled
-          >
-            <el-option
-              v-for="item in movie_list"
-              :key="item.id"
-              :label="item.chinese_name"
-              :value="item.chinese_name"
+              :key="item.hall_id"
+              :label="item.name"
+              :value="item.hall_id"
             />
           </el-select>
         </el-form-item>
+        <el-form-item label="影片名称" prop="movie_name" class="form-item">
+          <el-input
+            v-model="formModel.movie_name"
+            disabled
+            placeholder="影片名称"
+          />
+        </el-form-item>
         <el-form-item label="价格" prop="price" class="form-item">
           <el-input
-            disabled
+            :disabled="disabled"
             v-model="formModel.price"
             placeholder="请输入价格"
           />
@@ -200,15 +178,17 @@ const remoteMethod = async (query) => {
           class="btn"
           type="primary"
           @click="disabled = false"
+          
+        
           >修改信息</el-button
         >
+            
+          
         <div class="btnGro" v-else>
-          <el-button class="btn1" type="primary" @click="changeSession()"
-            >确认修改</el-button
-          >
-          <el-button class="btn1" type="primary" @click="cancle()"
-            >取消修改</el-button
-          >
+            
+          
+          <el-button class="btn1" type="primary" @click="changeSession()">确认修改</el-button>
+          <el-button class="btn1" type="primary" @click="cancle()">取消修改</el-button>
         </div>
       </el-form>
     </div>
@@ -224,27 +204,27 @@ const remoteMethod = async (query) => {
     flex-direction: column;
     justify-content: flex-start;
     .form {
-      width: 70%;
+       
+     
+      width:
+        70%;
+       
+       
+     
       .form-item {
         margin-top: 40px;
-        // border: 1px solid red;
-      }
-      .tags {
-        .tag {
-          width: 90px;
-          height: 40px;
-          margin-right: 10px;
-          margin-bottom: 10px;
-          text-align: center;
-          line-height: 40px;
-        }
       }
       .btn {
+         
+         
+         
+       
         width: 80%;
         height: 50px;
         margin: 70px 100px;
       }
-      .btnGro {
+      .b
+tnGro {
         display: flex;
         justify-content: space-between;
         .btn1 {

@@ -1,15 +1,14 @@
 <script setup>
-// import { movieAddService } from '@/api/movie'
 import { movieAddService } from '@/api/movie'
 import { sort, formatDate } from '@/utils/data'
 import { ref, nextTick } from 'vue'
-// 关于类型标签的部分
+
 const onChange = (i) => {
   refs.value[i] = !refs.value[i]
 }
 sort.shift()
-const refs = ref(new Array(length).fill(false))
-// 关于表单
+const refs = ref(new Array(sort.length).fill(false))
+
 const formModel = ref({
   name: '',
   engName: '',
@@ -18,35 +17,31 @@ const formModel = ref({
   duration: '',
   intro: ''
 })
-const formData1 = new FormData()
-const formData2 = new FormData()
-const formData3 = new FormData()
+
+const fileList1 = ref([])
+const fileList2 = ref([])
+const fileList3 = ref([])
+
 const form = ref(null)
+
 const rules = ref({
-  // name: [{ required: true, message: '请输入电影中文名称', trigger: 'blur' }],
-  // engName: [{ required: true, message: '请输入电影英文名称', trigger: 'blur' }],
-  // area: [{ required: true, message: '请输入电影地区', trigger: 'blur' }],
-  // date: [{ required: true, message: '请输入电影上映时间', trigger: 'blur' }],
-  // duration: [{ required: true, message: '请输入电影时长', trigger: 'blur' }],
-  // intro: [{ required: true, message: '请输入电影简介', trigger: 'blur' }]
+  name: [{ required: true, message: '请输入影片名', trigger: 'blur' }]
 })
-// 关于导演输入
+
+// 导演
 const inputValue = ref('')
 const dynamicTags = ref([])
 const inputVisible = ref(false)
 const InputRef = ref()
-
 const handleClose = (tag) => {
   dynamicTags.value.splice(dynamicTags.value.indexOf(tag), 1)
 }
-
 const showInput = () => {
   inputVisible.value = true
   nextTick(() => {
     InputRef.value.input.focus()
   })
 }
-
 const handleInputConfirm = () => {
   if (inputValue.value) {
     dynamicTags.value.push(inputValue.value)
@@ -54,23 +49,21 @@ const handleInputConfirm = () => {
   inputVisible.value = false
   inputValue.value = ''
 }
-// 关于演员输入
+
+// 演员
 const inputValue1 = ref('')
 const dynamicTags1 = ref([])
 const inputVisible1 = ref(false)
 const InputRef1 = ref()
-
 const handleClose1 = (tag) => {
   dynamicTags1.value.splice(dynamicTags1.value.indexOf(tag), 1)
 }
-
 const showInput1 = () => {
   inputVisible1.value = true
   nextTick(() => {
     InputRef1.value.input.focus()
   })
 }
-
 const handleInputConfirm1 = () => {
   if (inputValue1.value) {
     dynamicTags1.value.push(inputValue1.value)
@@ -78,70 +71,58 @@ const handleInputConfirm1 = () => {
   inputVisible1.value = false
   inputValue1.value = ''
 }
+
 const refsToArr = (obj) => {
-  // 遍历obj，如果值为true，将其键值添加到数组中
   const arr = []
   for (const key in obj) {
-    if (obj[key]) {
-      arr.push(Number(key) + 1)
-    }
+    if (obj[key]) arr.push(Number(key) + 1)
   }
   return arr
 }
-const refToArr = (arr) => {
-  let newArr = []
-  for (let i = 0; i < arr.length; i++) {
-    newArr.push(arr[i])
-  }
-  return newArr
+
+const handleFileChange1 = (file, fileList) => {
+  fileList1.value = fileList.map((f) => f.raw)
 }
-// setInterval(() => {
-//   console.log({
-//     category_id: refsToArr(refs.value).join(','),
-//     directors: refToArr(dynamicTags.value).join(','),
-//     actors: refToArr(dynamicTags1.value).join(',')
-//   })
-// }, 3000)
+const handleFileChange2 = (file, fileList) => {
+  fileList2.value = fileList.map((f) => f.raw)
+}
+const handleFileChange3 = (file, fileList) => {
+  fileList3.value = fileList.map((f) => f.raw)
+}
+
 const addMovie = async () => {
-  let date = formatDate(formModel.value.date)
-  await form.value.validate()
-  const res = await movieAddService({
-    chinese_name: formModel.value.name,
-    english_name: formModel.value.engName,
-    category_id: refsToArr(refs.value).join(','),
-    area: formModel.value.area,
-    show_time: date.slice(0, date.length - 1),
-    duration: formModel.value.duration,
-    directors: refToArr(dynamicTags.value).join(','),
-    actors: refToArr(dynamicTags1.value).join(','),
-    introduction: formModel.value.intro,
-    movie_img: formData1.get('file'),
-    director_img: formData2.get('file'),
-    actor_img: formData3.get('file')
-  })
-  if (res.status === 200) {
+  try {
+    await form.value.validate()
+  } catch (e) {
+    ElMessage.warning('请输入影片名')
+    return
+  }
+
+  const date = formatDate(formModel.value.date).trim()
+
+  const fd = new FormData()
+  fd.append('chinese_name', formModel.value.name)
+  fd.append('english_name', formModel.value.engName)
+  fd.append('category_ids', refsToArr(refs.value).join(','))
+  fd.append('area', formModel.value.area)
+  fd.append('show_time', date)
+  fd.append('duration', formModel.value.duration)
+  fd.append('directors', dynamicTags.value.join(','))
+  fd.append('actors', dynamicTags1.value.join(','))
+  fd.append('introduction', formModel.value.intro)
+
+  fileList1.value.forEach((file) => fd.append('movie_img', file))
+  fileList2.value.forEach((file) => fd.append('director_img', file))
+  fileList3.value.forEach((file) => fd.append('actor_img', file))
+
+  try {
+    const res = await movieAddService(fd)
+    console.log(res)
     ElMessage.success('影片创建成功')
-  } else {
+  } catch (e) {
     ElMessage.error('影片创建失败')
   }
 }
-// 关于图片操作
-const handleFileChange1 = (file, fileList) => {
-  formData1.append('file', fileList[fileList.length - 1].raw)
-}
-const handleFileChange2 = (file, fileList) => {
-  formData2.append('file', fileList[fileList.length - 1].raw)
-}
-const handleFileChange3 = (file, fileList) => {
-  formData3.append('file', fileList[fileList.length - 1].raw)
-}
-// setInterval(() => {
-//   console.log({
-//     movie_img: formData1.get('file'),
-//     director_img: formData2.get('file'),
-//     actor_img: formData3.get('file')
-//   })
-// }, 2000)
 </script>
 
 <template>
@@ -153,7 +134,6 @@ const handleFileChange3 = (file, fileList) => {
         :rules="rules"
         label-width="auto"
         class="demo-ruleForm form"
-        :size="formSize"
         status-icon
       >
         <el-form-item label="影片名" prop="name" class="form-item">
@@ -166,22 +146,17 @@ const handleFileChange3 = (file, fileList) => {
           <el-input v-model="formModel.area" placeholder="请输入上映区域" />
         </el-form-item>
         <el-form-item label="影片时长" prop="duration" class="form-item">
-          <el-input
-            v-model="formModel.duration"
-            placeholder="请输入影片时长"
-          /><template #append>分钟</template>
+          <el-input v-model="formModel.duration" placeholder="请输入影片时长" />
+          <template #append>分钟</template>
         </el-form-item>
-        <el-form-item label="上映日期" prop="date" class="form-item" required>
+        <el-form-item label="上映日期" prop="date" class="form-item">
           <el-col :span="11">
-            <el-form-item prop="date1">
-              <el-date-picker
-                v-model="formModel.date"
-                type="date"
-                aria-label="Pick a date"
-                placeholder="请选择上映日期"
-                style="width: 100%"
-              />
-            </el-form-item>
+            <el-date-picker
+              v-model="formModel.date"
+              type="date"
+              placeholder="请选择上映日期"
+              style="width: 100%"
+            />
           </el-col>
         </el-form-item>
         <el-form-item label="剧情简介" prop="intro" class="form-item">
@@ -230,9 +205,8 @@ const handleFileChange3 = (file, fileList) => {
               class="button-new-tag tag"
               size="small"
               @click="showInput"
+              >+ 导演</el-button
             >
-              + 导演
-            </el-button>
           </div>
         </el-form-item>
         <el-form-item label="演员" class="form-item">
@@ -256,23 +230,21 @@ const handleFileChange3 = (file, fileList) => {
               @keyup.enter="handleInputConfirm1"
               @blur="handleInputConfirm1"
             />
-
             <el-button
               v-else
               class="button-new-tag tag"
               size="small"
               @click="showInput1"
+              >+ 演员</el-button
             >
-              + 演员
-            </el-button>
           </div>
         </el-form-item>
         <el-form-item label="影片图集" class="form-item">
           <el-upload
-            ref="uploadRef"
-            action="https://jsonplaceholder.typicode.com/posts/"
+            action="#"
             list-type="picture-card"
             :auto-upload="false"
+            multiple
             :on-change="handleFileChange1"
           >
             <el-button size="small" plain style="width: 60px" type="primary"
@@ -282,10 +254,10 @@ const handleFileChange3 = (file, fileList) => {
         </el-form-item>
         <el-form-item label="导演图片" class="form-item">
           <el-upload
-            ref="uploadRef"
-            action="https://jsonplaceholder.typicode.com/posts/"
+            action="#"
             list-type="picture-card"
             :auto-upload="false"
+            multiple
             :on-change="handleFileChange2"
           >
             <el-button size="small" plain style="width: 60px" type="primary"
@@ -295,10 +267,10 @@ const handleFileChange3 = (file, fileList) => {
         </el-form-item>
         <el-form-item label="演员图片" class="form-item">
           <el-upload
-            ref="uploadRef"
-            action="https://jsonplaceholder.typicode.com/posts/"
+            action="#"
             list-type="picture-card"
             :auto-upload="false"
+            multiple
             :on-change="handleFileChange3"
           >
             <el-button size="small" plain style="width: 60px" type="primary"
@@ -331,7 +303,6 @@ const handleFileChange3 = (file, fileList) => {
       width: 70%;
       .form-item {
         margin-top: 40px;
-        // border: 1px solid red;
       }
       .tags {
         .tag {

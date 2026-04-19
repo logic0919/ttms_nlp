@@ -26,9 +26,8 @@ const hallController = {
    */
   deleteHall: async (req, res) => {
     try {
-        const hall_id = req.query.id;
-        
-      const deletedHall = await hallService.findByIdAndDelete(hall_id);
+      const hall_id = req.query.id;
+      const deletedHall = await hallService.getHallById(hall_id);
 
       if (!deletedHall) {
         return res.status(404).json({
@@ -36,7 +35,7 @@ const hallController = {
           message: "未找到指定影厅",
         });
       }
-
+      await hallService.deleteHall(hall_id);
       res.status(200).json({
         success: true,
         message: "影厅删除成功",

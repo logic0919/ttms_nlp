@@ -27,7 +27,9 @@ const userController = {
      * 用户登录
      */
     login: async (req, res) => {
-        try {            
+        try {
+            console.log();
+            
             const result = await userService.login(req.body)
             res.status(200).json({
                 success: true,

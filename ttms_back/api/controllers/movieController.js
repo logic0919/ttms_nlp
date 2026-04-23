@@ -75,6 +75,49 @@ const movieController = {
     }
   },
 
+  createMovieCoze: async (req, res) => {
+    try {
+      console.log("表单字段:", req.body);
+
+      const movieData = {
+        chinese_name: req.body.chinese_name || "中文名",
+        english_name: req.body.english_name || "eng_name",
+        category_ids: req.body.category_ids
+          ? "0," + req.body.category_ids
+          : "0",
+        area: req.body.area || "中国大陆",
+        show_time:
+          req.body.show_time === "NaN-NaN-NaN"
+            ? "2026-01-01"
+            : req.body.show_time,
+        duration: req.body.duration || "120",
+        directors: req.body.directors || "director_name",
+        actors: req.body.actors || "actor_name",
+        introduction: req.body.introduction || "detailIntroduction",
+
+        movie_img:req.body.movie_img||"https://ttms-img.oss-cn-beijing.aliyuncs.com/movie_img/default_movie.jpg",
+        director_img:req.body.director_img||"https://ttms-img.oss-cn-beijing.aliyuncs.com/director_img/default_director.jpg",
+        actor_img:req.body.actor_img||"https://ttms-img.oss-cn-beijing.aliyuncs.com/actor_img/default_actor.jpg",
+      };
+
+      console.log("处理后的电影数据:", movieData);
+
+      const result = await movieService.createMovie(movieData);
+      console.log(result);
+
+      res.status(200).json({
+        success: true,
+        message: "创建电影成功",
+        data: result,
+      });
+    } catch (err) {
+      console.error(err);
+      res.status(400).json({
+        success: false,
+        message: err.message,
+      });
+    }
+  },
   createMovie: async (req, res) => {
     try {
       console.log("表单字段:", req.body);

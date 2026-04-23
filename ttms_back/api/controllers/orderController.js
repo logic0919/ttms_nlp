@@ -160,9 +160,9 @@ const orderController = {
   /**
    * 获取所有订单（管理功能）
    */
-  getAllOrders: async (req, res) => {
+  getAllOrder: async (req, res) => {
     try {
-      const result = await orderService.getAllOrders();
+      const result = await orderService.getAllOrder();
 
       res.status(200).json({
         success: true,
@@ -176,6 +176,22 @@ const orderController = {
       });
     }
   },
+  getAllOrderSeat: async (req, res) => {
+    try {
+      const result = await orderService.getAllOrderSeat();
+
+      res.status(200).json({
+        success: true,
+        message: "获取订单列表成功",
+        data: result,
+      });
+    } catch (err) {
+      res.status(400).json({
+        success: false,
+        message: err.message,
+      });
+    }
+  }
 };
 
 module.exports = orderController;

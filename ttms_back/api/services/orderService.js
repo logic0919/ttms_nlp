@@ -185,8 +185,16 @@ const orderService = {
   /**
    * 获取所有订单（管理功能）
    */
-  getAllOrders: async () => {
-    const orders = await orderModel.findAll();
+  getAllOrder: async () => {
+    const orders = await orderModel.findAllOrder();
+    return {
+      orders,
+      total: orders.length,
+      status: 200,
+    };
+  },
+  getAllOrderSeat: async () => {
+    const orders = await orderModel.findAllOrderSeat();
     return {
       orders,
       total: orders.length,

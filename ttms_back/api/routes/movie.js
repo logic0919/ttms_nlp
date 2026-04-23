@@ -12,6 +12,7 @@ router.get("/hot", movieController.getHotList);
 router.get("/seabyid", movieController.searchMoviesById);
 router.get("/seabyname", movieController.searchMoviesByChineseName);
 router.get("/seabytab", movieController.searchMoviesByTab);
+router.post("/createCoze", verifyToken,movieController.createMovieCoze);
 
 // create 路由加上 multer 中间件，fields 列出所有图片字段名
 router.post(

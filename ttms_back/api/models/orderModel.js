@@ -144,7 +144,7 @@ const orderModel = {
                       LEFT JOIN order_seat os ON o.order_id = os.order_id
                       WHERE o.user_id = ?
                       GROUP BY o.order_id  -- 按订单分组
-                      ORDER BY o.order_id DESC`
+                      ORDER BY o.order_id DESC`;
 
       db.query(sqlStr, [userId], (err, results) => {
         if (err) {
@@ -329,6 +329,32 @@ const orderModel = {
                       LEFT JOIN hall h ON o.hall_id = h.hall_id
                       LEFT JOIN user u ON o.user_id = u.user_id
                       ORDER BY o.order_id DESC`;
+
+      db.query(sqlStr, (err, results) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(results);
+        }
+      });
+    });
+  },
+  findAllOrder: () => {
+    return new Promise((resolve, reject) => {
+      const sqlStr = `SELECT * FROM \`order\` ORDER BY order_id DESC`;
+
+      db.query(sqlStr, (err, results) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(results);
+        }
+      });
+    });
+  },
+  findAllOrderSeat: () => {
+    return new Promise((resolve, reject) => {
+      const sqlStr = `SELECT * FROM order_seat ORDER BY order_id DESC`;
 
       db.query(sqlStr, (err, results) => {
         if (err) {

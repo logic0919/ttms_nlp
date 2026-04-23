@@ -19,6 +19,7 @@ router.get('/getbyuserid', verifyToken, orderController.getOrderByUserId);
 router.get('/getinfo', verifyToken, orderController.getOrderInfo);
 
 // 获取所有订单（管理员权限）
-router.get('/all', verifyToken, orderController.getAllOrders);
+router.get('/allorder', verifyToken, orderController.getAllOrder);
+router.get('/allorderseat', verifyToken, orderController.getAllOrderSeat);
 
 module.exports = router;

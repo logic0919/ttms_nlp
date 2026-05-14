@@ -1,0 +1,802 @@
+[
+  {
+    "text": "帮我录入电影《碟中谍8》，导演是乔·沃茨，时长117分钟。",
+    "label": 2
+  },
+  {
+    "text": "帮我录入电影《流浪地球3》，导演是饺子，时长91分钟。",
+    "label": 2
+  },
+  {
+    "text": "https://feishu.cn/base/q1?table=tblQ1Films 这个是一季度的影片数据，麻烦批量写入。",
+    "label": 1
+  },
+  {
+    "text": "添加《阿凡达：水之道》，詹姆斯·卡梅隆导演，科幻奇幻，192分钟，美国。",
+    "label": 2
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall75?table=tbl7216",
+    "label": 3
+  },
+  {
+    "text": "帮我录入电影《唐人街探案4》，导演是郭帆，时长101分钟。",
+    "label": 2
+  },
+  {
+    "text": "把这个飞书文档里的片单全部导入系统：https://feishu.cn/base/sheets?table=tblFilmSheet",
+    "label": 1
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie281?table=tbl6137",
+    "label": 1
+  },
+  {
+    "text": "系统里加一个4D动感厅，有11行9列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall54?table=tbl5258",
+    "label": 3
+  },
+  {
+    "text": "帮我录入电影《唐人街探案4》，导演是饺子，时长125分钟。",
+    "label": 2
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie130?table=tbl8620",
+    "label": 1
+  },
+  {
+    "text": "帮我录入电影《哪吒之魔童闹海》，导演是乌尔善，时长137分钟。",
+    "label": 2
+  },
+  {
+    "text": "帮我录入电影《红海行动2》，导演是詹姆斯·卡梅隆，时长93分钟。",
+    "label": 2
+  },
+  {
+    "text": "帮我读取这个链接里的影片数据并写入数据库：https://feishu.cn/base/r1?table=tblR1Movie",
+    "label": 1
+  },
+  {
+    "text": "帮我录入电影《复仇者联盟5》，导演是乌尔善，时长99分钟。",
+    "label": 2
+  },
+  {
+    "text": "帮我录入电影《哪吒之魔童闹海》，导演是温子仁，时长180分钟。",
+    "label": 2
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall38?table=tbl9940",
+    "label": 3
+  },
+  {
+    "text": "新增一个普通放映厅，8行10列，全是有效座位。",
+    "label": 4
+  },
+  {
+    "text": "帮我建个小型放映厅，叫微型厅，3行6列，全部有效座位。",
+    "label": 4
+  },
+  {
+    "text": "录入影片信息：名字是《长安三万里》，动画历史类型，导演谢君伟，168分钟。",
+    "label": 2
+  },
+  {
+    "text": "系统里加一个普通2D厅，有15行15列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "系统里加一个IMAX巨幕厅，有10行14列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "帮我录入电影《沙丘3》，导演是乔·沃茨，时长135分钟。",
+    "label": 2
+  },
+  {
+    "text": "新建一个儿童专属厅，名字叫儿童乐园，5行8列。",
+    "label": 4
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie483?table=tbl7409",
+    "label": 1
+  },
+  {
+    "text": "系统里加一个杜比全景声厅，有11行14列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie506?table=tbl6325",
+    "label": 1
+  },
+  {
+    "text": "帮我把飞书里的影片资料全部录入：https://feishu.cn/base/all?table=tblAllMovies",
+    "label": 1
+  },
+  {
+    "text": "新建一个影厅，名字叫IMAX厅，12行16列，全部有效座位。",
+    "label": 4
+  },
+  {
+    "text": "我要在系统里加入《你好，李焕英》这部喜剧，128分钟，贾玲导演。",
+    "label": 2
+  },
+  {
+    "text": "上传电影信息：《独行月球》，沈腾主演，科幻喜剧，122分钟，中国大陆。",
+    "label": 2
+  },
+  {
+    "text": "帮我根据这个链接批量上传影片信息：https://feishu.cn/base/upload?table=tblMovieList",
+    "label": 1
+  },
+  {
+    "text": "帮我录入电影《流浪地球3》，导演是陈思诚，时长94分钟。",
+    "label": 2
+  },
+  {
+    "text": "添加影片《隐入尘烟》到系统，李睿珺导演，剧情，133分钟，中国大陆。",
+    "label": 2
+  },
+  {
+    "text": "建一个室外露天厅，5行10列，全有效座位。",
+    "label": 4
+  },
+  {
+    "text": "写入一部电影：《我的姐姐》，张子枫主演，剧情，128分钟，中国大陆。",
+    "label": 2
+  },
+  {
+    "text": "根据飞书文件里的影厅配置批量新建放映厅：https://feishu.cn/base/create?table=tblCreateHall",
+    "label": 3
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie781?table=tbl6854",
+    "label": 1
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie669?table=tbl9983",
+    "label": 1
+  },
+  {
+    "text": "帮我新增一个豪华放映厅，10行12列。",
+    "label": 4
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie860?table=tbl7799",
+    "label": 1
+  },
+  {
+    "text": "把飞书里的厅室数据全部写进系统：https://feishu.cn/base/room_data?table=tblRoomData",
+    "label": 3
+  },
+  {
+    "text": "新增一个影厅叫做复古厅，6行8列，全部有效。",
+    "label": 4
+  },
+  {
+    "text": "帮我录入电影《狂野飙车》，导演是罗素兄弟，时长128分钟。",
+    "label": 2
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall39?table=tbl6894",
+    "label": 3
+  },
+  {
+    "text": "这份飞书多维表格里是电影数据，帮我全部写入：https://feishu.cn/base/mv?table=tblMV001",
+    "label": 1
+  },
+  {
+    "text": "系统里加一个4D动感厅，有9行19列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "这个表格里面全是影片资料，帮我录进去：https://feishu.cn/base/data?table=tblFilmData2024",
+    "label": 1
+  },
+  {
+    "text": "用飞书里的放映厅配置创建新厅：https://feishu.cn/base/cfg_hall?table=tblHallCfg",
+    "label": 3
+  },
+  {
+    "text": "系统里加一个4D动感厅，有5行19列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie205?table=tbl7269",
+    "label": 1
+  },
+  {
+    "text": "飞书表格里面是新装修的影厅信息，请帮我录入：https://feishu.cn/base/new_hall?table=tblNewHall",
+    "label": 3
+  },
+  {
+    "text": "系统里加一个普通2D厅，有8行10列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "帮我在系统里建一个情侣厅，4行6列，中间两列是过道。",
+    "label": 4
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall67?table=tbl1395",
+    "label": 3
+  },
+  {
+    "text": "从这个飞书表格批量添加电影：https://feishu.cn/base/cinema?table=tblCinemaNew",
+    "label": 1
+  },
+  {
+    "text": "这是影片信息的飞书表，请帮我导入数据库：https://feishu.cn/base/import?table=tblImport001",
+    "label": 1
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall87?table=tbl5432",
+    "label": 3
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall33?table=tbl5145",
+    "label": 3
+  },
+  {
+    "text": "录入电影信息：《破·地狱》，港产剧情，黄子华主演，120分钟。",
+    "label": 2
+  },
+  {
+    "text": "系统里加一个VIP情侣厅，有9行9列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "根据这个飞书表格批量新增电影信息：https://feishu.cn/base/add?table=tblAddMovies2026",
+    "label": 1
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie555?table=tbl3736",
+    "label": 1
+  },
+  {
+    "text": "我把本周新片清单放在飞书了，链接https://feishu.cn/base/new?table=tblWeek，帮我导入。",
+    "label": 1
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall77?table=tbl1479",
+    "label": 3
+  },
+  {
+    "text": "系统里加一个IMAX巨幕厅，有6行5列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "系统里加一个杜比全景声厅，有7行19列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "用飞书里的数据批量创建影片记录：https://feishu.cn/base/cr?table=tblCreate",
+    "label": 1
+  },
+  {
+    "text": "帮我录入电影《复仇者联盟5》，导演是饺子，时长119分钟。",
+    "label": 2
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall24?table=tbl2528",
+    "label": 3
+  },
+  {
+    "text": "系统里加一个4D动感厅，有10行18列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall22?table=tbl7133",
+    "label": 3
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall16?table=tbl6619",
+    "label": 3
+  },
+  {
+    "text": "帮我录入电影《沙丘3》，导演是乔·沃茨，时长137分钟。",
+    "label": 2
+  },
+  {
+    "text": "写入影片《消失的她》，朱一龙主演，悬疑犯罪，107分钟，2023年上映。",
+    "label": 2
+  },
+  {
+    "text": "新建一个叫做小型试映厅的影厅，2行5列全部有效。",
+    "label": 4
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall69?table=tbl6993",
+    "label": 3
+  },
+  {
+    "text": "把这份飞书里存的座位图录入影厅数据库：https://feishu.cn/base/map?table=tblSeatMap",
+    "label": 3
+  },
+  {
+    "text": "帮我录入电影《阿凡达：火与灰》，导演是丹尼斯·维伦纽瓦，时长166分钟。",
+    "label": 2
+  },
+  {
+    "text": "系统里加一个VIP情侣厅，有9行20列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie362?table=tbl3912",
+    "label": 1
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall32?table=tbl5380",
+    "label": 3
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall52?table=tbl6753",
+    "label": 3
+  },
+  {
+    "text": "飞书里存了20部新片数据，链接：https://feishu.cn/base/b20?table=tbl20movies，麻烦导入一下。",
+    "label": 1
+  },
+  {
+    "text": "系统里加一个巨星豪华厅，有14行20列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "这个飞书里有全部的放映厅信息，帮我同步过来：https://feishu.cn/base/sync?table=tblSyncHall",
+    "label": 3
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall60?table=tbl6268",
+    "label": 3
+  },
+  {
+    "text": "把《奥本海默》加进来，诺兰导演，传记历史，180分钟，美国出品。",
+    "label": 2
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie560?table=tbl5372",
+    "label": 1
+  },
+  {
+    "text": "帮我录入电影《封神第二部》，导演是乌尔善，时长143分钟。",
+    "label": 2
+  },
+  {
+    "text": "系统里加一个4D动感厅，有10行18列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall67?table=tbl4991",
+    "label": 3
+  },
+  {
+    "text": "新增一部《星际穿越》，诺兰导演，科幻剧情，169分钟，2014年美国上映。",
+    "label": 2
+  },
+  {
+    "text": "帮我添加《封神第一部》，古装奇幻动作，148分钟，乌尔善导演。",
+    "label": 2
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie748?table=tbl8810",
+    "label": 1
+  },
+  {
+    "text": "帮我批量导入放映厅数据，数据在：https://feishu.cn/base/cinema_hall?table=tblCinemaHall",
+    "label": 3
+  },
+  {
+    "text": "帮我录入电影《流浪地球3》，导演是饺子，时长138分钟。",
+    "label": 2
+  },
+  {
+    "text": "系统里加一个VIP情侣厅，有6行16列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall63?table=tbl9029",
+    "label": 3
+  },
+  {
+    "text": "系统里加一个普通2D厅，有5行14列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "这个飞书文件存的是今年要上的新电影，帮我全录进去：https://feishu.cn/base/yr?table=tblYear2026",
+    "label": 1
+  },
+  {
+    "text": "这是各个放映厅的行列数据，存在飞书里，帮我导入：https://feishu.cn/base/rc?table=tblRowCol",
+    "label": 3
+  },
+  {
+    "text": "帮我录入电影《哪吒之魔童闹海》，导演是饺子，时长128分钟。",
+    "label": 2
+  },
+  {
+    "text": "创建影厅：超大银幕厅，20行25列，前3排标为无效。",
+    "label": 4
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall30?table=tbl3440",
+    "label": 3
+  },
+  {
+    "text": "帮我录入电影《复仇者联盟5》，导演是乔·沃茨，时长180分钟。",
+    "label": 2
+  },
+  {
+    "text": "帮我录入电影《碟中谍8》，导演是林超贤，时长117分钟。",
+    "label": 2
+  },
+  {
+    "text": "按照飞书里的影厅数据批量创建放映厅：https://feishu.cn/base/room?table=tblRoom",
+    "label": 3
+  },
+  {
+    "text": "这个飞书表格里是影厅配置，帮我批量录入：https://feishu.cn/base/hall?table=tblHall001",
+    "label": 3
+  },
+  {
+    "text": "系统里加一个激光放映厅，有9行6列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie150?table=tbl8953",
+    "label": 1
+  },
+  {
+    "text": "新增电影《深海》，导演田晓鹏，动画奇幻，112分钟，简介：少女参宿的奇幻冒险。",
+    "label": 2
+  },
+  {
+    "text": "帮我录入一部科幻片《流浪地球3》，郭帆导演，2027年上映。",
+    "label": 2
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie939?table=tbl4768",
+    "label": 1
+  },
+  {
+    "text": "建个残障专用厅，5行6列，第一排全部有效，其余正常。",
+    "label": 4
+  },
+  {
+    "text": "把飞书表格里的厅号和座位数全部录入：https://feishu.cn/base/hall_num?table=tblHallNum",
+    "label": 3
+  },
+  {
+    "text": "按照这个飞书表格批量录入影片：https://feishu.cn/base/x?table=tblFilm",
+    "label": 1
+  },
+  {
+    "text": "新增影厅：老年优惠厅，8行10列，前两排座位无效。",
+    "label": 4
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie318?table=tbl6538",
+    "label": 1
+  },
+  {
+    "text": "帮我根据飞书表格批量新增影厅：https://feishu.cn/base/halls?table=tblNewHalls",
+    "label": 3
+  },
+  {
+    "text": "系统里加一个杜比全景声厅，有10行7列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "添加一个叫做激光巨幕厅的影厅，15行20列。",
+    "label": 4
+  },
+  {
+    "text": "这份飞书表存的是影厅的行数列数，帮我录进去：https://feishu.cn/base/dim?table=tblDimension",
+    "label": 3
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall76?table=tbl1699",
+    "label": 3
+  },
+  {
+    "text": "帮我录入电影《封神第二部》，导演是饺子，时长146分钟。",
+    "label": 2
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie931?table=tbl5856",
+    "label": 1
+  },
+  {
+    "text": "系统里加一个亲子动画厅，有9行8列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie562?table=tbl5249",
+    "label": 1
+  },
+  {
+    "text": "从这个飞书里读取影厅信息写入数据库：https://feishu.cn/base/h?table=tblH001",
+    "label": 3
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie226?table=tbl7278",
+    "label": 1
+  },
+  {
+    "text": "把这个飞书文件里的座位配置全部导入系统：https://feishu.cn/base/seat?table=tblSeatConfig",
+    "label": 3
+  },
+  {
+    "text": "在系统里新增一部叫《宇宙探索编辑部》的科幻剧情片，97分钟。",
+    "label": 2
+  },
+  {
+    "text": "系统里加一个巨星豪华厅，有14行17列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "添加影片：《哪吒之魔童闹海》，中国大陆，动画奇幻，144分钟。",
+    "label": 2
+  },
+  {
+    "text": "新增影片：《狗十三》，曹保平导演，青春剧情，110分钟。",
+    "label": 2
+  },
+  {
+    "text": "系统里加一个IMAX巨幕厅，有14行8列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "帮我创建一个VIP包厢，3行5列全部有效。",
+    "label": 4
+  },
+  {
+    "text": "系统里加一个IMAX巨幕厅，有11行13列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall92?table=tbl6741",
+    "label": 3
+  },
+  {
+    "text": "系统里加一个4D动感厅，有9行14列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall10?table=tbl2050",
+    "label": 3
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie881?table=tbl4905",
+    "label": 1
+  },
+  {
+    "text": "系统里加一个4D动感厅，有6行13列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall42?table=tbl9136",
+    "label": 3
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie615?table=tbl1267",
+    "label": 1
+  },
+  {
+    "text": "帮我从飞书导入影厅名称和座位布局：https://feishu.cn/base/layout?table=tblLayout001",
+    "label": 3
+  },
+  {
+    "text": "系统里加一个IMAX巨幕厅，有5行18列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "系统里加一个VIP情侣厅，有6行8列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "帮我录入电影《蜘蛛侠4》，导演是饺子，时长166分钟。",
+    "label": 2
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie125?table=tbl2383",
+    "label": 1
+  },
+  {
+    "text": "系统里加一个亲子动画厅，有8行15列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie720?table=tbl6010",
+    "label": 1
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie923?table=tbl5490",
+    "label": 1
+  },
+  {
+    "text": "新建放映厅：数字厅，9行11列，全有效。",
+    "label": 4
+  },
+  {
+    "text": "帮我录入电影《狂野飙车》，导演是林超贤，时长103分钟。",
+    "label": 2
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie252?table=tbl8481",
+    "label": 1
+  },
+  {
+    "text": "帮我录入电影《狂野飙车》，导演是郭帆，时长107分钟。",
+    "label": 2
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie151?table=tbl8088",
+    "label": 1
+  },
+  {
+    "text": "帮我录入电影《唐人街探案4》，导演是詹姆斯·卡梅隆，时长170分钟。",
+    "label": 2
+  },
+  {
+    "text": "帮我录入电影《复仇者联盟5》，导演是罗素兄弟，时长154分钟。",
+    "label": 2
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall75?table=tbl2702",
+    "label": 3
+  },
+  {
+    "text": "我整理了一份电影库，全在飞书里：https://feishu.cn/base/lib?table=tblMovieLib，帮我同步到系统。",
+    "label": 1
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie527?table=tbl1075",
+    "label": 1
+  },
+  {
+    "text": "https://my.feishu.cn/base/abc123?table=tblMovie001 这是影片信息，帮我导入。",
+    "label": 1
+  },
+  {
+    "text": "批量创建影厅，数据来源飞书：https://feishu.cn/base/batch_hall?table=tblBatchHall",
+    "label": 3
+  },
+  {
+    "text": "按照飞书里的电影清单批量写入：https://feishu.cn/base/list?table=tblMovieSchedule",
+    "label": 1
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie593?table=tbl7650",
+    "label": 1
+  },
+  {
+    "text": "添加旗舰厅到系统，18行22列，全部有效座位。",
+    "label": 4
+  },
+  {
+    "text": "系统里加一个巨星豪华厅，有8行12列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "把飞书里存的片单写入影片库：https://feishu.cn/base/write?table=tblWriteFilms",
+    "label": 1
+  },
+  {
+    "text": "帮我把《八角笼中》录进来，王宝强导演主演，剧情动作，139分钟。",
+    "label": 2
+  },
+  {
+    "text": "帮我创建一个叫静音厅的放映厅，8行9列。",
+    "label": 4
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall62?table=tbl1361",
+    "label": 3
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall78?table=tbl8431",
+    "label": 3
+  },
+  {
+    "text": "帮我录入电影《红海行动2》，导演是郭帆，时长108分钟。",
+    "label": 2
+  },
+  {
+    "text": "帮我把《熊出没：伴我熊芯》写进去，动画儿童，100分钟，2022年。",
+    "label": 2
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie908?table=tbl5378",
+    "label": 1
+  },
+  {
+    "text": "系统里加一个VIP情侣厅，有9行6列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie779?table=tbl2283",
+    "label": 1
+  },
+  {
+    "text": "创建一个4D厅，6行8列。",
+    "label": 4
+  },
+  {
+    "text": "帮我录入电影《唐人街探案4》，导演是温子仁，时长129分钟。",
+    "label": 2
+  },
+  {
+    "text": "帮我读取飞书里的影厅资料写入系统：https://feishu.cn/base/hall_info?table=tblHallInfo",
+    "label": 3
+  },
+  {
+    "text": "根据这个飞书链接里的影厅座位信息批量创建：https://feishu.cn/base/s?table=tblSeatLayout",
+    "label": 3
+  },
+  {
+    "text": "按照飞书里记录的影厅结构批量写入系统：https://feishu.cn/base/struct?table=tblStructHall",
+    "label": 3
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall12?table=tbl1496",
+    "label": 3
+  },
+  {
+    "text": "系统里加一个VIP情侣厅，有8行11列，座位全是好的可以卖。",
+    "label": 4
+  },
+  {
+    "text": "请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie684?table=tbl7523",
+    "label": 1
+  },
+  {
+    "text": "帮我创建一条影片记录：《长津湖》，战争历史，176分钟，吴京主演。",
+    "label": 2
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall18?table=tbl3005",
+    "label": 3
+  },
+  {
+    "text": "帮我录入电影《阿凡达：火与灰》，导演是罗素兄弟，时长174分钟。",
+    "label": 2
+  },
+  {
+    "text": "帮我录入电影《狂野飙车》，导演是林超贤，时长135分钟。",
+    "label": 2
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall44?table=tbl4074",
+    "label": 3
+  },
+  {
+    "text": "添加影厅：高端厅，6行10列，最后一排是贵宾区设为有效。",
+    "label": 4
+  },
+  {
+    "text": "这里有个飞书表格是最新的排片计划，里面有影片信息：https://feishu.cn/base/plan?table=tblPlan",
+    "label": 1
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall80?table=tbl2051",
+    "label": 3
+  },
+  {
+    "text": "影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall46?table=tbl6953",
+    "label": 3
+  },
+  {
+    "text": "新增一部叫《满江红》的电影，张艺谋导演，古装悬疑，159分钟。",
+    "label": 2
+  },
+  {
+    "text": "帮我录入电影《沙丘3》，导演是詹姆斯·卡梅隆，时长171分钟。",
+    "label": 2
+  },
+  {
+    "text": "创建影厅：学生专场厅，7行9列，最后一排标为不可用。",
+    "label": 4
+  }
+]

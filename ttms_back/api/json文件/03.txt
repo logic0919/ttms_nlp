@@ -1,0 +1,849 @@
+问：新增电影《碟中谍8》，乌尔善执导，吴京主演。属于科幻类型，片长104分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "碟中谍8", "english_name": "", "area": "美国", "duration": "104", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,7", "actors": "吴京", "directors": "乌尔善", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《沙丘3》，温子仁执导，雷佳音主演。属于奇幻类型，片长151分钟，中国大陆出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "沙丘3", "english_name": "", "area": "中国大陆", "duration": "151", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "雷佳音", "directors": "温子仁", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《红海行动2》，陈思诚执导，赞达亚主演。属于动画类型，片长152分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "红海行动2", "english_name": "", "area": "日本", "duration": "152", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,3", "actors": "赞达亚", "directors": "陈思诚", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《沙丘3》，温子仁执导，易烊千玺主演。属于动画类型，片长126分钟，中国大陆出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "沙丘3", "english_name": "", "area": "中国大陆", "duration": "126", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,3", "actors": "易烊千玺", "directors": "温子仁", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：根据这个飞书表格批量添加影片：https://my.feishu.cn/base/TaBLe001?table=tblMovieImport&view=vew123
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"","english_name":"","area":"","duration":"","show_time":"","introduction":"","category_ids":"","actors":"","directors":"","movie_img":"","director_img":"","actor_img":"","name":"","rnum":"","cnum":"","seat":"","movie_url":"https://my.feishu.cn/base/TaBLe001","hall_url":"","movie_table":"tblMovieImport","hall_table":"","movie_valid":"0","hall_valid":"0"}
+
+问：新增电影《狂野飙车》，林超贤执导，雷佳音主演。属于喜剧类型，片长135分钟，中国大陆出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "狂野飙车", "english_name": "", "area": "中国大陆", "duration": "135", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,2", "actors": "雷佳音", "directors": "林超贤", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了普通2D厅，规模是5行12列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "普通2D厅", "rnum": "5", "cnum": "12", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：影院新建了VIP情侣厅，规模是5行9列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "VIP情侣厅", "rnum": "5", "cnum": "9", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：影院新建了激光放映厅，规模是14行10列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "激光放映厅", "rnum": "14", "cnum": "10", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《沙丘3》，詹姆斯·卡梅隆执导，刘德华主演。属于动画类型，片长127分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "沙丘3", "english_name": "", "area": "法国", "duration": "127", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,3", "actors": "刘德华", "directors": "詹姆斯·卡梅隆", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《封神第二部》，丹尼斯·维伦纽瓦执导，赞达亚主演。属于悬疑类型，片长140分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "封神第二部", "english_name": "", "area": "法国", "duration": "140", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,9", "actors": "赞达亚", "directors": "丹尼斯·维伦纽瓦", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《封神第二部》，林超贤执导，雷佳音主演。属于动画类型，片长153分钟，英国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "封神第二部", "english_name": "", "area": "英国", "duration": "153", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,3", "actors": "雷佳音", "directors": "林超贤", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《深海》，导演田晓鹏，类型动画奇幻，时长112分钟，简介：少女参宿被深海生物营救后展开的奇幻冒险。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"深海","english_name":"","area":"","duration":"112","show_time":"2026-03-31","introduction":"少女参宿被深海生物营救后展开的奇幻冒险。","category_ids":"0,3,13","actors":"","directors":"田晓鹏","movie_img":"","director_img":"","actor_img":"","name":"","rnum":"","cnum":"","seat":"","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"1","hall_valid":"0"}
+
+问：新增电影《复仇者联盟5》，丹尼斯·维伦纽瓦执导，刘德华主演。属于动作类型，片长160分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "复仇者联盟5", "english_name": "", "area": "美国", "duration": "160", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,8", "actors": "刘德华", "directors": "丹尼斯·维伦纽瓦", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《流浪地球3》，温子仁执导，易烊千玺主演。属于动作类型，片长144分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "流浪地球3", "english_name": "", "area": "日本", "duration": "144", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,8", "actors": "易烊千玺", "directors": "温子仁", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：录入影厅：激光巨幕厅，15行22列，全部有效座位。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"","english_name":"","area":"","duration":"","show_time":"","introduction":"","category_ids":"","actors":"","directors":"","movie_img":"","director_img":"","actor_img":"","name":"激光巨幕厅","rnum":"15","cnum":"22","seat":"1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"0","hall_valid":"1"}
+
+问：影院新建了杜比全景声厅，规模是7行10列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "杜比全景声厅", "rnum": "7", "cnum": "10", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《碟中谍8》，乌尔善执导，张译主演。属于科幻类型，片长137分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "碟中谍8", "english_name": "", "area": "美国", "duration": "137", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,7", "actors": "张译", "directors": "乌尔善", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx328?table=tbl7821&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx328", "movie_table": "", "hall_table": "tbl7821", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《阿凡达：火与灰》，詹姆斯·卡梅隆执导，易烊千玺主演。属于悬疑类型，片长131分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "阿凡达：火与灰", "english_name": "", "area": "美国", "duration": "131", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,9", "actors": "易烊千玺", "directors": "詹姆斯·卡梅隆", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《复仇者联盟5》，温子仁执导，沈腾主演。属于科幻类型，片长99分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "复仇者联盟5", "english_name": "", "area": "日本", "duration": "99", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,7", "actors": "沈腾", "directors": "温子仁", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《狂野飙车》，乌尔善执导，易烊千玺主演。属于动作类型，片长90分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "狂野飙车", "english_name": "", "area": "美国", "duration": "90", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,8", "actors": "易烊千玺", "directors": "乌尔善", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了IMAX巨幕厅，规模是5行16列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "IMAX巨幕厅", "rnum": "5", "cnum": "16", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：影院新建了巨星豪华厅，规模是5行18列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "巨星豪华厅", "rnum": "5", "cnum": "18", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：添加影片《长安三万里》，谢君伟导演，动画历史，168分钟，2023年7月8日。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"长安三万里","english_name":"","area":"中国大陆","duration":"168","show_time":"2023-07-08","introduction":"","category_ids":"0,3,19","actors":"","directors":"谢君伟","movie_img":"","director_img":"","actor_img":"","name":"","rnum":"","cnum":"","seat":"","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"1","hall_valid":"0"}
+
+问：影院新建了巨星豪华厅，规模是6行15列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "巨星豪华厅", "rnum": "6", "cnum": "15", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《唐人街探案4》，詹姆斯·卡梅隆执导，沈腾主演。属于奇幻类型，片长99分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "唐人街探案4", "english_name": "", "area": "法国", "duration": "99", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "沈腾", "directors": "詹姆斯·卡梅隆", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《狂野飙车》，温子仁执导，沈腾主演。属于动画类型，片长125分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "狂野飙车", "english_name": "", "area": "日本", "duration": "125", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,3", "actors": "沈腾", "directors": "温子仁", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新建一个IMAX厅，12行20列，座位全部有效。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"","english_name":"","area":"","duration":"","show_time":"","introduction":"","category_ids":"","actors":"","directors":"","movie_img":"","director_img":"","actor_img":"","name":"IMAX厅","rnum":"12","cnum":"20","seat":"1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"0","hall_valid":"1"}
+
+问：影院新建了IMAX巨幕厅，规模是5行15列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "IMAX巨幕厅", "rnum": "5", "cnum": "15", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：影院新建了巨星豪华厅，规模是5行11列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "巨星豪华厅", "rnum": "5", "cnum": "11", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《沙丘3》，林超贤执导，吴京主演。属于动画类型，片长124分钟，中国大陆出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "沙丘3", "english_name": "", "area": "中国大陆", "duration": "124", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,3", "actors": "吴京", "directors": "林超贤", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了VIP情侣厅，规模是6行19列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "VIP情侣厅", "rnum": "6", "cnum": "19", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《复仇者联盟5》，陈思诚执导，赞达亚主演。属于喜剧类型，片长103分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "复仇者联盟5", "english_name": "", "area": "法国", "duration": "103", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,2", "actors": "赞达亚", "directors": "陈思诚", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《复仇者联盟5》，陈思诚执导，刘德华主演。属于悬疑类型，片长119分钟，英国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "复仇者联盟5", "english_name": "", "area": "英国", "duration": "119", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,9", "actors": "刘德华", "directors": "陈思诚", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《碟中谍8》，陈思诚执导，吴京主演。属于悬疑类型，片长95分钟，中国大陆出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "碟中谍8", "english_name": "", "area": "中国大陆", "duration": "95", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,9", "actors": "吴京", "directors": "陈思诚", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了普通2D厅，规模是5行8列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "普通2D厅", "rnum": "5", "cnum": "8", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《复仇者联盟5》，陈思诚执导，吴京主演。属于动作类型，片长126分钟，英国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "复仇者联盟5", "english_name": "", "area": "英国", "duration": "126", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,8", "actors": "吴京", "directors": "陈思诚", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《复仇者联盟5》，丹尼斯·维伦纽瓦执导，易烊千玺主演。属于喜剧类型，片长122分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "复仇者联盟5", "english_name": "", "area": "美国", "duration": "122", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,2", "actors": "易烊千玺", "directors": "丹尼斯·维伦纽瓦", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《沙丘3》，林超贤执导，张译主演。属于奇幻类型，片长156分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "沙丘3", "english_name": "", "area": "美国", "duration": "156", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "张译", "directors": "林超贤", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了巨星豪华厅，规模是6行13列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "巨星豪华厅", "rnum": "6", "cnum": "13", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：添加影厅：普通放映厅，8行10列，全部有效。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"","english_name":"","area":"","duration":"","show_time":"","introduction":"","category_ids":"","actors":"","directors":"","movie_img":"","director_img":"","actor_img":"","name":"普通放映厅","rnum":"8","cnum":"10","seat":"1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"0","hall_valid":"1"}
+
+问：新增电影《碟中谍8》，饺子执导，易烊千玺主演。属于科幻类型，片长104分钟，中国大陆出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "碟中谍8", "english_name": "", "area": "中国大陆", "duration": "104", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,7", "actors": "易烊千玺", "directors": "饺子", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx661?table=tbl2076
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx661", "hall_url": "", "movie_table": "tbl2076", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《哪吒之魔童闹海》，乌尔善执导，赞达亚主演。属于动作类型，片长114分钟，英国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "哪吒之魔童闹海", "english_name": "", "area": "英国", "duration": "114", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,8", "actors": "赞达亚", "directors": "乌尔善", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：帮我录入《星际穿越》，诺兰导演，科幻剧情，169分钟，美国，2014年11月12日。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"星际穿越","english_name":"Interstellar","area":"美国","duration":"169","show_time":"2014-11-12","introduction":"","category_ids":"0,7,4","actors":"","directors":"克里斯托弗·诺兰","movie_img":"","director_img":"","actor_img":"","name":"","rnum":"","cnum":"","seat":"","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"1","hall_valid":"0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx500?table=tbl1654
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx500", "hall_url": "", "movie_table": "tbl1654", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《星际迷航》，罗素兄弟执导，赞达亚主演。属于悬疑类型，片长104分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "星际迷航", "english_name": "", "area": "法国", "duration": "104", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,9", "actors": "赞达亚", "directors": "罗素兄弟", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：创建影厅VIP小厅，4行6列，全有效座位。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"","english_name":"","area":"","duration":"","show_time":"","introduction":"","category_ids":"","actors":"","directors":"","movie_img":"","director_img":"","actor_img":"","name":"VIP小厅","rnum":"4","cnum":"6","seat":"1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"0","hall_valid":"1"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx544?table=tbl1503&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx544", "movie_table": "", "hall_table": "tbl1503", "movie_valid": "0", "hall_valid": "0"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx151?table=tbl6568&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx151", "movie_table": "", "hall_table": "tbl6568", "movie_valid": "0", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx859?table=tbl7024
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx859", "hall_url": "", "movie_table": "tbl7024", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《星际迷航》，丹尼斯·维伦纽瓦执导，雷佳音主演。属于动作类型，片长157分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "星际迷航", "english_name": "", "area": "日本", "duration": "157", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,8", "actors": "雷佳音", "directors": "丹尼斯·维伦纽瓦", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx576?table=tbl2320&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx576", "movie_table": "", "hall_table": "tbl2320", "movie_valid": "0", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx845?table=tbl2002
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx845", "hall_url": "", "movie_table": "tbl2002", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx195?table=tbl5519
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx195", "hall_url": "", "movie_table": "tbl5519", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：录入《流浪地球2》，郭帆导演，科幻动作片，中国大陆，173分钟，2023年1月22日上映，主演吴京。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"流浪地球2","english_name":"","area":"中国大陆","duration":"173","show_time":"2023-01-22","introduction":"","category_ids":"0,7,8","actors":"吴京","directors":"郭帆","movie_img":"","director_img":"","actor_img":"","name":"","rnum":"","cnum":"","seat":"","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"1","hall_valid":"0"}
+
+问：新增电影《沙丘3》，郭帆执导，赞达亚主演。属于喜剧类型，片长143分钟，英国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "沙丘3", "english_name": "", "area": "英国", "duration": "143", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,2", "actors": "赞达亚", "directors": "郭帆", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx120?table=tbl1520&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx120", "movie_table": "", "hall_table": "tbl1520", "movie_valid": "0", "hall_valid": "0"}
+
+问：写入《封神第一部》，乌尔善导演，古装奇幻动作，148分钟，中国大陆。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"封神第一部","english_name":"","area":"中国大陆","duration":"148","show_time":"2026-03-31","introduction":"","category_ids":"0,13,16,8","actors":"","directors":"乌尔善","movie_img":"","director_img":"","actor_img":"","name":"","rnum":"","cnum":"","seat":"","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"1","hall_valid":"0"}
+
+问：新增影厅：旗舰厅，18行22列，全有效。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"","english_name":"","area":"","duration":"","show_time":"","introduction":"","category_ids":"","actors":"","directors":"","movie_img":"","director_img":"","actor_img":"","name":"旗舰厅","rnum":"18","cnum":"22","seat":"1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"0","hall_valid":"1"}
+
+问：新增电影《红海行动2》，罗素兄弟执导，刘德华主演。属于动画类型，片长148分钟，英国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "红海行动2", "english_name": "", "area": "英国", "duration": "148", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,3", "actors": "刘德华", "directors": "罗素兄弟", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《星际迷航》，罗素兄弟执导，易烊千玺主演。属于奇幻类型，片长97分钟，英国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "星际迷航", "english_name": "", "area": "英国", "duration": "97", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "易烊千玺", "directors": "罗素兄弟", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了VIP情侣厅，规模是13行10列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "VIP情侣厅", "rnum": "13", "cnum": "10", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：影院新建了普通2D厅，规模是9行12列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "普通2D厅", "rnum": "9", "cnum": "12", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx900?table=tbl5758
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx900", "hall_url": "", "movie_table": "tbl5758", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：添加一部叫《宇宙探索编辑部》的科幻剧情片，97分钟，中国大陆。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"宇宙探索编辑部","english_name":"","area":"中国大陆","duration":"97","show_time":"2026-03-31","introduction":"","category_ids":"0,7,4","actors":"","directors":"","movie_img":"","director_img":"","actor_img":"","name":"","rnum":"","cnum":"","seat":"","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"1","hall_valid":"0"}
+
+问：从这个飞书链接导入影片：https://feishu.cn/base/import_mv?table=tblImportMV2026&view=vewABC
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"","english_name":"","area":"","duration":"","show_time":"","introduction":"","category_ids":"","actors":"","directors":"","movie_img":"","director_img":"","actor_img":"","name":"","rnum":"","cnum":"","seat":"","movie_url":"https://feishu.cn/base/import_mv","hall_url":"","movie_table":"tblImportMV2026","hall_table":"","movie_valid":"0","hall_valid":"0"}
+
+问：新增电影《唐人街探案4》，饺子执导，吴京主演。属于动画类型，片长148分钟，英国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "唐人街探案4", "english_name": "", "area": "英国", "duration": "148", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,3", "actors": "吴京", "directors": "饺子", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《哪吒之魔童闹海》，乔·沃茨执导，沈腾主演。属于奇幻类型，片长124分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "哪吒之魔童闹海", "english_name": "", "area": "法国", "duration": "124", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "沈腾", "directors": "乔·沃茨", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了4D动感厅，规模是14行13列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "4D动感厅", "rnum": "14", "cnum": "13", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《沙丘3》，詹姆斯·卡梅隆执导，赞达亚主演。属于科幻类型，片长109分钟，中国大陆出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "沙丘3", "english_name": "", "area": "中国大陆", "duration": "109", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,7", "actors": "赞达亚", "directors": "詹姆斯·卡梅隆", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了激光放映厅，规模是15行9列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "激光放映厅", "rnum": "15", "cnum": "9", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx157?table=tbl1252
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx157", "hall_url": "", "movie_table": "tbl1252", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx201?table=tbl4261&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx201", "movie_table": "", "hall_table": "tbl4261", "movie_valid": "0", "hall_valid": "0"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx896?table=tbl2230&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx896", "movie_table": "", "hall_table": "tbl2230", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《沙丘3》，乔·沃茨执导，张译主演。属于科幻类型，片长139分钟，中国大陆出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "沙丘3", "english_name": "", "area": "中国大陆", "duration": "139", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,7", "actors": "张译", "directors": "乔·沃茨", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了亲子动画厅，规模是5行10列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "亲子动画厅", "rnum": "5", "cnum": "10", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：影院新建了杜比全景声厅，规模是8行20列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "杜比全景声厅", "rnum": "8", "cnum": "20", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《哪吒之魔童闹海》，丹尼斯·维伦纽瓦执导，沈腾主演。属于动画类型，片长98分钟，英国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "哪吒之魔童闹海", "english_name": "", "area": "英国", "duration": "98", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,3", "actors": "沈腾", "directors": "丹尼斯·维伦纽瓦", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《哪吒之魔童闹海》，罗素兄弟执导，吴京主演。属于奇幻类型，片长153分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "哪吒之魔童闹海", "english_name": "", "area": "日本", "duration": "153", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "吴京", "directors": "罗素兄弟", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了普通2D厅，规模是12行15列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "普通2D厅", "rnum": "12", "cnum": "15", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《复仇者联盟5》，乌尔善执导，赞达亚主演。属于动作类型，片长160分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "复仇者联盟5", "english_name": "", "area": "日本", "duration": "160", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,8", "actors": "赞达亚", "directors": "乌尔善", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx632?table=tbl6625
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx632", "hall_url": "", "movie_table": "tbl6625", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《红海行动2》，乔·沃茨执导，吴京主演。属于动作类型，片长153分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "红海行动2", "english_name": "", "area": "法国", "duration": "153", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,8", "actors": "吴京", "directors": "乔·沃茨", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《碟中谍8》，丹尼斯·维伦纽瓦执导，汤姆·克鲁斯主演。属于喜剧类型，片长159分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "碟中谍8", "english_name": "", "area": "美国", "duration": "159", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,2", "actors": "汤姆·克鲁斯", "directors": "丹尼斯·维伦纽瓦", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx250?table=tbl6472&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx250", "movie_table": "", "hall_table": "tbl6472", "movie_valid": "0", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx850?table=tbl2496
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx850", "hall_url": "", "movie_table": "tbl2496", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx956?table=tbl7490
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx956", "hall_url": "", "movie_table": "tbl7490", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《流浪地球3》，詹姆斯·卡梅隆执导，雷佳音主演。属于动作类型，片长106分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "流浪地球3", "english_name": "", "area": "法国", "duration": "106", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,8", "actors": "雷佳音", "directors": "詹姆斯·卡梅隆", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了杜比全景声厅，规模是9行20列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "杜比全景声厅", "rnum": "9", "cnum": "20", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：从飞书批量添加影厅：https://feishu.cn/base/hall001?table=tblHallConfig
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"","english_name":"","area":"","duration":"","show_time":"","introduction":"","category_ids":"","actors":"","directors":"","movie_img":"","director_img":"","actor_img":"","name":"","rnum":"","cnum":"","seat":"","movie_url":"","hall_url":"https://feishu.cn/base/hall001","movie_table":"","hall_table":"tblHallConfig","movie_valid":"0","hall_valid":"0"}
+
+问：新增电影《封神第二部》，饺子执导，雷佳音主演。属于动画类型，片长121分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "封神第二部", "english_name": "", "area": "日本", "duration": "121", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,3", "actors": "雷佳音", "directors": "饺子", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx436?table=tbl6625
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx436", "hall_url": "", "movie_table": "tbl6625", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《星际迷航》，温子仁执导，张译主演。属于科幻类型，片长110分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "星际迷航", "english_name": "", "area": "日本", "duration": "110", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,7", "actors": "张译", "directors": "温子仁", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《封神第二部》，饺子执导，张译主演。属于喜剧类型，片长131分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "封神第二部", "english_name": "", "area": "美国", "duration": "131", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,2", "actors": "张译", "directors": "饺子", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了巨星豪华厅，规模是9行11列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "巨星豪华厅", "rnum": "9", "cnum": "11", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：影院新建了亲子动画厅，规模是6行18列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "亲子动画厅", "rnum": "6", "cnum": "18", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《碟中谍8》，饺子执导，易烊千玺主演。属于奇幻类型，片长115分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "碟中谍8", "english_name": "", "area": "法国", "duration": "115", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "易烊千玺", "directors": "饺子", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx852?table=tbl9263
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx852", "hall_url": "", "movie_table": "tbl9263", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx486?table=tbl2477
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx486", "hall_url": "", "movie_table": "tbl2477", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：影院新建了杜比全景声厅，规模是11行12列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "杜比全景声厅", "rnum": "11", "cnum": "12", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx417?table=tbl3127&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx417", "movie_table": "", "hall_table": "tbl3127", "movie_valid": "0", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx244?table=tbl6552
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx244", "hall_url": "", "movie_table": "tbl6552", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《沙丘3》，乌尔善执导，易烊千玺主演。属于悬疑类型，片长128分钟，中国大陆出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "沙丘3", "english_name": "", "area": "中国大陆", "duration": "128", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,9", "actors": "易烊千玺", "directors": "乌尔善", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了巨星豪华厅，规模是6行19列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "巨星豪华厅", "rnum": "6", "cnum": "19", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《哪吒之魔童闹海》，林超贤执导，刘德华主演。属于科幻类型，片长137分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "哪吒之魔童闹海", "english_name": "", "area": "法国", "duration": "137", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,7", "actors": "刘德华", "directors": "林超贤", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：添加影片《满江红》，张艺谋导演，古装悬疑，159分钟，2023年1月22日上映，沈腾主演。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"满江红","english_name":"Full River Red","area":"中国大陆","duration":"159","show_time":"2023-01-22","introduction":"","category_ids":"0,16,9","actors":"沈腾","directors":"张艺谋","movie_img":"","director_img":"","actor_img":"","name":"","rnum":"","cnum":"","seat":"","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"1","hall_valid":"0"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx463?table=tbl4586&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx463", "movie_table": "", "hall_table": "tbl4586", "movie_valid": "0", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx446?table=tbl5410
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx446", "hall_url": "", "movie_table": "tbl5410", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：帮我录入《独行月球》，沈腾主演，科幻喜剧，122分钟，2022年上映。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"独行月球","english_name":"","area":"中国大陆","duration":"122","show_time":"2022-01-01","introduction":"","category_ids":"0,7,2","actors":"沈腾","directors":"","movie_img":"","director_img":"","actor_img":"","name":"","rnum":"","cnum":"","seat":"","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"1","hall_valid":"0"}
+
+问：新增《哪吒之魔童闹海》，饺子导演，动画奇幻，144分钟，中国大陆，2026年1月29日上映。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"哪吒之魔童闹海","english_name":"Ne Zha 2","area":"中国大陆","duration":"144","show_time":"2026-01-29","introduction":"","category_ids":"0,3,13","actors":"","directors":"饺子","movie_img":"","director_img":"","actor_img":"","name":"","rnum":"","cnum":"","seat":"","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"1","hall_valid":"0"}
+
+问：影院新建了巨星豪华厅，规模是10行11列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "巨星豪华厅", "rnum": "10", "cnum": "11", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《流浪地球3》，乌尔善执导，吴京主演。属于奇幻类型，片长110分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "流浪地球3", "english_name": "", "area": "日本", "duration": "110", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "吴京", "directors": "乌尔善", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx674?table=tbl2418
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx674", "hall_url": "", "movie_table": "tbl2418", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《复仇者联盟5》，温子仁执导，雷佳音主演。属于动画类型，片长117分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "复仇者联盟5", "english_name": "", "area": "美国", "duration": "117", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,3", "actors": "雷佳音", "directors": "温子仁", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx630?table=tbl2781&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx630", "movie_table": "", "hall_table": "tbl2781", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《唐人街探案4》，乌尔善执导，刘德华主演。属于喜剧类型，片长138分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "唐人街探案4", "english_name": "", "area": "法国", "duration": "138", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,2", "actors": "刘德华", "directors": "乌尔善", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《狂野飙车》，饺子执导，易烊千玺主演。属于科幻类型，片长133分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "狂野飙车", "english_name": "", "area": "日本", "duration": "133", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,7", "actors": "易烊千玺", "directors": "饺子", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《狂野飙车》，林超贤执导，吴京主演。属于科幻类型，片长150分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "狂野飙车", "english_name": "", "area": "美国", "duration": "150", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,7", "actors": "吴京", "directors": "林超贤", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《复仇者联盟5》，丹尼斯·维伦纽瓦执导，易烊千玺主演。属于悬疑类型，片长115分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "复仇者联盟5", "english_name": "", "area": "法国", "duration": "115", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,9", "actors": "易烊千玺", "directors": "丹尼斯·维伦纽瓦", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《狂野飙车》，罗素兄弟执导，雷佳音主演。属于悬疑类型，片长103分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "狂野飙车", "english_name": "", "area": "美国", "duration": "103", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,9", "actors": "雷佳音", "directors": "罗素兄弟", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了激光放映厅，规模是12行17列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "激光放映厅", "rnum": "12", "cnum": "17", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《哪吒之魔童闹海》，丹尼斯·维伦纽瓦执导，易烊千玺主演。属于悬疑类型，片长136分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "哪吒之魔童闹海", "english_name": "", "area": "美国", "duration": "136", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,9", "actors": "易烊千玺", "directors": "丹尼斯·维伦纽瓦", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx165?table=tbl1191
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx165", "hall_url": "", "movie_table": "tbl1191", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：创建影厅：情侣厅，4行8列，中间两列设为过道（0）其余有效（1）。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"","english_name":"","area":"","duration":"","show_time":"","introduction":"","category_ids":"","actors":"","directors":"","movie_img":"","director_img":"","actor_img":"","name":"情侣厅","rnum":"4","cnum":"8","seat":"1,1,1,0,0,1,1,1,1,1,1,0,0,1,1,1,1,1,1,0,0,1,1,1,1,1,1,0,0,1,1,1","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"0","hall_valid":"1"}
+
+问：影院新建了普通2D厅，规模是7行15列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "普通2D厅", "rnum": "7", "cnum": "15", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx652?table=tbl8706
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx652", "hall_url": "", "movie_table": "tbl8706", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：影院新建了VIP情侣厅，规模是12行17列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "VIP情侣厅", "rnum": "12", "cnum": "17", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：影院新建了亲子动画厅，规模是13行8列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "亲子动画厅", "rnum": "13", "cnum": "8", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：影院新建了VIP情侣厅，规模是11行9列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "VIP情侣厅", "rnum": "11", "cnum": "9", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：影院新建了巨星豪华厅，规模是5行12列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "巨星豪华厅", "rnum": "5", "cnum": "12", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：影院新建了杜比全景声厅，规模是11行8列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "杜比全景声厅", "rnum": "11", "cnum": "8", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx155?table=tbl1809
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx155", "hall_url": "", "movie_table": "tbl1809", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：影院新建了杜比全景声厅，规模是13行14列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "杜比全景声厅", "rnum": "13", "cnum": "14", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增影厅：学生厅，7行9列，全部有效。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"","english_name":"","area":"","duration":"","show_time":"","introduction":"","category_ids":"","actors":"","directors":"","movie_img":"","director_img":"","actor_img":"","name":"学生厅","rnum":"7","cnum":"9","seat":"1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"0","hall_valid":"1"}
+
+问：影院新建了IMAX巨幕厅，规模是10行19列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "IMAX巨幕厅", "rnum": "10", "cnum": "19", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《封神第二部》，郭帆执导，易烊千玺主演。属于奇幻类型，片长107分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "封神第二部", "english_name": "", "area": "美国", "duration": "107", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "易烊千玺", "directors": "郭帆", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx512?table=tbl9220&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx512", "movie_table": "", "hall_table": "tbl9220", "movie_valid": "0", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx813?table=tbl6580
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx813", "hall_url": "", "movie_table": "tbl6580", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《唐人街探案4》，乔·沃茨执导，沈腾主演。属于奇幻类型，片长134分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "唐人街探案4", "english_name": "", "area": "美国", "duration": "134", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "沈腾", "directors": "乔·沃茨", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《封神第二部》，饺子执导，易烊千玺主演。属于动画类型，片长132分钟，英国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "封神第二部", "english_name": "", "area": "英国", "duration": "132", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,3", "actors": "易烊千玺", "directors": "饺子", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《狂野飙车》，饺子执导，汤姆·克鲁斯主演。属于动画类型，片长91分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "狂野飙车", "english_name": "", "area": "日本", "duration": "91", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,3", "actors": "汤姆·克鲁斯", "directors": "饺子", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《唐人街探案4》，林超贤执导，赞达亚主演。属于科幻类型，片长117分钟，中国大陆出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "唐人街探案4", "english_name": "", "area": "中国大陆", "duration": "117", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,7", "actors": "赞达亚", "directors": "林超贤", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：影院新建了激光放映厅，规模是9行16列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "激光放映厅", "rnum": "9", "cnum": "16", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：影院新建了巨星豪华厅，规模是8行19列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "巨星豪华厅", "rnum": "8", "cnum": "19", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《复仇者联盟5》，乌尔善执导，沈腾主演。属于喜剧类型，片长100分钟，中国大陆出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "复仇者联盟5", "english_name": "", "area": "中国大陆", "duration": "100", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,2", "actors": "沈腾", "directors": "乌尔善", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《红海行动2》，罗素兄弟执导，汤姆·克鲁斯主演。属于喜剧类型，片长118分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "红海行动2", "english_name": "", "area": "日本", "duration": "118", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,2", "actors": "汤姆·克鲁斯", "directors": "罗素兄弟", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《封神第二部》，罗素兄弟执导，吴京主演。属于动作类型，片长149分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "封神第二部", "english_name": "", "area": "法国", "duration": "149", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,8", "actors": "吴京", "directors": "罗素兄弟", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx687?table=tbl4614&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx687", "movie_table": "", "hall_table": "tbl4614", "movie_valid": "0", "hall_valid": "0"}
+
+问：影院新建了巨星豪华厅，规模是9行18列，全部有效位置。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "巨星豪华厅", "rnum": "9", "cnum": "18", "seat": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "0", "hall_valid": "1"}
+
+问：新增电影《唐人街探案4》，詹姆斯·卡梅隆执导，吴京主演。属于奇幻类型，片长129分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "唐人街探案4", "english_name": "", "area": "美国", "duration": "129", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "吴京", "directors": "詹姆斯·卡梅隆", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《星际迷航》，饺子执导，刘德华主演。属于奇幻类型，片长147分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "星际迷航", "english_name": "", "area": "美国", "duration": "147", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "刘德华", "directors": "饺子", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《阿凡达：火与灰》，温子仁执导，沈腾主演。属于奇幻类型，片长137分钟，美国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "阿凡达：火与灰", "english_name": "", "area": "美国", "duration": "137", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "沈腾", "directors": "温子仁", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《阿凡达：火与灰》，乌尔善执导，刘德华主演。属于喜剧类型，片长135分钟，中国大陆出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "阿凡达：火与灰", "english_name": "", "area": "中国大陆", "duration": "135", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,2", "actors": "刘德华", "directors": "乌尔善", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx933?table=tbl8162&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx933", "movie_table": "", "hall_table": "tbl8162", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《星际迷航》，陈思诚执导，易烊千玺主演。属于悬疑类型，片长158分钟，中国大陆出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "星际迷航", "english_name": "", "area": "中国大陆", "duration": "158", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,9", "actors": "易烊千玺", "directors": "陈思诚", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《唐人街探案4》，饺子执导，易烊千玺主演。属于悬疑类型，片长146分钟，英国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "唐人街探案4", "english_name": "", "area": "英国", "duration": "146", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,9", "actors": "易烊千玺", "directors": "饺子", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx472?table=tbl4217
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx472", "hall_url": "", "movie_table": "tbl4217", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《沙丘3》，乔·沃茨执导，吴京主演。属于奇幻类型，片长90分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "沙丘3", "english_name": "", "area": "法国", "duration": "90", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "吴京", "directors": "乔·沃茨", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《复仇者联盟5》，温子仁执导，汤姆·克鲁斯主演。属于奇幻类型，片长154分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "复仇者联盟5", "english_name": "", "area": "法国", "duration": "154", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,13", "actors": "汤姆·克鲁斯", "directors": "温子仁", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：根据飞书文档添加近期片单：https://feishu.cn/base/basexxx909?table=tbl1605
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "https://feishu.cn/base/basexxx909", "hall_url": "", "movie_table": "tbl1605", "hall_table": "", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《封神第二部》，乔·沃茨执导，吴京主演。属于动作类型，片长109分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "封神第二部", "english_name": "", "area": "法国", "duration": "109", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,8", "actors": "吴京", "directors": "乔·沃茨", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：写入影片《消失的她》，悬疑犯罪，朱一龙主演，107分钟，2023年6月上映。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name":"消失的她","english_name":"","area":"中国大陆","duration":"107","show_time":"2023-06-01","introduction":"","category_ids":"0,9,10","actors":"朱一龙","directors":"","movie_img":"","director_img":"","actor_img":"","name":"","rnum":"","cnum":"","seat":"","movie_url":"","hall_url":"","movie_table":"","hall_table":"","movie_valid":"1","hall_valid":"0"}
+
+问：新增电影《狂野飙车》，林超贤执导，沈腾主演。属于动作类型，片长117分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "狂野飙车", "english_name": "", "area": "日本", "duration": "117", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,8", "actors": "沈腾", "directors": "林超贤", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《阿凡达：火与灰》，丹尼斯·维伦纽瓦执导，刘德华主演。属于悬疑类型，片长91分钟，中国大陆出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "阿凡达：火与灰", "english_name": "", "area": "中国大陆", "duration": "91", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,9", "actors": "刘德华", "directors": "丹尼斯·维伦纽瓦", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《阿凡达：火与灰》，饺子执导，吴京主演。属于悬疑类型，片长141分钟，日本出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "阿凡达：火与灰", "english_name": "", "area": "日本", "duration": "141", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,9", "actors": "吴京", "directors": "饺子", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：从这里批量导一下影厅的座位图：https://feishu.cn/base/basexxx402?table=tbl6302&view=vewxxx
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "", "english_name": "", "area": "", "duration": "", "show_time": "2026-03-31", "introduction": "", "category_ids": "", "actors": "", "directors": "", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "https://feishu.cn/base/basexxx402", "movie_table": "", "hall_table": "tbl6302", "movie_valid": "0", "hall_valid": "0"}
+
+问：新增电影《蜘蛛侠4》，郭帆执导，沈腾主演。属于喜剧类型，片长121分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "蜘蛛侠4", "english_name": "", "area": "法国", "duration": "121", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,2", "actors": "沈腾", "directors": "郭帆", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}
+
+问：新增电影《复仇者联盟5》，陈思诚执导，张译主演。属于喜剧类型，片长120分钟，法国出品。
+系统提示词：
+你是结构化信息提取器，从用户输入提取字段
+答：{"chinese_name": "复仇者联盟5", "english_name": "", "area": "法国", "duration": "120", "show_time": "2026-03-31", "introduction": "", "category_ids": "0,2", "actors": "张译", "directors": "陈思诚", "movie_img": "", "director_img": "", "actor_img": "", "name": "", "rnum": "", "cnum": "", "seat": "", "movie_url": "", "hall_url": "", "movie_table": "", "hall_table": "", "movie_valid": "1", "hall_valid": "0"}

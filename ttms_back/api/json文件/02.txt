@@ -1,0 +1,1119 @@
+问：
+帮我录入电影《碟中谍8》，导演是乔·沃茨，时长117分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+帮我录入电影《流浪地球3》，导演是饺子，时长91分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：https://feishu.cn/base/q1?table=tblQ1Films 这个是一季度的影片数据，麻烦批量写入。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "含飞书链接+季度影片，匹配文件添加影片。"}
+
+问：添加《阿凡达：水之道》，詹姆斯·卡梅隆导演，科幻奇幻，192分钟，美国。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含完整影片信息，匹配文本描述添加影片。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall75?table=tbl7216
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+帮我录入电影《唐人街探案4》，导演是郭帆，时长101分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：把这个飞书文档里的片单全部导入系统：https://feishu.cn/base/sheets?table=tblFilmSheet
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "片单导入，含飞书链接，匹配文件添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie281?table=tbl6137
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：
+系统里加一个4D动感厅，有11行9列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall54?table=tbl5258
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+帮我录入电影《唐人街探案4》，导演是饺子，时长125分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie130?table=tbl8620
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：
+帮我录入电影《哪吒之魔童闹海》，导演是乌尔善，时长137分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+帮我录入电影《红海行动2》，导演是詹姆斯·卡梅隆，时长93分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：帮我读取这个链接里的影片数据并写入数据库：https://feishu.cn/base/r1?table=tblR1Movie
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "读取飞书+写入，影片操作，匹配文件添加影片。"}
+
+问：
+帮我录入电影《复仇者联盟5》，导演是乌尔善，时长99分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+帮我录入电影《哪吒之魔童闹海》，导演是温子仁，时长180分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall38?table=tbl9940
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：新增一个普通放映厅，8行10列，全是有效座位。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含行列数，匹配文本描述添加影厅。"}
+
+问：帮我建个小型放映厅，叫微型厅，3行6列，全部有效座位。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅配置，匹配文本描述添加影厅。"}
+
+问：录入影片信息：名字是《长安三万里》，动画历史类型，导演谢君伟，168分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，明确录入影片，匹配文本描述添加影片。"}
+
+问：
+系统里加一个普通2D厅，有15行15列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+系统里加一个IMAX巨幕厅，有10行14列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+帮我录入电影《沙丘3》，导演是乔·沃茨，时长135分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：新建一个儿童专属厅，名字叫儿童乐园，5行8列。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅信息，匹配文本描述添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie483?table=tbl7409
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：
+系统里加一个杜比全景声厅，有11行14列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie506?table=tbl6325
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：帮我把飞书里的影片资料全部录入：https://feishu.cn/base/all?table=tblAllMovies
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "全部录入，含飞书链接，匹配文件添加影片。"}
+
+问：新建一个影厅，名字叫IMAX厅，12行16列，全部有效座位。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅名称行列数，匹配文本描述添加影厅。"}
+
+问：我要在系统里加入《你好，李焕英》这部喜剧，128分钟，贾玲导演。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含影片信息，匹配文本描述添加影片。"}
+
+问：上传电影信息：《独行月球》，沈腾主演，科幻喜剧，122分钟，中国大陆。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含影片字段，匹配文本描述添加影片。"}
+
+问：帮我根据这个链接批量上传影片信息：https://feishu.cn/base/upload?table=tblMovieList
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "批量上传影片，含飞书链接，匹配文件添加影片。"}
+
+问：
+帮我录入电影《流浪地球3》，导演是陈思诚，时长94分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：添加影片《隐入尘烟》到系统，李睿珺导演，剧情，133分钟，中国大陆。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，添加影片，匹配文本描述添加影片。"}
+
+问：建一个室外露天厅，5行10列，全有效座位。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅信息，匹配文本描述添加影厅。"}
+
+问：写入一部电影：《我的姐姐》，张子枫主演，剧情，128分钟，中国大陆。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，写入影片，匹配文本描述添加影片。"}
+
+问：根据飞书文件里的影厅配置批量新建放映厅：https://feishu.cn/base/create?table=tblCreateHall
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "批量新建放映厅，飞书来源，匹配文件添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie781?table=tbl6854
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie669?table=tbl9983
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：帮我新增一个豪华放映厅，10行12列。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅名和行列，匹配文本描述添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie860?table=tbl7799
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：把飞书里的厅室数据全部写进系统：https://feishu.cn/base/room_data?table=tblRoomData
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "厅室数据写入，含飞书链接，匹配文件添加影厅。"}
+
+问：新增一个影厅叫做复古厅，6行8列，全部有效。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅配置，匹配文本描述添加影厅。"}
+
+问：
+帮我录入电影《狂野飙车》，导演是罗素兄弟，时长128分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall39?table=tbl6894
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：这份飞书多维表格里是电影数据，帮我全部写入：https://feishu.cn/base/mv?table=tblMV001
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "飞书链接+电影数据，匹配文件添加影片。"}
+
+问：
+系统里加一个4D动感厅，有9行19列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：这个表格里面全是影片资料，帮我录进去：https://feishu.cn/base/data?table=tblFilmData2024
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "飞书链接+影片资料，匹配文件添加影片。"}
+
+问：用飞书里的放映厅配置创建新厅：https://feishu.cn/base/cfg_hall?table=tblHallCfg
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "用飞书配置创建影厅，匹配文件添加影厅。"}
+
+问：
+系统里加一个4D动感厅，有5行19列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie205?table=tbl7269
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：飞书表格里面是新装修的影厅信息，请帮我录入：https://feishu.cn/base/new_hall?table=tblNewHall
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "飞书+新影厅，匹配文件添加影厅。"}
+
+问：
+系统里加一个普通2D厅，有8行10列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：帮我在系统里建一个情侣厅，4行6列，中间两列是过道。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅信息，匹配文本描述添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall67?table=tbl1395
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：从这个飞书表格批量添加电影：https://feishu.cn/base/cinema?table=tblCinemaNew
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "批量添加电影，含飞书链接，匹配文件添加影片。"}
+
+问：这是影片信息的飞书表，请帮我导入数据库：https://feishu.cn/base/import?table=tblImport001
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "含飞书链接+导入操作，匹配文件添加影片。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall87?table=tbl5432
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall33?table=tbl5145
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：录入电影信息：《破·地狱》，港产剧情，黄子华主演，120分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含影片信息，匹配文本描述添加影片。"}
+
+问：
+系统里加一个VIP情侣厅，有9行9列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：根据这个飞书表格批量新增电影信息：https://feishu.cn/base/add?table=tblAddMovies2026
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "批量新增电影，含飞书链接，匹配文件添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie555?table=tbl3736
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：我把本周新片清单放在飞书了，链接https://feishu.cn/base/new?table=tblWeek，帮我导入。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "飞书链接+新片导入，匹配文件添加影片。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall77?table=tbl1479
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+系统里加一个IMAX巨幕厅，有6行5列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+系统里加一个杜比全景声厅，有7行19列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：用飞书里的数据批量创建影片记录：https://feishu.cn/base/cr?table=tblCreate
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "批量创建影片，含飞书链接，匹配文件添加影片。"}
+
+问：
+帮我录入电影《复仇者联盟5》，导演是饺子，时长119分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall24?table=tbl2528
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+系统里加一个4D动感厅，有10行18列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall22?table=tbl7133
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall16?table=tbl6619
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+帮我录入电影《沙丘3》，导演是乔·沃茨，时长137分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：写入影片《消失的她》，朱一龙主演，悬疑犯罪，107分钟，2023年上映。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含影片完整信息，匹配文本描述添加影片。"}
+
+问：新建一个叫做小型试映厅的影厅，2行5列全部有效。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅名行列，匹配文本描述添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall69?table=tbl6993
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：把这份飞书里存的座位图录入影厅数据库：https://feishu.cn/base/map?table=tblSeatMap
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "座位图录入影厅，含飞书链接，匹配文件添加影厅。"}
+
+问：
+帮我录入电影《阿凡达：火与灰》，导演是丹尼斯·维伦纽瓦，时长166分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+系统里加一个VIP情侣厅，有9行20列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie362?table=tbl3912
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall32?table=tbl5380
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall52?table=tbl6753
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：飞书里存了20部新片数据，链接：https://feishu.cn/base/b20?table=tbl20movies，麻烦导入一下。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "飞书链接+影片数量信息，匹配文件添加影片。"}
+
+问：
+系统里加一个巨星豪华厅，有14行20列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：这个飞书里有全部的放映厅信息，帮我同步过来：https://feishu.cn/base/sync?table=tblSyncHall
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "同步放映厅，含飞书链接，匹配文件添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall60?table=tbl6268
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：把《奥本海默》加进来，诺兰导演，传记历史，180分钟，美国出品。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含影片字段，匹配文本描述添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie560?table=tbl5372
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：
+帮我录入电影《封神第二部》，导演是乌尔善，时长143分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+系统里加一个4D动感厅，有10行18列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall67?table=tbl4991
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：新增一部《星际穿越》，诺兰导演，科幻剧情，169分钟，2014年美国上映。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含详细影片信息，匹配文本描述添加影片。"}
+
+问：帮我添加《封神第一部》，古装奇幻动作，148分钟，乌尔善导演。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含影片字段，匹配文本描述添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie748?table=tbl8810
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：帮我批量导入放映厅数据，数据在：https://feishu.cn/base/cinema_hall?table=tblCinemaHall
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "批量导入放映厅，含飞书链接，匹配文件添加影厅。"}
+
+问：
+帮我录入电影《流浪地球3》，导演是饺子，时长138分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+系统里加一个VIP情侣厅，有6行16列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall63?table=tbl9029
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+系统里加一个普通2D厅，有5行14列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：这个飞书文件存的是今年要上的新电影，帮我全录进去：https://feishu.cn/base/yr?table=tblYear2026
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "新电影录入，含飞书链接，匹配文件添加影片。"}
+
+问：这是各个放映厅的行列数据，存在飞书里，帮我导入：https://feishu.cn/base/rc?table=tblRowCol
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "飞书链接+行列数据，影厅语义，匹配文件添加影厅。"}
+
+问：
+帮我录入电影《哪吒之魔童闹海》，导演是饺子，时长128分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：创建影厅：超大银幕厅，20行25列，前3排标为无效。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅详细配置，匹配文本描述添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall30?table=tbl3440
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+帮我录入电影《复仇者联盟5》，导演是乔·沃茨，时长180分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+帮我录入电影《碟中谍8》，导演是林超贤，时长117分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：按照飞书里的影厅数据批量创建放映厅：https://feishu.cn/base/room?table=tblRoom
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "飞书链接+放映厅，匹配文件添加影厅。"}
+
+问：这个飞书表格里是影厅配置，帮我批量录入：https://feishu.cn/base/hall?table=tblHall001
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "含飞书链接+影厅语义，匹配文件添加影厅。"}
+
+问：
+系统里加一个激光放映厅，有9行6列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie150?table=tbl8953
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：新增电影《深海》，导演田晓鹏，动画奇幻，112分钟，简介：少女参宿的奇幻冒险。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含影片信息描述，匹配文本描述添加影片。"}
+
+问：帮我录入一部科幻片《流浪地球3》，郭帆导演，2027年上映。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含影片字段，匹配文本描述添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie939?table=tbl4768
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：建个残障专用厅，5行6列，第一排全部有效，其余正常。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅特殊配置，匹配文本描述添加影厅。"}
+
+问：把飞书表格里的厅号和座位数全部录入：https://feishu.cn/base/hall_num?table=tblHallNum
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "录入厅号座位数，飞书来源，匹配文件添加影厅。"}
+
+问：按照这个飞书表格批量录入影片：https://feishu.cn/base/x?table=tblFilm
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "飞书链接含影片表格，匹配文件添加影片。"}
+
+问：新增影厅：老年优惠厅，8行10列，前两排座位无效。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅名行列信息，匹配文本描述添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie318?table=tbl6538
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：帮我根据飞书表格批量新增影厅：https://feishu.cn/base/halls?table=tblNewHalls
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "批量新增影厅，含飞书链接，匹配文件添加影厅。"}
+
+问：
+系统里加一个杜比全景声厅，有10行7列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：添加一个叫做激光巨幕厅的影厅，15行20列。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅名和行列，匹配文本描述添加影厅。"}
+
+问：这份飞书表存的是影厅的行数列数，帮我录进去：https://feishu.cn/base/dim?table=tblDimension
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "飞书+行列数影厅信息，匹配文件添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall76?table=tbl1699
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+帮我录入电影《封神第二部》，导演是饺子，时长146分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie931?table=tbl5856
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：
+系统里加一个亲子动画厅，有9行8列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie562?table=tbl5249
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：从这个飞书里读取影厅信息写入数据库：https://feishu.cn/base/h?table=tblH001
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "读取飞书写入影厅，匹配文件添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie226?table=tbl7278
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：把这个飞书文件里的座位配置全部导入系统：https://feishu.cn/base/seat?table=tblSeatConfig
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "飞书链接+座位配置，匹配文件添加影厅。"}
+
+问：在系统里新增一部叫《宇宙探索编辑部》的科幻剧情片，97分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含影片名和类型，匹配文本描述添加影片。"}
+
+问：
+系统里加一个巨星豪华厅，有14行17列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：添加影片：《哪吒之魔童闹海》，中国大陆，动画奇幻，144分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含影片详细信息，匹配文本描述添加影片。"}
+
+问：新增影片：《狗十三》，曹保平导演，青春剧情，110分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含影片字段，匹配文本描述添加影片。"}
+
+问：
+系统里加一个IMAX巨幕厅，有14行8列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：帮我创建一个VIP包厢，3行5列全部有效。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅配置，匹配文本描述添加影厅。"}
+
+问：
+系统里加一个IMAX巨幕厅，有11行13列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall92?table=tbl6741
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+系统里加一个4D动感厅，有9行14列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall10?table=tbl2050
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie881?table=tbl4905
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：
+系统里加一个4D动感厅，有6行13列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall42?table=tbl9136
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie615?table=tbl1267
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：帮我从飞书导入影厅名称和座位布局：https://feishu.cn/base/layout?table=tblLayout001
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "导入影厅信息，含飞书链接，匹配文件添加影厅。"}
+
+问：
+系统里加一个IMAX巨幕厅，有5行18列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+系统里加一个VIP情侣厅，有6行8列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+帮我录入电影《蜘蛛侠4》，导演是饺子，时长166分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie125?table=tbl2383
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：
+系统里加一个亲子动画厅，有8行15列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie720?table=tbl6010
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie923?table=tbl5490
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：新建放映厅：数字厅，9行11列，全有效。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含名称行列数，匹配文本描述添加影厅。"}
+
+问：
+帮我录入电影《狂野飙车》，导演是林超贤，时长103分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie252?table=tbl8481
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：
+帮我录入电影《狂野飙车》，导演是郭帆，时长107分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie151?table=tbl8088
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：
+帮我录入电影《唐人街探案4》，导演是詹姆斯·卡梅隆，时长170分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+帮我录入电影《复仇者联盟5》，导演是罗素兄弟，时长154分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall75?table=tbl2702
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：我整理了一份电影库，全在飞书里：https://feishu.cn/base/lib?table=tblMovieLib，帮我同步到系统。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "电影库同步，含飞书链接，匹配文件添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie527?table=tbl1075
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：https://my.feishu.cn/base/abc123?table=tblMovie001 这是影片信息，帮我导入。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "含飞书链接和影片语义，匹配文件添加影片。"}
+
+问：批量创建影厅，数据来源飞书：https://feishu.cn/base/batch_hall?table=tblBatchHall
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "批量创建影厅，飞书来源，匹配文件添加影厅。"}
+
+问：按照飞书里的电影清单批量写入：https://feishu.cn/base/list?table=tblMovieSchedule
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "电影清单批量写入，匹配文件添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie593?table=tbl7650
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：添加旗舰厅到系统，18行22列，全部有效座位。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含行列数，匹配文本描述添加影厅。"}
+
+问：
+系统里加一个巨星豪华厅，有8行12列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：把飞书里存的片单写入影片库：https://feishu.cn/base/write?table=tblWriteFilms
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "写入片单，含飞书链接，匹配文件添加影片。"}
+
+问：帮我把《八角笼中》录进来，王宝强导演主演，剧情动作，139分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含影片信息，匹配文本描述添加影片。"}
+
+问：帮我创建一个叫静音厅的放映厅，8行9列。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅名和行列数，匹配文本描述添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall62?table=tbl1361
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall78?table=tbl8431
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+帮我录入电影《红海行动2》，导演是郭帆，时长108分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：帮我把《熊出没：伴我熊芯》写进去，动画儿童，100分钟，2022年。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含影片字段，匹配文本描述添加影片。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie908?table=tbl5378
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：
+系统里加一个VIP情侣厅，有9行6列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie779?table=tbl2283
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：创建一个4D厅，6行8列。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅名和行列，匹配文本描述添加影厅。"}
+
+问：
+帮我录入电影《唐人街探案4》，导演是温子仁，时长129分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：帮我读取飞书里的影厅资料写入系统：https://feishu.cn/base/hall_info?table=tblHallInfo
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "读取影厅资料，含飞书链接，匹配文件添加影厅。"}
+
+问：根据这个飞书链接里的影厅座位信息批量创建：https://feishu.cn/base/s?table=tblSeatLayout
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "飞书链接+座位信息，匹配文件添加影厅。"}
+
+问：按照飞书里记录的影厅结构批量写入系统：https://feishu.cn/base/struct?table=tblStructHall
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 3, "isSuccess": true, "reason": "批量写入影厅，飞书来源，匹配文件添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall12?table=tbl1496
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+系统里加一个VIP情侣厅，有8行11列，座位全是好的可以卖。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 4, "isSuccess": true, "reason": "含影厅名称和行列数且无链接，匹配文本描述添加影厅。"}
+
+问：
+请通过这个飞书多维表格链接导入一批新电影：https://feishu.cn/base/movie684?table=tbl7523
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 1, "isSuccess": true, "reason": "含影片录入语义及飞书链接，匹配文件添加影片。"}
+
+问：帮我创建一条影片记录：《长津湖》，战争历史，176分钟，吴京主演。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，创建影片记录，匹配文本描述添加影片。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall18?table=tbl3005
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+帮我录入电影《阿凡达：火与灰》，导演是罗素兄弟，时长174分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+帮我录入电影《狂野飙车》，导演是林超贤，时长135分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall44?table=tbl4074
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：添加影厅：高端厅，6行10列，最后一排是贵宾区设为有效。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅信息，匹配文本描述添加影厅。"}
+
+问：这里有个飞书表格是最新的排片计划，里面有影片信息：https://feishu.cn/base/plan?table=tblPlan
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 1, "isSuccess": true, "reason": "飞书+影片信息，匹配文件添加影片。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall80?table=tbl2051
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：
+影院改造了，根据这个飞书表更新一下所有的影厅座位信息：https://lark.com/base/hall46?table=tbl6953
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 3, "isSuccess": true, "reason": "含影厅配置语义及飞书链接，匹配文件添加影厅。"}
+
+问：新增一部叫《满江红》的电影，张艺谋导演，古装悬疑，159分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 2, "isSuccess": true, "reason": "无链接，含影片信息，匹配文本描述添加影片。"}
+
+问：
+帮我录入电影《沙丘3》，导演是詹姆斯·卡梅隆，时长171分钟。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型。
+{"classificationId": 2, "isSuccess": true, "reason": "包含电影名称等信息且无链接，匹配文本描述添加影片。"}
+
+问：创建影厅：学生专场厅，7行9列，最后一排标为不可用。
+系统提示词：
+你是影院操作分类器，判断添加操作的具体类型，输出严格JSON，禁止解释文字。
+答：{"classificationId": 4, "isSuccess": true, "reason": "无链接，含影厅配置，匹配文本描述添加影厅。"}

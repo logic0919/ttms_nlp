@@ -1,0 +1,1004 @@
+问：帮我写一段Python代码爬取电影评分。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：什么样的题材电影在春节档票房最好？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：帮我翻译一段英文电影介绍。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：今晚最晚的场次几点散场？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：你们的会员积分怎么算？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：订单号501是什么状态？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：现在系统里一共有多少部电影？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：给《独行月球》新增一个今晚场次。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：影院里能带外面的食物进去吗？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：添加影片：《深海》，导演田晓鹏，动画奇幻，112分钟。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：移除用户u001的所有订单。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：清空影片库里所有国外电影。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：我要上传一批影厅配置，链接：https://feishu.cn/base/cfg?table=tblHallCfg001
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：一号厅今天的排片是什么？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：这周票房最好的三部电影是哪几部？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：电影和电视剧哪个更好看？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：《速度与激情11》是哪年上映的？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：把session表里stime早于今天的记录全部删了。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：帮我找一部2小时以内的喜剧。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：修改影厅1的名字从大厅改成旗舰厅。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：把《消失的她》写入影片库，悬疑犯罪，107分钟，朱一龙主演。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：查询所有票价超过80元的场次。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：视觉特效做得最好的电影是哪部？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：帮我录入一部新电影，叫《长安三万里》，是动画历史类型的。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：帮我把一号厅的最后两排标记为残障席，更新数据库。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：覆盖掉影厅ID为5的座位布局数据。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：把用户u003的所有待支付订单状态改为已取消。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：新建一个影厅，叫IMAX厅，12行16列。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：我要上传一部新片，片名叫《满江红》，张艺谋导演。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：带1岁半的孩子去看电影需要买票吗？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：写入一条影厅记录：小型放映厅，3行6列，全部有效。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：新增影厅：豪华厅，10行12列，第一行全部设为无效座位。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：帮我取消明天所有场次的排片。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：写进来一部电影：《熊出没：伴我熊芯》，动画儿童，100分钟。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：新增电影《破·地狱》，港产剧情片，黄子华主演。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：帮我在系统里添加《哪吒之魔童闹海》这部电影。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：2024年奥斯卡最佳影片是什么？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：列出所有影厅的名称和座位数。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：有什么好的观影礼仪需要注意？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：今晚有哪些喜剧电影可以看？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：《泰坦尼克号》的故事情节是什么？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：写入影片《独行月球》，沈腾主演，科幻喜剧，122分钟，2022年上映。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：把ID为5的电影从系统里删掉。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：导入这份影片清单到数据库：https://feishu.cn/base/movies?table=tblWeeklyNew
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：今天哪部电影上座率最高？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：电影分级制度是怎么回事？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：新建影厅：儿童厅，5行8列，全有效座位。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：给《哪吒》添加一个新的放映场次，明天上午10点。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：把《蜘蛛侠：英雄无归》加入影片库，科幻动作，148分钟，美国。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：诺兰导演的电影风格有什么特点？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：把《星际穿越》加进来，诺兰导演，科幻剧情，169分钟，美国出品。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：这周有几场电影可以看？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：这个月的票房总收入是多少？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：有没有90分钟以内的儿童动画片？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：新增影厅：学生专场厅，7行9列，最后一排标记为不可用。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：如果我买了票但临时有事去不了怎么办？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：把IMAX厅的票价全部改成88元。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：删除影片ID在10以下的所有记录。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：路上有点堵，晚20分钟到还能进场吗？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：今天有哪些场次？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：明年的春节档会有哪些大片？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：移除掉已下架的影片信息。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：创建新影厅：激光巨幕厅，15行20列。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：新建放映厅：情侣厅，4行6列，中间两列设为通道。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：系统里总共有几个影厅？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：清空一号厅今天的所有排片。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：删除所有座位数少于100的影厅记录。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：今天天气怎么样，适合出门看电影吗？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：新建一个用户账号给新来的员工用。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：删掉旧放映厅那条影厅记录。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：今天最早的一场是几点？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：我昨天买的票是什么状态？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：IMAX厅今天有什么排片？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：今天所有退款的订单有多少？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：创建影厅：超大银幕厅，20行25列，前3排座位标记无效。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：我有一份飞书表格存了几个影厅信息，帮我批量添加进去。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：覆盖ID为2的影片信息，换成新的数据。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：迪士尼的动画电影最近有什么新作？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：我的订单什么时候过期？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：显示一下所有已支付但还没看的订单。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：三号厅今天下午有几场？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：创建一条新的电影记录：《你好，李焕英》，喜剧，128分钟，贾玲导演。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：我要把《宇宙探索编辑部》加进影片库，科幻剧情片，科幻笑话导演。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：录入影厅：数字放映厅，9行11列，座位全有效。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：你好，最近生意怎么样？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：这个月哪部电影场次最多？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：今天哪些场次还有余票？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：现在几点了？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：上传一部电影到系统：《阿凡达》，詹姆斯·卡梅隆导演，162分钟。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：我想新增一部科幻片，叫《信条》，导演诺兰。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：帮我看看有没有适合晚上9点看完不太晚的场次。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：帮我把这批影片信息写进去，飞书链接是https://feishu.cn/base/batch?table=tbl20240101
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：五一节去影院有没有优惠？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：帮我找能看到日落的场次时间。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：系统里新增一部剧情片《隐入尘烟》，导演李睿珺，中国大陆出品。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：这周五有没有晚场？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：帮我写入一部纪录片《大国崛起》，时长240分钟。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：系统里评分最高的电影是哪部？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：更新《流浪地球2》的上映日期。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：介绍一下《星际穿越》这部电影讲了什么。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：今天过期未支付的订单有几笔？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：上个月的订单量是多少？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：影院节假日票价一般怎么定比较合理？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：影院爆米花一般多少钱合适？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：维权意识这么强，电影票不好退是正常的吗？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：删除所有退款状态的订单。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：影片《满江红》的时长是多少分钟？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：帮我把《狗13》录入进影片库，剧情片，青春题材，105分钟。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：删除2024年以前上映的所有影片。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：今晚七点半各个影厅在放什么？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：你是GPT吗？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：有没有中国大陆出品的战争片？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：清空所有历史订单，重新统计。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：帮我录入影厅数据，按照这个飞书表格：https://feishu.cn/base/halls?table=tblHallData
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：今晚VIP厅有没有排片？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：帮我注册一个新的管理员账号。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：今晚七点以后还有哪些场次？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：今天上午还有没有可以买的票？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：《流浪地球》系列一共几部？（公开信息）
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：影院平时几点开门？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：电影票可以转让给别人吗？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：新增一个场次排片，后天晚上8点放《流浪地球2》。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：影厅里哪个最大？最多能坐多少人？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：新增一个场次，明天下午2点在一号厅放《哪吒》。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：你能帮我写一封邮件吗？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：帮我录入一部美国动作片《速度与激情11》，主演范·迪塞尔，130分钟。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：帮我找一部国外的动画电影。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：《封神》系列一共有几部在系统里？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：录入电影《八角笼中》，王宝强导演兼主演，剧情动作片，139分钟。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：帮我查一下座位1排3号今天有没有被占用。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：新建一个影厅叫做老年优惠厅，8行10列。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：有没有2022年以后上映的动画片？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：今天下午三点以后还有哪些影片？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：把order表里的所有数据清空，我要重新测试。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：新增影片：《流浪地球2》，郭帆导演，科幻动作，173分钟，2023年上映。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：添加一个新的放映厅到系统里，名字叫4D厅，6行8列。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：帮我把用户ID为88的账号改成管理员权限。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：二号厅的座位布局是什么样的？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：《哪吒》系列的两部电影时长差多少？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：找一下所有导演是陈凯歌的影片。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：删掉没有场次安排的影片记录。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：这个飞书表格里面是我们要上的新片列表，帮我全部录入：https://feishu.cn/base/xyz?table=tblNewFilms
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：把所有未来场次的票价涨10元。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：系统里加一部《长津湖》，战争历史，时长176分钟，吴京主演。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：中国电影票房历史最高的是哪部？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：帮我推荐一部适合家庭观看的电影。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：导入影片信息：《我的姐姐》，张子枫主演，剧情片，128分钟。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：查询用户u001的所有订单。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：新增一个影厅叫做普通厅，8行10列，所有座位都可用。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：张艺谋导演的代表作有哪些？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：最近一周哪部电影票房最高？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：唐朝是哪年建立的？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：添加一个叫做旗舰厅的影厅，18行22列，全部有效。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：推荐一部适合情侣看的电影。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：删除order_seat表里所有session_id为20的记录。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：这里有个飞书表格，里面存了20部影片信息，帮我批量导入。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：《哪吒》明天几点开场？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：改一下用户u002的密码。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：把《封神第一部》录入进来，古装奇幻，148分钟，乌尔善导演。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：明天下午有没有动作片的场次？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：帮我导入一批新影厅数据，数据在这个飞书里https://feishu.cn/base/hall?table=tblHall123
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：帮我创建一个VIP包厢，3行5列全部有效座位。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：删掉所有2023年以前的场次记录。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：《阿凡达》在全球票房是多少？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：韩国恐怖片和日本恐怖片哪个更吓人？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：帮我修改一号厅的行数从8改成10。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：看一下有没有五一假期的排片安排。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：查一下《流浪地球2》今天有几场？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：帮我添加《奥本海默》，诺兰导演，传记历史，180分钟，美国出品。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：把影厅2的列数从10改成12。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：新增一个员工账户，用来管理后台。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：如何提高影院的周末上座率？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：把《星际穿越》的简介更新一下。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：帮我把《流浪地球》的票价改成45元。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：把二号厅的名字改成豪华厅。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：帮我统计一下今天各场次的销售额。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：今天哪个时间段场次最多？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：删除影厅ID为3的那个厅。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：https://my.feishu.cn/base/abc123?table=tbl001 这个链接里有影片信息，帮我导入。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：最近有没有好看的新片上映？（指全国院线）
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：帮我在系统里给周末加几场儿童专场。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：把《满江红》的分类从古装改成喜剧。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：帮我把所有票价低于30元的场次改成35元。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：删除影片《深海》。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：把订单号501的状态改成已支付。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：帮我批量录入影厅信息，飞书表：https://feishu.cn/base/h?table=tblH2024
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：修改订单501的过期时间延长到明天。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：系统里有没有《泰坦尼克号》？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：添加一部恐怖片《咒》进系统，台湾出品，99分钟。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：清空今天以前的所有订单记录。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：告诉我《星际穿越》的导演是谁。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：影院座位一般A区比B区贵吗？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：把今晚的最后一场场次时间推迟半小时。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：上传影片《长空之王》，王一博主演，动作，129分钟，中国大陆。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：帮我在影片库里录入《流浪地球3》，郭帆导演，科幻类型，2027年上映。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 1, "isSuccess": true}
+
+问：中国有几个省份？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}
+
+问：有没有国产科幻电影在映？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：删除订单号1001到1010的所有记录。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：帮我查一下今晚的恐怖片场次。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 2, "isSuccess": true}
+
+问：清空所有过期订单记录。
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 3, "isSuccess": true}
+
+问：豆瓣评分9分以上的电影有哪些？
+系统提示词：
+你是影院管理助手，判断用户意图类型。
+答：{"classificationId": 0, "isSuccess": true}

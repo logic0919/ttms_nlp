@@ -12,7 +12,6 @@ const { token, id, status } = storeToRefs(userStore)
   <div class="topNav">
     <div class="main">
       <div class="left">
-        <img src="../assets/image/logo.jpg" alt="" class="logo" />
         <el-button type="danger" plain @click="router.push('/index')" class="a"
           >首页</el-button
         >

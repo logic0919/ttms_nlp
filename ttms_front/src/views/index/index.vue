@@ -2,6 +2,74 @@
 import { ref, onMounted } from 'vue'
 import { movieGetAllService } from '@/api/movie'
 import { useRouter } from 'vue-router'
+let bot_id
+// 导入用户身份模块
+import { useUserStore } from '@/stores/index'
+const userStore = useUserStore()
+import { storeToRefs } from 'pinia'
+const { status } = storeToRefs(userStore)
+// 判断用户身份是不是管理员
+if (!status) {
+  //管理员
+  bot_id = '7619678615225204777'
+  console.log('管理员')
+} else {
+  bot_id = '7639745139535495174'
+  console.log('用户')
+}
+const initCozeSDK = () => {
+  if (typeof window.CozeWebSDK !== 'undefined') {
+    try {
+      new window.CozeWebSDK.WebChatClient({
+        config: {
+          type: 'bot',
+          bot_id: bot_id // 你的 Bot ID
+        },
+        auth: {
+          type: 'token',
+          token: 'pat_tqAHUE9hiZXG9y4o90sIIxaAvnDovwBp0rQ1DV8h8W9mUx7uC6D7lHJCpYB3FC8x', // 必须填入真实的 PAT
+          // 这里必须写在 auth 里面！
+          onRefreshToken: async () => {
+            console.log('Token 正在刷新...')
+            return 'pat_tqAHUE9hiZXG9y4o90sIIxaAvnDovwBp0rQ1DV8h8W9mUx7uC6D7lHJCpYB3FC8x'
+          }
+        },
+        ui: {
+          base: {
+            lang: 'zh-CN',
+            zIndex: 10000
+          },
+          asstBtn: {
+            isNeed: true
+          },
+          chatBot: {
+            title: '智能电影助手',
+            width: 390
+          }
+        }
+      })
+      console.log('Coze 智能体初始化逻辑执行完毕')
+    } catch (e) {
+      console.error('Coze SDK 内部报错:', e)
+    }
+  }
+}
+
+onMounted(() => {
+  if (window.CozeWebSDK) {
+    initCozeSDK()
+    return
+  }
+
+  const script = document.createElement('script')
+  // 修正后的 coze.cn 链接
+  script.src =
+    'https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.20/libs/cn/index.js'
+  script.async = true
+  script.onload = () => initCozeSDK()
+  script.onerror = () => console.eror('SDK 加载失败，检查网络')
+  document.head.appendChild(script)
+})
 
 const router = useRouter()
 
@@ -83,17 +151,9 @@ const gotoDetail = (id) => {
   <div class="index">
     <div class="carousels">
       <el-carousel indicator-position="outside" height="470px">
-        <el-carousel-item
-          v-for="(item, index) in carouse"
-          style="height: 100%"
-          :key="index"
-        >
+        <el-carousel-item v-for="(item, index) in carouse" style="height: 100%" :key="index">
           <div class="carousel-item">
-            <img
-              :src="item.img_path"
-              :alt="item.movie_name"
-              class="carousel-image"
-            />
+            <img :src="item.img_path" :alt="item.movie_name" class="carousel-image" />
             <h3 class="movie-name">{{ item.movie_name }}</h3>
           </div>
         </el-carousel-item>
